@@ -3033,3 +3033,18 @@
   position: relative;
   overflow: visible;
 }
+
+/* Basic hover effects */
+div[class*="button"] {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+div[class*="button"]:hover {
+  transform: scale(1.05);
+}
+a {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
