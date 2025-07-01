@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,9 +63,10 @@
       </div>
       <div class="div__frame-48095932"></div>
       <div class="div__frame-1000002206">
+        {% if not profile %}
         <div class="div__frame-48095931">
           <div class="div__button-2">
-              <a class="div__div2" href="#">Войти в аккаунт</a>
+              <a class="div__div2" href="#" id="login-button">Войти в аккаунт</a>
           </div>
           <div class="div__frame-1000006215">
             <img
@@ -81,6 +83,7 @@
             />
           </div>
         </div>
+        {% endif %}
         <div class="div__frame-480959322">
           <div class="div__frame-48095930">
             <div class="div__frame-48095926">
@@ -645,11 +648,13 @@
     </div>
     <div class="div__frame-54">
       <div class="div__frame-10000022062">
+        {% if not profile %}
         <div class="div__frame-48095931">
           <div class="div__button-2">
-              <a class="div__div2" href="#">Войти в аккаунт</a>
+              <a class="div__div2" href="#" id="login-button-footer">Войти в аккаунт</a>
           </div>
         </div>
+        {% endif %}
         <div class="div__group-197-1">
           <img class="div__frame-10000059732" src="frame-10000059731.svg" />
           <img class="div__vector11" src="vector10.svg" />
@@ -710,6 +715,31 @@
       </div>
     </div>
   </div>
-  
+
+  <div id="login-popup" class="popup">
+    <div class="popup-content">
+      <form method="post">
+        {% csrf_token %}
+        <label for="popup-username">Никнейм</label>
+        <input id="popup-username" type="text" name="username" required>
+        <button type="submit">Войти</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('#login-button, #login-button-footer').forEach(b => {
+      b.addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('login-popup').classList.add('active');
+      });
+    });
+    document.getElementById('login-popup').addEventListener('click', e => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.classList.remove('active');
+      }
+    });
+  </script>
+
 </body>
 </html>
