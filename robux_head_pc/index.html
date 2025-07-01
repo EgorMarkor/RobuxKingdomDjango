@@ -1,50 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
-  <link rel="stylesheet" href="./style.css">
-  
-  
+  <link rel="stylesheet" href="robux_head_pc/./vars.css">
+  <link rel="stylesheet" href="robux_head_pc/./style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
   <style>
     html {
       font-size: 0.52vw;
     }
-    
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
+
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .popup-wrapper {
+      background: #0d1222;
+      border-radius: 3.782rem;
+      width: 90.378rem;
+      height: 55.2rem;
+      position: relative;
+      box-shadow: 0 0.501rem 2.004rem rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+    }
+
+    /* Левая часть: форма */
+    .popup-form {
+      position: absolute;
+      left: 43.985rem;
+      top: 5.4rem;
+      width: 44.689rem;
+      height: 36.244rem;
+    }
+
+    .popup-instruction {
+      color: #798cb4;
+      font-family: "PlusJakartaSans-Medium", sans-serif;
+      font-size: 1.845rem;
+      line-height: 150%;
+      position: absolute;
+      top: 9.383rem;
+      width: 43.278rem;
+    }
+
+    .popup-title {
+      color: #fff;
+      font-family: "RobotoFlex-Bold", sans-serif;
+      font-size: 4.06rem;
+      line-height: 4.536rem;
+      position: absolute;
+      top: 2.477rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup-input-container {
+      position: absolute;
+      top: 18.859rem;
+      width: 42.812rem;
+      height: 6.568rem;
+      background: #0a0d1a;
+      border-radius: 2rem;
+      overflow: hidden;
+    }
+    .popup-input-label {
+      color: #fff;
+      font-family: "Roboto-Medium", sans-serif;
+      font-size: 1.845rem;
+      line-height: 150%;
+      position: absolute;
+      left: 3.519rem;
+      top: 2.58rem;
+    }
+
+    .popup-button {
+      position: absolute;
+      top: 29.3rem;
+      background: #3a93ef;
+      border-radius: 2rem;
+      width: 42.812rem;
+      height: 6.099rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-button-text {
+      color: #fff;
+      font-family: "Gilroy-SemiBold", sans-serif;
+      font-size: 2.065rem;
+      line-height: 2.701rem;
+    }
+
+    .popup-agreement {
+      position: absolute;
+      top: 39.223rem;
+      font-family: "RobotoFlex-Medium", sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+    .popup-agreement .gray { color: #80889a; }
+    .popup-agreement .link {
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Правая часть: изображение и иконка */
+    .popup-image-frame {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 37.3rem;
+      height: 60.9rem;
+      background: #0a0d19;
+      overflow: hidden;
+    }
+    .popup-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .popup-error-icon {
+      position: absolute;
+      top: 4.3rem;
+      left: 82.5rem;
+      width: 5.885rem;
+      height: 5.885rem;
+      background: #0a0d19;
+      border-radius: 50%;
+      padding: 0.914rem 0.717rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-error-icon img {
+      width: 4.079rem;
+      height: 4.079rem;
+    }
+  </style>
   <title>Document</title>
 </head>
+
 <body>
   <div class="div">
     <div class="div__frame-1000005832">
-      <img class="div__image-14" src="image-140.png" />
+      <img class="div__image-14" src="robux_head_pc/image-140.png" />
       <div class="div__frame-1000005854">
         <div class="div__kingdom">
           KINGDOM
@@ -64,21 +195,12 @@
       <div class="div__frame-1000002206">
         <div class="div__frame-48095931">
           <div class="div__button-2">
-              <a class="div__div2" href="#">Войти в аккаунт</a>
+            <a class="div__div2" href="#auth" data-fancybox id="triggger">Войти в аккаунт</a>
           </div>
           <div class="div__frame-1000006215">
-            <img
-              class="div__frame-1000005905-variant-3"
-              src="frame-1000005905-variant-30.svg"
-            />
-            <img
-              class="div__frame-1000005907-variant-2"
-              src="frame-1000005907-variant-20.svg"
-            />
-            <img
-              class="div__frame-1000005906-variant-1"
-              src="frame-1000005906-variant-10.svg"
-            />
+            <img class="div__frame-1000005905-variant-3" src="robux_head_pc/frame-1000005905-variant-30.svg" />
+            <img class="div__frame-1000005907-variant-2" src="robux_head_pc/frame-1000005907-variant-20.svg" />
+            <img class="div__frame-1000005906-variant-1" src="robux_head_pc/frame-1000005906-variant-10.svg" />
           </div>
         </div>
         <div class="div__frame-480959322">
@@ -86,58 +208,50 @@
             <div class="div__frame-48095926">
               <div class="div__div3">Купить робуксы</div>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                <img class="div__glyph" src="glyph0.svg" />
+                <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
               </div>
             </div>
-            <div class="div__frame-3">
-              <img class="div__group" src="group0.svg" />
+            <a class="div__frame-3" href="bonus/">
+              <img class="div__group" src="robux_head_pc/group0.svg" />
               <div class="div__div4">Бонусы</div>
-            </div>
+            </a>
             <div class="div__frame-48095929">
               <div class="div__frame-5">
-                <img
-                  class="div__coupon-svgrepo-com-1"
-                  src="coupon-svgrepo-com-10.svg"
-                />
+                <img class="div__coupon-svgrepo-com-1" src="robux_head_pc/coupon-svgrepo-com-10.svg" />
                 <div class="div__div5">Промокод</div>
               </div>
             </div>
-            <div class="div__frame-48095928">
+            <a class="div__frame-48095928 button" href="account/">
               <div class="div__frame-5">
-                <img
-                  class="div__shopping-cart-svgrepo-com-1"
-                  src="shopping-cart-svgrepo-com-10.svg"
-                />
+                <img class="div__shopping-cart-svgrepo-com-1" src="robux_head_pc/shopping-cart-svgrepo-com-10.svg" />
                 <div class="div__div6">Мои покупки</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="div__group-197-1">
-          <img class="div__frame-1000005973" src="frame-10000059730.svg" />
-          <img class="div__vector" src="vector0.svg" />
-          <img class="div__vector2" src="vector1.svg" />
-          <img class="div__vector3" src="vector2.svg" />
-          <img class="div__vector4" src="vector3.svg" />
-          <img class="div__vector5" src="vector4.svg" />
-          <img class="div__vector6" src="vector5.svg" />
-          <img class="div__vector7" src="vector6.svg" />
-          <img class="div__frame-1000005974" src="frame-10000059740.svg" />
+          <img class="div__frame-1000005973" src="robux_head_pc/frame-10000059730.svg" />
+          <img class="div__vector" src="robux_head_pc/vector0.svg" />
+          <img class="div__vector2" src="robux_head_pc/vector1.svg" />
+          <img class="div__vector3" src="robux_head_pc/vector2.svg" />
+          <img class="div__vector4" src="robux_head_pc/vector3.svg" />
+          <img class="div__vector5" src="robux_head_pc/vector4.svg" />
+          <img class="div__vector6" src="robux_head_pc/vector5.svg" />
+          <img class="div__vector7" src="robux_head_pc/vector6.svg" />
+          <img class="div__frame-1000005974" src="robux_head_pc/frame-10000059740.svg" />
         </div>
       </div>
       <div class="div__frame-1000005853">
         <div class="div__frame-1000005851">
           <div class="div__img-6195-2"></div>
-          <img class="div__img-6195-1" src="img-6195-10.png" />
-          <img class="div___1-1" src="_1-10.png" />
-          <div class="div__rectangle-156575"></div>
+          <img class="div__img-6195-1" src="robux_head_pc/img-6195-10.png" />
+          <img class="div___1-1" src="robux_head_pc/_1-10.png" />
           <div class="div__rectangle-156525"></div>
         </div>
         <div class="div__frame-1000005846">
           <div class="div__frame-1000005845">
-            <img class="div__ellipse-76" src="ellipse-760.svg" />
             <div class="div__ellipse-77"></div>
-            <img class="div__frame-1000006027" src="frame-10000060270.svg" />
+            <img class="div__frame-1000006027" src="robux_head_pc/frame-10000060270.svg" />
           </div>
         </div>
         <div class="div__frame-48095922">
@@ -160,7 +274,7 @@
               </div>
               <div class="div__button2">
                 <div class="div__div7">Ввести промокод</div>
-                <img class="div__svg" src="svg0.svg" />
+                <img class="div__svg" src="robux_head_pc/svg0.svg" />
               </div>
               <div class="div__frame-1000006016">
                 <div class="div__frame-1000006015">
@@ -179,7 +293,6 @@
                     <div class="div__input">
                       <div class="div___10">10 ₽</div>
                     </div>
-                    <div class="div__label4">14.81 min и 14814.81 max</div>
                   </div>
                   <div class="div__background-border2">
                     <div class="div__label5">Ты получаешь</div>
@@ -192,22 +305,28 @@
                       </div>
                     </div>
                     <div class="div__background2">
+                      <input
+                        type="range"
+                        min="0"
+                        max="1000"
+                        value="1000"
+                        class="range-overlay"
+                      />
                       <div class="div__background3"></div>
                       <div class="div__background4"></div>
                       <div class="div__slider">
                         <div class="div___1000">1000</div>
-                        <img class="div__svg2" src="svg1.svg" />
+                        <img class="div__svg2" src="robux_head_pc/svg1.svg" />
                       </div>
                     </div>
                     <div class="div__container">
                       <div class="div__background5">
                         <div class="div__frame-1000006006">
                           <div class="div___0-r">+0R$</div>
-                          <img class="div__group2" src="group1.svg" />
+                          <img class="div__group2" src="robux_head_pc/group1.svg" />
                         </div>
                       </div>
                     </div>
-                    <div class="div__label6">20 min и 20000 max</div>
                   </div>
                 </div>
               </div>
@@ -217,7 +336,7 @@
             <div class="div__container2">
               <div class="div__overlay">
                 <div class="div__fire-z-39-vox-3-x-9-kl-5-1">
-                  <img class="div__group3" src="group2.svg" />
+                  <img class="div__group3" src="robux_head_pc/group2.svg" />
                 </div>
                 <div class="div__div8">Самый выгодный курс робуксов</div>
               </div>
@@ -253,15 +372,15 @@
               <div class="div__background6"></div>
               <div class="div__div11">Все системы в порядке</div>
               <div class="div__frame-1000006041">
-                <img class="div__svg3" src="svg2.svg" />
+                <img class="div__svg3" src="robux_head_pc/svg2.svg" />
                 <div class="div__svg4">
-                  <img class="div__vector8" src="vector7.svg" />
+                  <img class="div__vector8" src="robux_head_pc/vector7.svg" />
                   <div class="div__frame-1000006010">
-                    <img class="div__page-1" src="page-10.svg" />
+                    <img class="div__page-1" src="robux_head_pc/page-10.svg" />
                   </div>
                 </div>
-                <img class="div__svg5" src="svg4.svg" />
-                <img class="div__svg6" src="svg5.svg" />
+                <img class="div__svg5" src="robux_head_pc/svg4.svg" />
+                <img class="div__svg6" src="robux_head_pc/svg5.svg" />
               </div>
             </div>
           </div>
@@ -274,17 +393,13 @@
             <div class="div__logo-footer">
               <div class="div__logo">
                 <div class="div__frame-1000006060">
-                  <img
-                    class="div__frame-10000059742"
-                    src="frame-10000059741.svg"
-                  />
+                  <img class="div__frame-10000059742" src="robux_head_pc/frame-10000059741.svg" />
                 </div>
                 <div class="div__robux-kingdom">RobuxKingdom</div>
               </div>
             </div>
             <div
-              class="div__beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica-rbxkingdom-gmail-com"
-            >
+              class="div__beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica-rbxkingdom-gmail-com">
               Beneficiary: INTERNATIONAL BUSINESS SYSTEMS S.R.L.
               <br />
               Reg. number: 3-102-693823
@@ -307,23 +422,16 @@
                 <div class="div__frame-1000005860">
                   <div class="div__frame-1000005859">
                     <div class="div__ellipse-6"></div>
-                    <img
-                      class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2"
-                      src="_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-20.png"
-                    />
+                    <img class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2"
+                      src="robux_head_pc/_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-20.png" />
                   </div>
-                  <img
-                    class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-22"
-                    src="_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-21.png"
-                  />
+                  <img class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-22"
+                    src="robux_head_pc/_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-21.png" />
                 </div>
               </div>
             </div>
             <div class="div__frame-1000005997">
-              <img
-                class="div__busts-in-silhouette-1-1"
-                src="busts-in-silhouette-1-10.png"
-              />
+              <img class="div__busts-in-silhouette-1-1" src="robux_head_pc/busts-in-silhouette-1-10.png" />
               <div class="div__div12">
                 <span>
                   <span class="div-12-span">
@@ -348,83 +456,65 @@
                       <div class="div___803-r">803 R$</div>
                       <div class="div__gar-28">gar...28</div>
                       <div class="div__background8">
-                        <img class="div__no-filter" src="no-filter0.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter0.png" />
                       </div>
                     </div>
                     <div class="div__background7">
                       <div class="div___406-r">406 R$</div>
                       <div class="div___021-20">021...20</div>
                       <div class="div__background8">
-                        <img class="div__no-filter2" src="no-filter1.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter1.png" />
                       </div>
                     </div>
                     <div class="div__background7">
                       <div class="div___110-r">110 R$</div>
                       <div class="div__tac-og">TAC...Og</div>
                       <div class="div__background9">
-                        <img class="div__no-filter3" src="no-filter2.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter2.png" />
                       </div>
                     </div>
                     <div class="div__background7">
                       <div class="div___100-r">100 R$</div>
                       <div class="div__bac-07">bac...07</div>
                       <div class="div__background8">
-                        <img class="div__no-filter4" src="no-filter3.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter3.png" />
                       </div>
                     </div>
                     <div class="div__background7">
                       <div class="div___1008-r">1008 R$</div>
                       <div class="div__msv-a-s">Msv...aS</div>
                       <div class="div__background8">
-                        <img class="div__no-filter5" src="no-filter4.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter4.png" />
                       </div>
                     </div>
                     <div class="div__background7">
                       <div class="div___100">100</div>
-                      <div class="div__svg7">
-                        <img
-                          class="div__clip-path-group"
-                          src="clip-path-group0.svg"
-                        />
-                      </div>
                       <div class="div__bac-072">bac...07</div>
                       <div class="div__background8">
-                        <img class="div__no-filter6" src="no-filter5.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter5.png" />
                       </div>
                     </div>
                     <div class="div__background10">
                       <div class="div___1008">1008</div>
-                      <div class="div__svg8">
-                        <img
-                          class="div__clip-path-group2"
-                          src="clip-path-group1.svg"
-                        />
-                      </div>
                       <div class="div__msv-a-s2">Msv...aS</div>
                       <div class="div__background8">
-                        <img class="div__no-filter7" src="no-filter6.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter6.png" />
                       </div>
                     </div>
                     <div class="div__background10">
                       <div class="div___1008">1008</div>
                       <div class="div__svg9">
-                        <img
-                          class="div__clip-path-group3"
-                          src="clip-path-group2.svg"
-                        />
+                        <img class="div__clip-path-group3" src="robux_head_pc/clip-path-group2.svg" />
                       </div>
                       <div class="div__msv-a-s2">Msv...aS</div>
                       <div class="div__background8">
-                        <img class="div__no-filter8" src="no-filter7.png" />
+                        <img class="div__no-filter" src="robux_head_pc/no-filter7.png" />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="div__frame-1000006023">
-                  <img
-                    class="div__time-l-9-dttlv-7-tivj-1"
-                    src="time-l-9-dttlv-7-tivj-10.svg"
-                  />
+                  <img class="div__time-l-9-dttlv-7-tivj-1" src="robux_head_pc/time-l-9-dttlv-7-tivj-10.svg" />
                   <div class="div__div14">Последние покупки</div>
                 </div>
               </div>
@@ -434,10 +524,7 @@
           <div class="div__frame-1000006059">
             <div class="div__div15">Лучший курс робуксов</div>
             <div class="div___1-1-35-r">1Р = 1.35 R$</div>
-            <img
-              class="div___13-metaverse-touch-1"
-              src="_13-metaverse-touch-10.png"
-            />
+            <img class="div___13-metaverse-touch-1" src="robux_head_pc/_13-metaverse-touch-10.png" />
           </div>
         </div>
         <div class="div__frame-1000002104">
@@ -448,10 +535,7 @@
                 <div class="div___55-414-r">55.414R$</div>
                 <div class="div__div16">Куплено робуксов</div>
               </div>
-              <img
-                class="div___13-metaverse-touch-12"
-                src="_13-metaverse-touch-11.png"
-              />
+              <img class="div___13-metaverse-touch-12" src="robux_head_pc/_13-metaverse-touch-11.png" />
             </div>
             <div class="div__frame-1000002134">
               <div class="div__image"></div>
@@ -459,11 +543,8 @@
                 <div class="div___1-029">1,029</div>
                 <div class="div__div17">Пользователей сайта</div>
               </div>
-              <img class="div___19-multiverse-1" src="_19-multiverse-10.png" />
-              <img
-                class="div___7-metaverse-virtual-world-1"
-                src="_7-metaverse-virtual-world-10.png"
-              />
+              <img class="div___19-multiverse-1" src="robux_head_pc/_19-multiverse-10.png" />
+              <img class="div___7-metaverse-virtual-world-1" src="robux_head_pc/_7-metaverse-virtual-world-10.png" />
             </div>
           </div>
           <div class="div__frame-1000001871">
@@ -479,112 +560,122 @@
           </div>
           <div class="div__frame-1000002136">
             <div class="div__frame-1000002135">
-              <img
-                class="div___1-metaverse-imagination-2"
-                src="_1-metaverse-imagination-20.png"
-              />
-              <img
-                class="div___8-metaverse-friend-1"
-                src="_8-metaverse-friend-10.png"
-              />
+              <img class="div___1-metaverse-imagination-2" src="robux_head_pc/_1-metaverse-imagination-20.png" />
+              <img class="div___8-metaverse-friend-1" src="robux_head_pc/_8-metaverse-friend-10.png" />
             </div>
             <div class="div__frame-10000059753">
               <div class="div___3-712">3,712</div>
               <div class="div__div19">Всего покупок</div>
             </div>
-            <img
-              class="div___9-metaverse-items-1"
-              src="_9-metaverse-items-10.png"
-            />
+            <img class="div___9-metaverse-items-1" src="robux_head_pc/_9-metaverse-items-10.png" />
             <div class="div__rectangle-156574"></div>
           </div>
         </div>
         <div class="div__frame-1000006213">
           <div class="div__frame-1000006030">
             <div class="div__div20">Ответы на самые популярные вопросы</div>
-            <img
-              class="div__card-index-dividers-1"
-              src="card-index-dividers-10.png"
-            />
+            <img class="div__card-index-dividers-1" src="robux_head_pc/card-index-dividers-10.png" />
           </div>
-          <div class="div__frame-1000002208">
-            <div class="div__frame-48095944">
-              <div class="div__frame-48095949">
-                <div class="div__div21">Как мне купить робуксы?</div>
-              </div>
-            </div>
-            <div class="div__frame-1000006054">
-              <div class="div__div22">+</div>
-            </div>
-          </div>
-          <div class="div__frame-1000006031">
-            <div class="div__frame-480959442">
-              <div class="div__frame-48095949">
-                <div class="div__robux-kingdom2">
-                  Могу ли я доверять Robux Kingdom?
-                </div>
-              </div>
-              <div class="div__robux-kingdom-telegram">
-                Да, конечно! Мы, Robux Kingdom, выполняем абсолютно все заказы без
-                исключений. Если вы в нас сомневаетесь, попробуйте в начале
-                совершить покупку на небольшое количество робуксов и убедитесь в
-                нашей честности. Дополнительно у нас есть отзывы в Telegram.
-              </div>
-            </div>
-            <div class="div__frame-10000060542">
-              <div class="div__div22">-</div>
-            </div>
-          </div>
-          <div class="div__frame-1000002210">
-            <div class="div__frame-48095944">
-              <div class="div__frame-48095949">
-                <div class="div__div21">Как получить робуксы бесплатно?</div>
-              </div>
-            </div>
-            <div class="div__frame-1000006054">
-              <div class="div__div22">+</div>
-            </div>
-          </div>
-          <div class="div__frame-1000002212">
-            <div class="div__frame-48095944">
-              <div class="div__frame-48095949">
-                <div class="div__div21">Когда придут робуксы?</div>
-              </div>
-            </div>
-            <div class="div__frame-1000006054">
-              <div class="div__div22">+</div>
-            </div>
-          </div>
-          <div class="div__frame-1000002211">
-            <div class="div__frame-48095944">
-              <div class="div__frame-48095949">
-                <div class="div__div21">Как пригласить друга?</div>
-              </div>
-            </div>
-            <div class="div__frame-1000006054">
-              <div class="div__div22">+</div>
+          <!-- 1. В <head> вашего документа или в файле стилей: -->
+          <style>
+            /* Скрываем контент, но оставляем место для анимации max-height */
+            .div__div20_answer {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.4s ease, padding 0.4s ease;
+
+              /* типографика */
+              font-family: "Wix Madefor Display", sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 120%;
+              /* 1.2 */
+              letter-spacing: -2%;
+              /* эквивалентно -0.02em */
+              text-align: justify;
+
+              /* чтобы при нулевом max-height не «залазил» padding */
+              padding: 0 1em;
+            }
+
+            /* Когда открыто — задаём достаточный max-height и отступы */
+            .div__frame-1000006030.open .div__div20_answer {
+              max-height: 500px;
+              /* должно быть больше, чем реальная высота текста */
+              padding: 0.5em 1em;
+            }
+
+            /* Курсор и индикатор +/– оставляем как было */
+            .div__div20_quest {
+              cursor: pointer;
+            }
+
+            .div__div20_quest::after {
+              content: '+';
+              float: right;
+              font-weight: bold;
+            }
+
+            .div__frame-1000006030.open .div__div20_quest::after {
+              content: '–';
+            }
+          </style>
+
+          <!-- 3. HTML самих FAQ‑пунктов: -->
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Как мне купить робуксы?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> На главной странице покупки укажите количество робуксов, которое вы хотели бы
+              купить. Затем просто следуйте инструкции!
             </div>
           </div>
-          <div class="div__frame-1000002209">
-            <div class="div__frame-480959443">
-              <div class="div__frame-48095949">
-                <div class="div__div21">
-                  Можно ли вернуть деньги после оплаты?
-                </div>
-              </div>
-              <div class="div__div23">
-                Покупки на нашем сайте окончательные. После отправки робуксов,
-                вернуть деньги за заказ нельзя. Если вы попросили до выполнения
-                заказа, ваша просьба может быть принята платежной системой.
-              </div>
-            </div>
-            <div class="div__frame-10000060542">
-              <div class="div__div22">-</div>
+
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Могу ли я доверять Robux Kingdom?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> Да, конечно! Мы, Robux Kingdom, выполняем абсолютно все заказы без исключений.
+              Если вы в нас сомневаетесь, попробуйте сначала совершить покупку небольшого количества робуксов и
+              убедитесь в нашей честности. Дополнительно у нас есть отзывы в Telegram.
             </div>
           </div>
+
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Как получить робуксы бесплатно?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> Вы можете посмотреть нашу страницу «Бонусы». Также мы часто проводим розыгрыши
+              робуксов совершенно бесплатно в наших социальных сетях. Ссылки на них есть на главной странице.
+            </div>
+          </div>
+
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Когда придут робуксы?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> Если робуксы есть в наличии, валюта доставляется на ваш аккаунт в кратчайшие
+              сроки. В Roblox статус Pending Robux может занять до 5–7 дней. Отследить транзакцию можно по ссылке: <a
+                href="https://www.roblox.com/transactions" target="_blank">transactions</a>.
+            </div>
+          </div>
+
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Как пригласить друга?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> На странице «Бонусы» вы найдёте свой реферальный код — скопируйте его и отправьте
+              другу. Если он воспользуется им при первой покупке от 250 R$, вы оба получите по 20 R$.
+            </div>
+          </div>
+
+          <div class="div__frame-1000006030">
+            <div class="div__div20_quest">Можно ли вернуть деньги после оплаты?</div>
+            <div class="div__div20_answer">
+              <strong>Ответ:</strong> Покупки на нашем сайте окончательные. После отправки робуксов вернуть деньги
+              нельзя. Если вы запросили отмену до выполнения заказа, ваша просьба может быть удовлетворена платёжной
+              системой.
+            </div>
+          </div>
+
         </div>
         <div class="div__background11">
-          <img class="div__svg10" src="svg9.svg" />
+          <img class="div__svg10" src="robux_head_pc/svg9.svg" />
           <div class="div__frame-1000006020">
             <div class="div__frame-1000006019">
               <div class="div__frame-1000006018">
@@ -597,29 +688,20 @@
                   можете написать нам в нашу поддержку.
                 </div>
               </div>
-              <div class="div__button3">
+              <a class="div__button3" href="">
                 <div class="div__div26">Купить робуксы</div>
-                <img class="div__vector9" src="vector8.svg" />
-              </div>
+                <img class="div__vector9" src="robux_head_pc/vector8.svg" />
+              </a>
             </div>
           </div>
-          <img class="div__svg11" src="svg10.svg" />
-          <img
-            class="div___13-metaverse-touch-13"
-            src="_13-metaverse-touch-12.png"
-          />
-          <img
-            class="div___13-metaverse-touch-2"
-            src="_13-metaverse-touch-20.png"
-          />
-          <img
-            class="div___13-metaverse-touch-3"
-            src="_13-metaverse-touch-30.png"
-          />
-          <img class="div___1-2" src="_1-20.png" />
+          <img class="div__svg11" src="robux_head_pc/svg10.svg" />
+          <img class="div___13-metaverse-touch-13" src="robux_head_pc/_13-metaverse-touch-12.png" />
+          <img class="div___13-metaverse-touch-2" src="robux_head_pc/_13-metaverse-touch-20.png" />
+          <img class="div___13-metaverse-touch-3" src="robux_head_pc/_13-metaverse-touch-30.png" />
+          <img class="div___1-2" src="robux_head_pc/_1-20.png" />
         </div>
         <div class="div__background12">
-          <img class="div__svg12" src="svg11.svg" />
+          <img class="div__svg12" src="robux_head_pc/svg11.svg" />
           <div class="div__frame-1000006021">
             <div class="div__frame-1000006017">
               <div class="div__div24">Остались вопросы?</div>
@@ -630,16 +712,13 @@
                 при любых возникших трудностях при покупке.
               </div>
             </div>
-            <div class="div__button4">
+            <a class="div__button4" href="https://t.me/rbxkingdom">
               <div class="div__telegram2">Telegram канал</div>
-              <img class="div__vector10" src="vector9.svg" />
-            </div>
+              <img class="div__vector10" src="robux_head_pc/vector9.svg" />
+            </a>
           </div>
-          <img class="div__svg13" src="svg12.svg" />
-          <img
-            class="div__icons-8-telegram-750-1"
-            src="icons-8-telegram-750-10.png"
-          />
+          <img class="div__svg13" src="robux_head_pc/svg12.svg" />
+          <img class="div__icons-8-telegram-750-1" src="robux_head_pc/icons-8-telegram-750-10.png" />
         </div>
       </div>
     </div>
@@ -647,69 +726,132 @@
       <div class="div__frame-10000022062">
         <div class="div__frame-48095931">
           <div class="div__button-2">
-              <a class="div__div2" href="#">Войти в аккаунт</a>
+            <a class="div__div2" href="#auth" data-fancybox id="triggger2">Войти в аккаунт</a>
           </div>
         </div>
         <div class="div__group-197-1">
-          <img class="div__frame-10000059732" src="frame-10000059731.svg" />
-          <img class="div__vector11" src="vector10.svg" />
-          <img class="div__vector12" src="vector11.svg" />
-          <img class="div__vector13" src="vector12.svg" />
-          <img class="div__vector14" src="vector13.svg" />
-          <img class="div__vector15" src="vector14.svg" />
-          <img class="div__vector16" src="vector15.svg" />
-          <img class="div__vector17" src="vector16.svg" />
-          <img class="div__frame-10000059743" src="frame-10000059742.svg" />
+          <img class="div__frame-10000059732" src="robux_head_pc/frame-10000059731.svg" />
+          <img class="div__vector11" src="robux_head_pc/vector10.svg" />
+          <img class="div__vector12" src="robux_head_pc/vector11.svg" />
+          <img class="div__vector13" src="robux_head_pc/vector12.svg" />
+          <img class="div__vector14" src="robux_head_pc/vector13.svg" />
+          <img class="div__vector15" src="robux_head_pc/vector14.svg" />
+          <img class="div__vector16" src="robux_head_pc/vector15.svg" />
+          <img class="div__vector17" src="robux_head_pc/vector16.svg" />
+          <img class="div__frame-10000059743" src="robux_head_pc/frame-10000059742.svg" />
         </div>
         <div class="div__frame-480959322">
           <div class="div__frame-48095930">
             <div class="div__frame-48095926">
               <div class="div__div3">Купить робуксы</div>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                <img class="div__glyph2" src="glyph1.svg" />
+                <img class="div__glyph2" src="robux_head_pc/glyph1.svg" />
               </div>
             </div>
-            <div class="div__frame-3">
-              <img class="div__svg14" src="svg13.svg" />
+            <a class="div__frame-3 button" href="bonus/">
+              <img class="div__svg14" src="robux_head_pc/svg13.svg" />
               <div class="div__div4">Бонусы</div>
-            </div>
+            </a>
             <div class="div__frame-48095929">
               <div class="div__frame-5">
-                <img
-                  class="div__coupon-svgrepo-com-12"
-                  src="coupon-svgrepo-com-11.svg"
-                />
+                <img class="div__coupon-svgrepo-com-12" src="robux_head_pc/coupon-svgrepo-com-11.svg" />
                 <div class="div__div5">Промокод</div>
               </div>
             </div>
-            <div class="div__frame-48095928">
+            <a class="div__frame-48095928 button"  href="account/">
               <div class="div__frame-5">
-                <img
-                  class="div__shopping-cart-svgrepo-com-12"
-                  src="shopping-cart-svgrepo-com-11.svg"
-                />
+                <img class="div__shopping-cart-svgrepo-com-12" src="robux_head_pc/shopping-cart-svgrepo-com-11.svg" />
                 <div class="div__div6">Мои покупки</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="div__frame-10000062152">
-          <img
-            class="div__frame-1000005905-variant-32"
-            src="frame-1000005905-variant-31.svg"
-          />
-          <img
-            class="div__frame-1000005907-variant-22"
-            src="frame-1000005907-variant-21.svg"
-          />
-          <img
-            class="div__frame-1000005906-variant-12"
-            src="frame-1000005906-variant-11.svg"
-          />
+          <img class="div__frame-1000005905-variant-32" src="robux_head_pc/frame-1000005905-variant-31.svg" />
+          <img class="div__frame-1000005907-variant-22" src="robux_head_pc/frame-1000005907-variant-21.svg" />
+          <img class="div__frame-1000005906-variant-12" src="robux_head_pc/frame-1000005906-variant-11.svg" />
         </div>
       </div>
     </div>
   </div>
-  
+
+
+  <div style="display: none; background: transparent;" id="auth">
+    <div class="popup-wrapper">
+      <!-- Левая часть: форма -->
+      <div class="popup-form">
+        <div class="popup-instruction">
+          Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
+        </div>
+        <div class="popup-title">Мой аккаунт</div>
+
+        <input type="text" class="popup-input-container" style="padding-left: 2rem; font-size: 4rem; color: white;">
+
+        <div class="popup-button">
+          <div class="popup-button-text">Войти</div>
+        </div>
+
+        <div class="popup-agreement">
+          <span class="gray">Прочел и согласен с </span>
+          <span class="link">Пользовательским соглашением</span><span class="gray">, </span>
+          <span class="link">Политикой возврата средств</span><span class="gray">, </span>
+          <span class="link">Политикой конфиденциальности</span>
+        </div>
+      </div>
+
+      <!-- Правая часть: иллюстрация -->
+      <div class="popup-image-frame">
+        <img class="popup-image" src="robux_head_pc/image-140.png" alt="Иллюстрация"/>
+      </div>
+
+    </div>
+  </div>
+
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+<script>
+  document.getElementById("triggger").addEventListener("click", () => {
+      Fancybox.show([{ src: "#auth", type: "inline" }]);
+    });
+
+  document.getElementById("triggger2").addEventListener("click", () => {
+      Fancybox.show([{ src: "#auth", type: "inline" }]);
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.div__background2');
+  const thumb = document.querySelector('.div__slider');
+  const label = thumb.querySelector('.div___1000');
+  const range = document.querySelector('.range-overlay');
+
+  // Обновляем положение при движении <input>
+  range.addEventListener('input', () => {
+    const val = +range.value;               // 0…1000
+    const pct = val / (+range.max);         // 0…1
+    const rect = track.getBoundingClientRect();
+
+    // 1) Градиент заполнения
+    track.style.background = `
+      linear-gradient(
+        90deg,
+        rgba(255,196,44,1)   0%,
+        rgba(255,196,44,1)  ${pct*100}%,
+        rgba(19,25,48,1)   ${pct*100}%,
+        rgba(19,25,48,1)   100%
+      )
+    `;
+
+    // 2) Сдвиг вашего .div__slider (центрируем по середине)
+    const x = pct * rect.width;
+    thumb.style.left = (x - thumb.offsetWidth/2) + 'px';
+
+    // 3) Обновляем цифру
+    label.textContent = val;
+  });
+});
+</script>
 </html>
