@@ -141,6 +141,7 @@ class GamePass(TemplateView):
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
         context["selected_account_id"] = self.request.session.get("selected_account_id")
+        context["place_id"] = self.request.GET.get("place_id")
         return context
     
 class CheckPlace(TemplateView):
