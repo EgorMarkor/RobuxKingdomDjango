@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+
 def check_regional_pricing(gamepass_id: str) -> bool:
     """Return True if regional pricing is enabled for the given gamepass."""
     url = f"https://apis.roblox.com/game-passes/v1/game-passes/{gamepass_id}"
@@ -25,6 +26,32 @@ def check_regional_pricing(gamepass_id: str) -> bool:
         return False
 
     return data.get("isRegionalPricingEnabled", False)
+
+
+def gamepass_exists_for_price(place_id: str, price: int) -> bool:
+    """Return True if the place has a gamepass with the specified price."""
+    url = f"https://games.roblox.com/v1/games/{place_id}/game-passes"
+    try:
+        resp = requests.get(url, timeout=5)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # pragma: no cover - network issue
+        logger.warning("Failed to fetch gamepasses list: %s", exc)
+        return False
+
+    try:
+        data = resp.json().get("data", [])
+    except ValueError:  # pragma: no cover - invalid JSON
+        logger.warning("Invalid JSON in gamepasses list response")
+        return False
+
+    for item in data:
+        try:
+            if int(item.get("price", 0)) == price:
+                return True
+        except (TypeError, ValueError):
+            continue
+
+    return False
 
 
 class HomeView(TemplateView):
@@ -160,7 +187,20 @@ class GamePass(TemplateView):
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
         context["selected_account_id"] = self.request.session.get("selected_account_id")
-        context["place_id"] = self.request.GET.get("place_id")
+        place_id = self.request.GET.get("place_id") or self.request.session.get("selected_place_id")
+        context["place_id"] = place_id
+
+        selected_amount = self.request.session.get("selected_amount")
+        try:
+            expected_price = int(selected_amount) if selected_amount else None
+        except (TypeError, ValueError):
+            expected_price = None
+
+        if place_id and expected_price is not None:
+            context["gamepass_exists"] = gamepass_exists_for_price(place_id, expected_price)
+        else:
+            context["gamepass_exists"] = False
+        context["expected_gamepass_price"] = expected_price
 
         gamepass_id = self.request.session.get("selected_gamepass_id")
         if gamepass_id:

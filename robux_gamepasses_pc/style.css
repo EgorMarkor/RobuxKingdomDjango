@@ -985,3 +985,14 @@
   font-family: "Wix Madefor Display", sans-serif;
   font-size: 1.6rem;
 }
+
+.gamepass-missing-warning {
+  background: #ffd1d1;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  color: #000000;
+  text-align: center;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+}
