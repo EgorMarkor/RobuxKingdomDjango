@@ -188,6 +188,7 @@ class CheckPlace(TemplateView):
 
         try:
             places = fetch_roblox_places(profile.account_id)
+            print(places)
             logger.debug("ROBLOX places for account %s: %r", profile.account_id, places)
             context["places"] = places
         except requests.RequestException as e:

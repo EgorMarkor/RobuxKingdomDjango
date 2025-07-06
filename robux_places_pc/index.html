@@ -68,7 +68,7 @@
         <div class="flex_container_places">
           {% if places %}
     {% for place in places %}
-      {% with pid=place.rootPlace.id %}
+      {% with pid=place.id %}
           <a class="place__frame-1000005982" href="{% url 'gamepass' %}?place_id={{ pid }}">
             <img class="place__image-78" src="http://127.0.0.1:8000/robux_places_pc/image-780.png" />
             <div class="place__gefzyy-123-place">{{ place.name }}</div>
