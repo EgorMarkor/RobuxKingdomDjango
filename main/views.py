@@ -51,6 +51,7 @@ class HomeView(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
+        context["selected_amount"] = self.request.session.get("selected_amount")
         return context
 
 
@@ -65,6 +66,9 @@ class BonusView(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
+        context["selected_place_id"] = self.request.session.get("selected_place_id")
+        context["selected_gamepass_id"] = self.request.session.get("selected_gamepass_id")
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
         return context
     
     
@@ -79,12 +83,30 @@ class AccountView(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
         return context
     
     
 class CheckAccountView(TemplateView):
     template_name = "robux_check_acc_pc/index.html"
-    
+
+    def get(self, request, *args, **kwargs):
+        amount = request.GET.get("amount")
+        if amount:
+            request.session["selected_amount"] = amount
+        account_id = request.GET.get("account_id")
+        if account_id:
+            request.session["selected_account_id"] = account_id
+        elif "selected_account_id" not in request.session:
+            profile_id = request.session.get("profile_id")
+            if profile_id:
+                try:
+                    profile = UserProfile.objects.get(pk=profile_id)
+                    request.session["selected_account_id"] = profile.account_id
+                except UserProfile.DoesNotExist:
+                    request.session.pop("profile_id", None)
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile_id = self.request.session.get("profile_id")
@@ -93,12 +115,23 @@ class CheckAccountView(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
         return context
     
     
 class GamePass(TemplateView):
     template_name = "robux_gamepasses_pc/index.html"
-    
+
+    def get(self, request, *args, **kwargs):
+        place_id = request.GET.get("place_id")
+        if place_id:
+            request.session["selected_place_id"] = place_id
+
+        gamepass_id = request.GET.get("gamepass_id")
+        if gamepass_id:
+            request.session["selected_gamepass_id"] = gamepass_id
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile_id = self.request.session.get("profile_id")
@@ -107,11 +140,16 @@ class GamePass(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
         return context
     
 class CheckPlace(TemplateView):
     template_name = "robux_places_pc/index.html"
-    
+
+    def get(self, request, *args, **kwargs):
+        # place selection happens on gamepass page; nothing to store here
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile_id = self.request.session.get("profile_id")
@@ -126,6 +164,8 @@ class CheckPlace(TemplateView):
             return context
 
         context["profile"] = profile
+        context["selected_amount"] = self.request.session.get("selected_amount")
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
 
         # Функция для получения всех плейсов пользователя
         def fetch_roblox_places(account_id):
