@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,6 +94,7 @@
       border-radius: 2rem;
       overflow: hidden;
     }
+
     .popup-input-label {
       color: #fff;
       font-family: "Roboto-Medium", sans-serif;
@@ -114,6 +116,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .popup-button-text {
       color: #fff;
       font-family: "Gilroy-SemiBold", sans-serif;
@@ -128,7 +131,11 @@
       font-size: 1.4rem;
       line-height: 1.8rem;
     }
-    .popup-agreement .gray { color: #80889a; }
+
+    .popup-agreement .gray {
+      color: #80889a;
+    }
+
     .popup-agreement .link {
       color: #fff;
       text-decoration: underline;
@@ -145,6 +152,7 @@
       background: #0a0d19;
       overflow: hidden;
     }
+
     .popup-image {
       width: 100%;
       height: 100%;
@@ -164,9 +172,78 @@
       align-items: center;
       justify-content: center;
     }
+
     .popup-error-icon img {
       width: 4.079rem;
       height: 4.079rem;
+    }
+
+    .div__frame-1000005958 {
+      width: 19.9rem;
+      height: 5.6rem;
+      position: absolute;
+      left: 141.2rem;
+      top: 4.5rem;
+    }
+
+    .div__image2 {
+      border-radius: 50%;
+      width: 5.6rem;
+      height: 5.6rem;
+      position: absolute;
+      left: 0rem;
+      top: 0rem;
+      object-fit: cover;
+    }
+
+    .div__frame-1000005915 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 13.4rem;
+      position: absolute;
+      left: 6.5rem;
+      top: 0.7rem;
+    }
+
+    .div__gefzyy-1232 {
+      color: #ffffff;
+      text-align: left;
+      font-family: "Gilroy-Bold", sans-serif;
+      font-size: 1.6rem;
+      line-height: 2.988rem;
+      font-weight: 700;
+      position: relative;
+      align-self: stretch;
+      height: 1.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .div__div11 {
+      color: #80889a;
+      text-align: left;
+      font-family: "Gilroy-Medium", sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.356rem;
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .div__vector9 {
+      width: 0.708rem;
+      height: 1.423rem;
+      position: absolute;
+      left: 19.2rem;
+      top: 1.5rem;
+      transform: translate(-0.047rem, -0.047rem);
+      overflow: visible;
     }
   </style>
   <title>Document</title>
@@ -193,10 +270,95 @@
       </div>
       <div class="div__frame-48095932"></div>
       <div class="div__frame-1000002206">
+
         <div class="div__frame-48095931">
-          <div class="div__button-2">
-            <a class="div__div2" href="#auth" data-fancybox id="triggger">Войти в аккаунт</a>
-          </div>
+          {% if not profile %}
+            <div class="div__button-2">
+              <a class="div__div2" href="#auth" data-fancybox id="triggger">Войти в аккаунт</a>
+            </div>
+          {% endif %}
+          {% if profile %}
+
+          <style>
+            .div__frame-1000005958 {
+              width: 19.9rem;
+              height: 5.6rem;
+              position: absolute;
+              left: 111.2rem;
+              top: -0.5rem;
+            }
+            .div__image2 {
+              border-radius: 50%;
+              width: 5.6rem;
+              height: 5.6rem;
+              position: absolute;
+              left: 0rem;
+              top: 0rem;
+              object-fit: cover;
+            }
+            .div__frame-1000005915 {
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+              align-items: flex-start;
+              justify-content: flex-start;
+              width: 13.4rem;
+              position: absolute;
+              left: 6.5rem;
+              top: 0.7rem;
+            }
+            .div__gefzyy-1232 {
+              color: #ffffff;
+              text-align: left;
+              font-family: "Gilroy-Bold", sans-serif;
+              font-size: 1.6rem;
+              line-height: 2.988rem;
+              font-weight: 700;
+              position: relative;
+              align-self: stretch;
+              height: 1.9rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+            }
+            .div__div11 {
+              left: 0rem;
+              top: -0.5rem;
+              color: #80889a;
+              text-align: left;
+              font-family: "Gilroy-Medium", sans-serif;
+              font-size: 1.2rem;
+              line-height: 1.356rem;
+              font-weight: 500;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+            }
+            .div__vector9 {
+              width: 0.708rem;
+              height: 1.423rem;
+              position: absolute;
+              left: 19.2rem;
+              top: 1.5rem;
+              transform: translate(-0.047rem, -0.047rem);
+              overflow: visible;
+            }
+
+          </style>
+          <a class="div__frame-1000005958 button" href="http://127.0.0.1:8000/account/">
+            <img class="div__image2" src="{{ profile.image_url }}" />
+            <div class="div__frame-1000005915">
+              <div class="div__gefzyy-1232">{{ profile.username }}</div>
+              <div class="div__div11">Перейти в профиль</div>
+            </div>
+            <img class="div__vector9" src="http://127.0.0.1:8000/robux_account_pc/vector8.svg" />
+          </a>
+
+          {% endif %}
+          
+          
+
           <div class="div__frame-1000006215">
             <img class="div__frame-1000005905-variant-3" src="robux_head_pc/frame-1000005905-variant-30.svg" />
             <img class="div__frame-1000005907-variant-2" src="robux_head_pc/frame-1000005907-variant-20.svg" />
@@ -206,12 +368,12 @@
         <div class="div__frame-480959322">
           <div class="div__frame-48095930">
             <div class="div__frame-48095926">
-              <div class="div__div3">Купить робуксы</div>
+              <a class="div__div3" href="http://127.0.0.1:8000/">Купить робуксы</a>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
                 <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
               </div>
             </div>
-            <a class="div__frame-3" href="bonus/">
+            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger3" {% endif %}>
               <img class="div__group" src="robux_head_pc/group0.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
@@ -221,7 +383,8 @@
                 <div class="div__div5">Промокод</div>
               </div>
             </div>
-            <a class="div__frame-48095928 button" href="account/">
+            <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
+              {% if not profile %} data-fancybox id="triggger4" {% endif %}>
               <div class="div__frame-5">
                 <img class="div__shopping-cart-svgrepo-com-1" src="robux_head_pc/shopping-cart-svgrepo-com-10.svg" />
                 <div class="div__div6">Мои покупки</div>
@@ -269,7 +432,7 @@
                     <div class="div__item7"></div>
                     <div class="div__item8"></div>
                   </div>
-                  <div class="div__heading-2">Купить робуксы</div>
+                  <a class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger5" {% endif %}>Купить робуксы</a>
                 </div>
               </div>
               <div class="div__button2">
@@ -305,17 +468,11 @@
                       </div>
                     </div>
                     <div class="div__background2">
-                      <input
-                        type="range"
-                        min="0"
-                        max="1000"
-                        value="1000"
-                        class="range-overlay"
-                      />
+                      <input type="range" min="0" max="20000" value="10000" class="range-overlay" />
                       <div class="div__background3"></div>
                       <div class="div__background4"></div>
                       <div class="div__slider">
-                        <div class="div___1000">1000</div>
+                        <div class="div___1000">10000</div>
                         <img class="div__svg2" src="robux_head_pc/svg1.svg" />
                       </div>
                     </div>
@@ -576,102 +733,126 @@
             <div class="div__div20">Ответы на самые популярные вопросы</div>
             <img class="div__card-index-dividers-1" src="robux_head_pc/card-index-dividers-10.png" />
           </div>
-          <!-- 1. В <head> вашего документа или в файле стилей: -->
-          <style>
-            /* Скрываем контент, но оставляем место для анимации max-height */
-            .div__div20_answer {
-              max-height: 0;
-              overflow: hidden;
-              transition: max-height 0.4s ease, padding 0.4s ease;
-
-              /* типографика */
-              font-family: "Wix Madefor Display", sans-serif;
-              font-weight: 500;
-              font-size: 14px;
-              line-height: 120%;
-              /* 1.2 */
-              letter-spacing: -2%;
-              /* эквивалентно -0.02em */
-              text-align: justify;
-
-              /* чтобы при нулевом max-height не «залазил» padding */
-              padding: 0 1em;
-            }
-
-            /* Когда открыто — задаём достаточный max-height и отступы */
-            .div__frame-1000006030.open .div__div20_answer {
-              max-height: 500px;
-              /* должно быть больше, чем реальная высота текста */
-              padding: 0.5em 1em;
-            }
-
-            /* Курсор и индикатор +/– оставляем как было */
-            .div__div20_quest {
-              cursor: pointer;
-            }
-
-            .div__div20_quest::after {
-              content: '+';
-              float: right;
-              font-weight: bold;
-            }
-
-            .div__frame-1000006030.open .div__div20_quest::after {
-              content: '–';
-            }
-          </style>
 
           <!-- 3. HTML самих FAQ‑пунктов: -->
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Как мне купить робуксы?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> На главной странице покупки укажите количество робуксов, которое вы хотели бы
-              купить. Затем просто следуйте инструкции!
+          <div class="faq-item">
+            <div class="faq-question">Как мне купить робуксы?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> На главной странице покупки укажите количество робуксов, которое вы бы хотели купить. Затем просто следуйте инструкции!
             </div>
           </div>
 
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Могу ли я доверять Robux Kingdom?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> Да, конечно! Мы, Robux Kingdom, выполняем абсолютно все заказы без исключений.
-              Если вы в нас сомневаетесь, попробуйте сначала совершить покупку небольшого количества робуксов и
-              убедитесь в нашей честности. Дополнительно у нас есть отзывы в Telegram.
+          <div class="faq-item">
+            <div class="faq-question">Могу ли я доверять Robux Kingdom?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Да, конечно! Мы, Robux Kingdom, выполняем абсолютно все заказы без исключений. Если вы в нас сомневаетесь, попробуйте в начале совершить покупку на небольшое количество робуксов и убедитесь в нашей честности. Дополнительно у нас есть отзывы в Telegram.
             </div>
           </div>
 
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Как получить робуксы бесплатно?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> Вы можете посмотреть нашу страницу «Бонусы». Также мы часто проводим розыгрыши
-              робуксов совершенно бесплатно в наших социальных сетях. Ссылки на них есть на главной странице.
+          <div class="faq-item">
+            <div class="faq-question">Как получить робуксы бесплатно?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Вы можете посмотреть нашу страницу «Бонусы». Также мы часто проводим розыгрыши робуксов совершенно бесплатно в наших социальных сетях. Они доступны на главной странице.
             </div>
           </div>
 
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Когда придут робуксы?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> Если робуксы есть в наличии, валюта доставляется на ваш аккаунт в кратчайшие
-              сроки. В Roblox статус Pending Robux может занять до 5–7 дней. Отследить транзакцию можно по ссылке: <a
-                href="https://www.roblox.com/transactions" target="_blank">transactions</a>.
+          <div class="faq-item">
+            <div class="faq-question">Когда придут робуксы?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Если робуксы в наличии на момент покупки, валюта доставляется на ваш аккаунт в кратчайшие сроки. В самом Roblox статус «Pending Robux» может держаться до 5–7 дней. Отследить робуксы можно по ссылке: 
+              <a href="https://www.roblox.com/transactions" target="_blank">roblox.com/transactions</a>
             </div>
           </div>
 
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Как пригласить друга?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> На странице «Бонусы» вы найдёте свой реферальный код — скопируйте его и отправьте
-              другу. Если он воспользуется им при первой покупке от 250 R$, вы оба получите по 20 R$.
+          <div class="faq-item">
+            <div class="faq-question">Как пригласить друга?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> На странице «Бонусы» будет отображён ваш код. Скопируйте и отправьте его другу. Если он использует его при первой покупке на сумму от 250 R$, вы оба получите по 20 R$.
             </div>
           </div>
 
-          <div class="div__frame-1000006030">
-            <div class="div__div20_quest">Можно ли вернуть деньги после оплаты?</div>
-            <div class="div__div20_answer">
-              <strong>Ответ:</strong> Покупки на нашем сайте окончательные. После отправки робуксов вернуть деньги
-              нельзя. Если вы запросили отмену до выполнения заказа, ваша просьба может быть удовлетворена платёжной
-              системой.
+          <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть деньги после оплаты?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Покупки на нашем сайте окончательные. После отправки робуксов вернуть деньги за заказ нельзя. Если вы запросили отмену до выполнения заказа, ваша просьба может быть принята платёжной системой.
             </div>
           </div>
+
+<!-- И так далее… -->
+<style>
+  /* контейнер */
+.faq-item {
+  width: 140.4rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;          /* чтобы контент «выезжал» за рамки мягко */
+  transition: box-shadow .3s;
+}
+
+/* вопрос */
+.faq-question {
+  position: relative;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.07;
+  color: #050f27;
+}
+
+/* плюс/минус */
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.faq-item.open .faq-question::after {
+  content: '–';
+}
+
+/* ответ (скрыт по умолчанию) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height .4s ease, padding .4s ease;
+  
+  /* ваша типографика */
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: justify;
+}
+
+/* когда открыт — даём отступы и большой max-height */
+.faq-item.open .faq-answer {
+  max-height: 500px;   /* чуть больше реальной высоты контента */
+  padding: 0.8rem 1.5rem;
+}
+
+</style>
+<script>
+  // дожидаемся, когда DOM прогрузится
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+      question.addEventListener('click', function() {
+        // просто переключаем класс open у родительского .faq-item
+        this.parentNode.classList.toggle('open');
+      });
+    });
+  });
+</script>
+
 
         </div>
         <div class="div__background11">
@@ -724,11 +905,13 @@
     </div>
     <div class="div__frame-54">
       <div class="div__frame-10000022062">
+        {% if not profile %}
         <div class="div__frame-48095931">
           <div class="div__button-2">
             <a class="div__div2" href="#auth" data-fancybox id="triggger2">Войти в аккаунт</a>
           </div>
         </div>
+        {% endif %}
         <div class="div__group-197-1">
           <img class="div__frame-10000059732" src="robux_head_pc/frame-10000059731.svg" />
           <img class="div__vector11" src="robux_head_pc/vector10.svg" />
@@ -748,7 +931,8 @@
                 <img class="div__glyph2" src="robux_head_pc/glyph1.svg" />
               </div>
             </div>
-            <a class="div__frame-3 button" href="bonus/">
+            <a class="div__frame-3 button" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}"
+              {% if not profile %} data-fancybox id="triggger6" {% endif %}>>
               <img class="div__svg14" src="robux_head_pc/svg13.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
@@ -758,7 +942,8 @@
                 <div class="div__div5">Промокод</div>
               </div>
             </div>
-            <a class="div__frame-48095928 button"  href="account/">
+            <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
+              {% if not profile %} data-fancybox id="triggger7" {% endif %}>>
               <div class="div__frame-5">
                 <img class="div__shopping-cart-svgrepo-com-12" src="robux_head_pc/shopping-cart-svgrepo-com-11.svg" />
                 <div class="div__div6">Мои покупки</div>
@@ -775,6 +960,32 @@
     </div>
   </div>
 
+  <div id="login-popup" class="popup">
+    <div class="popup-content">
+      <form method="post">
+        {% csrf_token %}
+        <label for="popup-username">Никнейм</label>
+        <input id="popup-username" type="text" name="username" required>
+        <button type="submit">Войти</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('#login-button, #login-button-footer').forEach(b => {
+      b.addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('login-popup').classList.add('active');
+      });
+    });
+    document.getElementById('login-popup').addEventListener('click', e => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.classList.remove('active');
+      }
+    });
+  </script>
+
+
 
   <div style="display: none; background: transparent;" id="auth">
     <div class="popup-wrapper">
@@ -784,12 +995,14 @@
           Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
         </div>
         <div class="popup-title">Мой аккаунт</div>
-
-        <input type="text" class="popup-input-container" style="padding-left: 2rem; font-size: 4rem; color: white;">
-
-        <div class="popup-button">
-          <div class="popup-button-text">Войти</div>
-        </div>
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="username" required class="popup-input-container"
+            style="padding-left: 2rem; font-size: 4rem; color: white;">
+          <button class="popup-button">
+            <div class="popup-button-text">Войти</div>
+          </button>
+        </form>
 
         <div class="popup-agreement">
           <span class="gray">Прочел и согласен с </span>
@@ -801,7 +1014,7 @@
 
       <!-- Правая часть: иллюстрация -->
       <div class="popup-image-frame">
-        <img class="popup-image" src="robux_head_pc/image-140.png" alt="Иллюстрация"/>
+        <img class="popup-image" src="robux_head_pc/image-140.png" alt="Иллюстрация" />
       </div>
 
     </div>
@@ -814,44 +1027,95 @@
 
 <script>
   document.getElementById("triggger").addEventListener("click", () => {
-      Fancybox.show([{ src: "#auth", type: "inline" }]);
-    });
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
 
   document.getElementById("triggger2").addEventListener("click", () => {
-      Fancybox.show([{ src: "#auth", type: "inline" }]);
-    });
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
+
+  document.getElementById("triggger3").addEventListener("click", () => {
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
+
+  document.getElementById("triggger4").addEventListener("click", () => {
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
+
+  document.getElementById("triggger5").addEventListener("click", () => {
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
+
+  document.getElementById("triggger6").addEventListener("click", () => {
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
+
+  document.getElementById("triggger7").addEventListener("click", () => {
+    Fancybox.show([{ src: "#auth", type: "inline" }]);
+  });
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.div__background2');
-  const thumb = document.querySelector('.div__slider');
-  const label = thumb.querySelector('.div___1000');
-  const range = document.querySelector('.range-overlay');
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.div__background2');
+    const thumb = document.querySelector('.div__slider');
+    const label = thumb.querySelector('.div___1000');
+    const range = document.querySelector('.range-overlay');
 
-  // Обновляем положение при движении <input>
-  range.addEventListener('input', () => {
-    const val = +range.value;               // 0…1000
-    const pct = val / (+range.max);         // 0…1
-    const rect = track.getBoundingClientRect();
+    // Обновляем положение при движении <input>
+    range.addEventListener('input', () => {
+      const val = +range.value;               // 0…1000
+      const pct = val / (+range.max);         // 0…1
+      const rect = track.getBoundingClientRect();
 
-    // 1) Градиент заполнения
-    track.style.background = `
+      // 1) Градиент заполнения
+      track.style.background = `
       linear-gradient(
         90deg,
         rgba(255,196,44,1)   0%,
-        rgba(255,196,44,1)  ${pct*100}%,
-        rgba(19,25,48,1)   ${pct*100}%,
+        rgba(255,196,44,1)  ${pct * 100}%,
+        rgba(19,25,48,1)   ${pct * 100}%,
         rgba(19,25,48,1)   100%
       )
     `;
 
-    // 2) Сдвиг вашего .div__slider (центрируем по середине)
-    const x = pct * rect.width;
-    thumb.style.left = (x - thumb.offsetWidth/2) + 'px';
+      // 2) Сдвиг вашего .div__slider (центрируем по середине)
+      const x = pct * rect.width;
+      thumb.style.left = (x - thumb.offsetWidth / 2) + 'px';
 
-    // 3) Обновляем цифру
-    label.textContent = val;
+      // 3) Обновляем цифру
+      label.textContent = val;
+    });
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Элемент ползунка
+  const slider = document.querySelector('.range-overlay');
+  // Поле "Ты платишь"
+  const payDiv = document.querySelector('.div__input .div___10');
+  // Числовой спан в "Ты получаешь"
+  const receiveValueSpan = document.querySelector('.div___14-r ._14-r-span');
+  // Метка над ползунком
+  const sliderLabel = document.querySelector('.div__slider .div___1000');
+  const rate = 0.8; // курс
+
+  function updateValues() {
+    const rubles = Number(slider.value);
+    const robux = Math.floor(rubles * rate);
+    // Обновляем сумму в рублях
+    payDiv.textContent = robux + ' ₽';
+    // Считаем робуксы (округляем вниз)
+    receiveValueSpan.textContent = rubles;
+    // И обновляем метку на самом ползунке
+    sliderLabel.textContent = rubles;
+  }
+
+  // При движении ползунка
+  slider.addEventListener('input', updateValues);
+  // Инициализировать при загрузке страницы
+  updateValues();
 });
 </script>
+
+
 </html>

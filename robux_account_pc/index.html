@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://127.0.0.1:8084/robux_account_pc/vars.css">
-  <link rel="stylesheet" href="http://127.0.0.1:8084/robux_account_pc/style.css">
+  <link rel="stylesheet" href="http://127.0.0.1:8000/robux_account_pc/vars.css">
+  <link rel="stylesheet" href="http://127.0.0.1:8000/robux_account_pc/style.css">
   
   
   <style>
@@ -50,7 +50,7 @@
               <div class="div__frame-1000002262"></div>
               <img
                 class="div___11-metaverse-gate-1"
-                src="http://127.0.0.1:8084/robux_account_pc/_11-metaverse-gate-10.png"
+                src="http://127.0.0.1:8000/robux_account_pc/_11-metaverse-gate-10.png"
               />
               <div class="div__frame-1000005927">
                 <div class="div__heading-2">ДРУЗЕЙ</div>
@@ -61,7 +61,7 @@
               </div>
             </div>
             <div class="div__frame-1000005919">
-              <img class="div__calendar-3" src="http://127.0.0.1:8084/robux_account_pc/calendar-30.png" />
+              <img class="div__calendar-3" src="http://127.0.0.1:8000/robux_account_pc/calendar-30.png" />
               <div class="div__frame-10000022622">
                 <div class="div__heading-24">НА САЙТЕ</div>
                 <div class="div__heading-25">С первого входа</div>
@@ -73,7 +73,7 @@
             <div class="div__frame-1000005920">
               <img
                 class="div__wallet-dynamic-premi-1"
-                src="http://127.0.0.1:8084/robux_account_pc/wallet-dynamic-premi-10.png"
+                src="http://127.0.0.1:8000/robux_account_pc/wallet-dynamic-premi-10.png"
               />
               <div class="div__frame-10000022623">
                 <div class="div__heading-24">КУПЛЕНО R$</div>
@@ -85,20 +85,20 @@
             </div>
           </div>
           <div class="div__frame-1000005924">
-            <img class="div__image" src="http://127.0.0.1:8084/robux_account_pc/image0.png" />
+            <img class="div__image" src="{{ profile.image_url }}" />
             <div class="div__frame-1000005923">
               <div class="div__frame-1000005914">
-                <div class="div__gefzyy-123">gefzyy_123</div>
+                <div class="div__gefzyy-123">{{ profile.username }}</div>
                 <div class="div__div2">
                   В личном кабинете вы можете отследить всю историю покупок
                 </div>
               </div>
-              <div class="div__button">
-                <img class="div__icon-left" src="http://127.0.0.1:8084/robux_account_pc/icon-left0.svg" />
+              <a class="div__button" href="http://127.0.0.1:8000/logout/">
+                <img class="div__icon-left" src="http://127.0.0.1:8000/robux_account_pc/icon-left0.svg" />
                 <div class="div__safe-area">
                   <div class="div__text">Выйти</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -126,33 +126,14 @@
                 <div class="div__heading-27">29.10.2024</div>
               </div>
               <div class="div__frame-1000005930">
-                <img
-                  class="div___13-metaverse-touch-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/_13-metaverse-touch-10.png"
-                />
+                <img class="div___13-metaverse-touch-1" src="http://127.0.0.1:8000/robux_account_pc/_13-metaverse-touch-10.png">
               </div>
             </div>
-              <div class="div__frame-1000005928">
-                <div class="div__label2">
-                  <div class="div___152">
-                    <span>
-                      <span class="_152-span">Заказ #152 ·</span>
-                      <span class="_152-span2">Выполнено </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="div__frame-1000005929">
-                <div class="div__heading-27">29.10.2024</div>
-              </div>
-              <div class="div__frame-1000005930">
-                <img
-                  class="div___13-metaverse-touch-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/_13-metaverse-touch-13.png"
-                />
-              </div>
+              
+              
+              
             </div>
-          <div class="div__frame-1000005913">
+            <div class="div__frame-1000005913">
             <div class="div__frame-1000005911">
               <div class="div__frame-1000005928">
                 <div class="div__label">
@@ -171,31 +152,38 @@
                 <div class="div__heading-27">29.10.2024</div>
               </div>
               <div class="div__frame-1000005930">
-                <img
-                  class="div___13-metaverse-touch-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/_13-metaverse-touch-10.png"
-                />
+                <img class="div___13-metaverse-touch-1" src="http://127.0.0.1:8000/robux_account_pc/_13-metaverse-touch-10.png">
               </div>
             </div>
+              
+              
+              
+            </div>
+            <div class="div__frame-1000005913">
+            <div class="div__frame-1000005911">
               <div class="div__frame-1000005928">
-                <div class="div__label2">
+                <div class="div__label">
                   <div class="div___152">
                     <span>
                       <span class="_152-span">Заказ #152 ·</span>
-                      <span class="_152-span2">Выполнено </span>
+                      <span class="_152-span2">Выполнено</span>
                     </span>
                   </div>
+                </div>
+                <div class="div__frame-1000005989">
+                  <div class="div___1000-r">1000 R$</div>
                 </div>
               </div>
               <div class="div__frame-1000005929">
                 <div class="div__heading-27">29.10.2024</div>
               </div>
               <div class="div__frame-1000005930">
-                <img
-                  class="div___13-metaverse-touch-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/_13-metaverse-touch-13.png"
-                />
+                <img class="div___13-metaverse-touch-1" src="http://127.0.0.1:8000/robux_account_pc/_13-metaverse-touch-10.png">
               </div>
+            </div>
+              
+              
+              
             </div>
           </div>
           </div>
@@ -207,19 +195,19 @@
           <div class="div__frame-48095932">
             <div class="div__frame-48095930">
               <div class="div__frame-48095926">
-                <div class="div__div4">Купить робуксы</div>
+                <a class="div__div4" href="http://127.0.0.1:8000/check_acc/">Купить робуксы</a>
                 <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                  <img class="div__glyph" src="http://127.0.0.1:8084/robux_account_pc/glyph0.svg" />
+                  <img class="div__glyph" src="http://127.0.0.1:8000/robux_account_pc/glyph0.svg" />
                 </div>
               </div>
               <div class="div__frame-3">
-                <img class="div__group" src="http://127.0.0.1:8084/robux_account_pc/group0.svg" />
+                <img class="div__group" src="http://127.0.0.1:8000/robux_account_pc/group0.svg" />
                 <div class="div__div5">Бонусы</div>
               </div>
               <div class="div__frame-48095929">
                 <img
                   class="div__coupon-svgrepo-com-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/coupon-svgrepo-com-10.svg"
+                  src="http://127.0.0.1:8000/robux_account_pc/coupon-svgrepo-com-10.svg"
                 />
                 <div class="div__frame-5">
                   <div class="div__div6">Промокод</div>
@@ -228,7 +216,7 @@
               <div class="div__frame-480959302">
                 <img
                   class="div__shopping-cart-svgrepo-com-1"
-                  src="http://127.0.0.1:8084/robux_account_pc/shopping-cart-svgrepo-com-10.svg"
+                  src="http://127.0.0.1:8000/robux_account_pc/shopping-cart-svgrepo-com-10.svg"
                 />
                 <div class="div__frame-5">
                   <div class="div__div7">Мои покупки</div>
@@ -237,28 +225,28 @@
             </div>
           </div>
           <div class="div__group-197-1">
-            <img class="div__frame-1000005973" src="http://127.0.0.1:8084/robux_account_pc/frame-10000059730.svg" />
-            <img class="div__vector" src="http://127.0.0.1:8084/robux_account_pc/vector0.svg" />
-            <img class="div__vector2" src="http://127.0.0.1:8084/robux_account_pc/vector1.svg" />
-            <img class="div__vector3" src="http://127.0.0.1:8084/robux_account_pc/vector2.svg" />
-            <img class="div__vector4" src="http://127.0.0.1:8084/robux_account_pc/vector3.svg" />
-            <img class="div__vector5" src="http://127.0.0.1:8084/robux_account_pc/vector4.svg" />
-            <img class="div__vector6" src="http://127.0.0.1:8084/robux_account_pc/vector5.svg" />
-            <img class="div__vector7" src="http://127.0.0.1:8084/robux_account_pc/vector6.svg" />
-            <img class="div__frame-1000005974" src="http://127.0.0.1:8084/robux_account_pc/frame-10000059740.svg" />
+            <img class="div__frame-1000005973" src="http://127.0.0.1:8000/robux_account_pc/frame-10000059730.svg" />
+            <img class="div__vector" src="http://127.0.0.1:8000/robux_account_pc/vector0.svg" />
+            <img class="div__vector2" src="http://127.0.0.1:8000/robux_account_pc/vector1.svg" />
+            <img class="div__vector3" src="http://127.0.0.1:8000/robux_account_pc/vector2.svg" />
+            <img class="div__vector4" src="http://127.0.0.1:8000/robux_account_pc/vector3.svg" />
+            <img class="div__vector5" src="http://127.0.0.1:8000/robux_account_pc/vector4.svg" />
+            <img class="div__vector6" src="http://127.0.0.1:8000/robux_account_pc/vector5.svg" />
+            <img class="div__vector7" src="http://127.0.0.1:8000/robux_account_pc/vector6.svg" />
+            <img class="div__frame-1000005974" src="http://127.0.0.1:8000/robux_account_pc/frame-10000059740.svg" />
           </div>
           <div class="div__frame-1000006215">
             <img
               class="div__frame-1000005905-variant-3"
-              src="http://127.0.0.1:8084/robux_account_pc/frame-1000005905-variant-30.svg"
+              src="http://127.0.0.1:8000/robux_account_pc/frame-1000005905-variant-30.svg"
             />
             <img
               class="div__frame-1000005907-variant-2"
-              src="http://127.0.0.1:8084/robux_account_pc/frame-1000005907-variant-20.svg"
+              src="http://127.0.0.1:8000/robux_account_pc/frame-1000005907-variant-20.svg"
             />
             <img
               class="div__frame-1000005906-variant-1"
-              src="http://127.0.0.1:8084/robux_account_pc/frame-1000005906-variant-10.svg"
+              src="http://127.0.0.1:8000/robux_account_pc/frame-1000005906-variant-10.svg"
             />
           </div>
         </div>
@@ -288,15 +276,15 @@
               <div class="div__background"></div>
               <div class="div__div10">Все системы в порядке</div>
               <div class="div__frame-1000006041">
-                <img class="div__svg2" src="http://127.0.0.1:8084/robux_account_pc/svg1.svg" />
+                <img class="div__svg2" src="http://127.0.0.1:8000/robux_account_pc/svg1.svg" />
                 <div class="div__svg3">
-                  <img class="div__vector8" src="http://127.0.0.1:8084/robux_account_pc/vector7.svg" />
+                  <img class="div__vector8" src="http://127.0.0.1:8000/robux_account_pc/vector7.svg" />
                   <div class="div__frame-1000006010">
-                    <img class="div__page-1" src="http://127.0.0.1:8084/robux_account_pc/page-10.svg" />
+                    <img class="div__page-1" src="http://127.0.0.1:8000/robux_account_pc/page-10.svg" />
                   </div>
                 </div>
-                <img class="div__svg4" src="http://127.0.0.1:8084/robux_account_pc/svg3.svg" />
-                <img class="div__svg5" src="http://127.0.0.1:8084/robux_account_pc/svg4.svg" />
+                <img class="div__svg4" src="http://127.0.0.1:8000/robux_account_pc/svg3.svg" />
+                <img class="div__svg5" src="http://127.0.0.1:8000/robux_account_pc/svg4.svg" />
               </div>
             </div>
           </div>
@@ -321,7 +309,7 @@
             </div>
             <div class="div__logo">
               <div class="div__frame-1000006060">
-                <img class="div__frame-10000059742" src="http://127.0.0.1:8084/robux_account_pc/frame-10000059741.svg" />
+                <img class="div__frame-10000059742" src="http://127.0.0.1:8000/robux_account_pc/frame-10000059741.svg" />
               </div>
               <div class="div__robux-kingdom">RobuxKingdom</div>
             </div>
@@ -329,14 +317,14 @@
         </div>
       </div>
     </div>
-    <div class="div__frame-1000005958">
-      <img class="div__image2" src="http://127.0.0.1:8084/robux_account_pc/image1.png" />
+    <a class="div__frame-1000005958 button" href="http://127.0.0.1:8000/account/">
+      <img class="div__image2" src="{{ profile.image_url }}" />
       <div class="div__frame-1000005915">
-        <div class="div__gefzyy-1232">gefzyy_123</div>
+        <div class="div__gefzyy-1232">{{ profile.username }}</div>
         <div class="div__div11">Перейти в профиль</div>
       </div>
-      <img class="div__vector9" src="http://127.0.0.1:8084/robux_account_pc/vector8.svg" />
-    </div>
+      <img class="div__vector9" src="http://127.0.0.1:8000/robux_account_pc/vector8.svg" />
+    </a>
   </div>
   
 </body>

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from django.templatetags.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,6 +41,33 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "main",
 ]
+
+UNFOLD = {
+    # Принудительная тема: 'light' или 'dark'
+    "THEME": "dark",
+
+    # Переопределяем цвета
+    "COLORS": {
+        # Ваш фирменный жёлтый
+        "primary": {
+            "500": "255, 184, 0",    # #FFB800
+        },
+        # Фон (базовый) — тёмно‑синий
+        "base": {
+            "900": "10, 13, 27",     # #0A0D1B
+        },
+        # Цвета текста под ваши тона
+        "font": {
+            "default-light":  "var(--color-base-900)",    # основной текст
+            "important-dark":"var(--color-primary-500)", # акцентный текст
+        },
+    },
+
+    # Подключаем ваш скомпилированный CSS
+    "STYLES": [
+        lambda request: static("css/styles.css"),
+    ],
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

@@ -1328,7 +1328,7 @@
 .div__frame-1000005958 {
   width: 19.9rem;
   height: 5.6rem;
-  position: fixed;
+  position: absolute;
   left: 141.2rem;
   top: 4.5rem;
 }
