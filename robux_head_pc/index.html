@@ -432,7 +432,7 @@
                     <div class="div__item7"></div>
                     <div class="div__item8"></div>
                   </div>
-                  <a class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger5" {% endif %}>Купить робуксы</a>
+                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger5" {% endif %}>Купить робуксы</a>
                 </div>
               </div>
               <div class="div__button2">
@@ -851,6 +851,23 @@
       });
     });
   });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const buyBtn = document.getElementById('buy-button');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', (e) => {
+      const slider = document.querySelector('.range-overlay');
+      if (slider) {
+        e.preventDefault();
+        const url = new URL(buyBtn.href, window.location.origin);
+        url.searchParams.set('amount', slider.value);
+        window.location.href = url.toString();
+      }
+    });
+  }
+});
 </script>
 
 
