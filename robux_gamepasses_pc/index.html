@@ -53,6 +53,11 @@
           <div class="game-pass__game-pass-1459-r">
             Создайте Game Pass с ценой 1459 R$
           </div>
+          {% if regional_pricing_enabled %}
+          <div class="regional-pricing-warning">
+            Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова
+          </div>
+          {% endif %}
           <img class="game-pass__frame-1000002526" src="http://127.0.0.1:8000/robux_gamepasses_pc/frame-10000025260.svg" />
         </div>
         <div class="game-pass__frame-1000005944"></div>

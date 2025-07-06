@@ -8,6 +8,25 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+def check_regional_pricing(gamepass_id: str) -> bool:
+    """Return True if regional pricing is enabled for the given gamepass."""
+    url = f"https://apis.roblox.com/game-passes/v1/game-passes/{gamepass_id}"
+    try:
+        resp = requests.get(url, timeout=5)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # pragma: no cover - network issue
+        logger.warning("Failed to fetch gamepass info: %s", exc)
+        return False
+
+    try:
+        data = resp.json()
+    except ValueError:  # pragma: no cover - invalid JSON
+        logger.warning("Invalid JSON in gamepass info response")
+        return False
+
+    return data.get("isRegionalPricingEnabled", False)
+
+
 class HomeView(TemplateView):
     template_name = "robux_head_pc/index.html"
 
@@ -142,6 +161,13 @@ class GamePass(TemplateView):
                 self.request.session.pop("profile_id", None)
         context["selected_account_id"] = self.request.session.get("selected_account_id")
         context["place_id"] = self.request.GET.get("place_id")
+
+        gamepass_id = self.request.session.get("selected_gamepass_id")
+        if gamepass_id:
+            context["regional_pricing_enabled"] = check_regional_pricing(gamepass_id)
+        else:
+            context["regional_pricing_enabled"] = False
+
         return context
     
 class CheckPlace(TemplateView):
