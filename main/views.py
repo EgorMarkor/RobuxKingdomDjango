@@ -95,6 +95,20 @@ class CheckAccountView(TemplateView):
                 self.request.session.pop("profile_id", None)
         return context
     
+    
+class GamePass(TemplateView):
+    template_name = "robux_gamepasses_pc/index.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+        if profile_id:
+            try:
+                context["profile"] = UserProfile.objects.get(pk=profile_id)
+            except UserProfile.DoesNotExist:  # pragma: no cover - edge case
+                self.request.session.pop("profile_id", None)
+        return context
+    
 class CheckPlace(TemplateView):
     template_name = "robux_places_pc/index.html"
     
