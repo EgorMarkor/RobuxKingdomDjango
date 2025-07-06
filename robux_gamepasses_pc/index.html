@@ -51,11 +51,16 @@
         <div class="game-pass__frame-1000005980">
           <div class="game-pass__game-pass2">Настройка Game-Pass</div>
           <div class="game-pass__game-pass-1459-r">
-            Создайте Game Pass с ценой 1459 R$
+            Создайте Game Pass с ценой {{ expected_gamepass_price|default_if_none:"" }} R$
           </div>
           {% if regional_pricing_enabled %}
           <div class="regional-pricing-warning">
             Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова
+          </div>
+          {% endif %}
+          {% if not gamepass_exists %}
+          <div class="gamepass-missing-warning">
+            Геймпасс с ценой {{ expected_gamepass_price }} R$ не найден в выбранном плейсе
           </div>
           {% endif %}
           <img class="game-pass__frame-1000002526" src="http://127.0.0.1:8000/robux_gamepasses_pc/frame-10000025260.svg" />
@@ -65,7 +70,7 @@
           <div class="game-pass__frame-1000005941">
             <div class="game-pass__frame-1000005946">
               <div class="game-pass__frame-1000005938">
-                <div class="game-pass___1459-r">1459 R$</div>
+                <div class="game-pass___1459-r">{{ expected_gamepass_price|default_if_none:"" }} R$</div>
               </div>
               <div class="game-pass__frame-1000005939">
                 <img class="game-pass__group" src="http://127.0.0.1:8000/robux_gamepasses_pc/group0.svg" />
