@@ -46,10 +46,10 @@
     <div class="div__frame-1000005835">
       <div class="div__frame-1000005844">
         <div class="div__frame-1000005980">
-          <div class="div__div2">Подтверждение заказа</div>
-          <div class="div__div3">Проверь детали покупки перед оплатой</div>
           <img class="div__frame-1000002526" src="http://127.0.0.1:8000/robux_buy_pc/frame-10000025260.svg" />
+          <div class="div__div2">Подтверждение заказа</div>
         </div>
+        <div class="div__div3">Проверь детали покупки перед оплатой</div>
         <div class="div__frame-1000006014">
           <div class="div__frame-1000005983">
             <div class="div__div4">К оплате:</div>
@@ -77,9 +77,7 @@
         </div>
         <div class="div__frame-1000005995">
           <div class="div__frame-1000005939">
-            <div class="div__frame-1000005937">
-              <div class="div__gefzy-123-gmail-com">{{ profile.username }}@gmail.com</div>
-            </div>
+            <input type="text" class="div__frame-1000005937 div__gefzy-123-gmail-com">
           </div>
           <div class="div__email">Введите свой email</div>
         </div>
@@ -89,7 +87,7 @@
               <div class="div__frame-1000005951"></div>
             </div>
             <div class="div__frame-10000059372"></div>
-            <img class="div__image" src="http://127.0.0.1:8000/robux_buy_pc/image0.png" />
+            <img class="div__image" src="{{ profile.image_url }}" />
             <div class="div__frame-1000006004">
               <div class="div__gefzy-123">{{ profile.username }}</div>
               <div class="div__pass-in-gefzyy-123">Place: {{ selected_place.name|default:selected_place_id }}</div>

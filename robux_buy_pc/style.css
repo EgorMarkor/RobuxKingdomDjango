@@ -26,7 +26,10 @@
   overflow: hidden;
 }
 .div__frame-1000005980 {
-  width: 39rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 45rem;
   height: 7.7rem;
   position: absolute;
   left: 6rem;
@@ -39,10 +42,7 @@
   font-size: 3rem;
   line-height: 2.981rem;
   font-weight: 700;
-  position: absolute;
-  left: 5.7rem;
-  top: 0.5rem;
-  width: 34.7rem;
+  width: 38.7rem;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -56,8 +56,8 @@
   line-height: 2.981rem;
   font-weight: 500;
   position: absolute;
-  left: 0rem;
-  top: 4.7rem;
+  left: 6.8rem;
+  top: 13rem;
   width: 39rem;
   height: 3rem;
   display: flex;
@@ -71,10 +71,7 @@
   gap: 1.613rem;
   align-items: center;
   justify-content: flex-start;
-  height: auto;
-  position: absolute;
-  left: 0rem;
-  top: 0rem;
+  height: 5rem;
   overflow: visible;
 }
 .div__frame-1000006014 {
@@ -95,7 +92,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  width: 12.9rem;
+  width: 14.9rem;
   position: relative;
 }
 .div__div4 {
@@ -456,7 +453,7 @@
   line-height: 2.7359999999999998rem;
   font-weight: 700;
   position: relative;
-  width: 9.1rem;
+  width: 11.1rem;
   height: 2.7rem;
   display: flex;
   align-items: center;
@@ -504,7 +501,7 @@
   justify-content: center;
   height: 4.6rem;
   position: absolute;
-  left: 17.392rem;
+  left: 15.392rem;
   top: 2.5rem;
   overflow: hidden;
 }
@@ -512,11 +509,11 @@
   color: #ffffff;
   text-align: left;
   font-family: "Wix Madefor Display", sans-serif;
-  font-size: 2.3452526092529298rem;
+  font-size: 2.1452526092529298rem;
   line-height: 2.7359999999999998rem;
   font-weight: 700;
   position: relative;
-  width: 8.7rem;
+  width: 10.7rem;
   height: 2.2rem;
   display: flex;
   align-items: center;
@@ -632,7 +629,7 @@
   top: 6.029999999999999rem;
 }
 .div__page-1 {
-  height: 1.3rem;
+  height: 2.4rem;
   position: absolute;
   left: 0rem;
   top: 0rem;
