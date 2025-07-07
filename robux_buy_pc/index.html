@@ -53,7 +53,7 @@
         <div class="div__frame-1000006014">
           <div class="div__frame-1000005983">
             <div class="div__div4">К оплате:</div>
-            <div class="div___740-74">740.74Р</div>
+            <div class="div___740-74">{{ selected_amount }} Р</div>
           </div>
           <div class="div__button">
             <div class="div__list">
@@ -78,13 +78,7 @@
         <div class="div__frame-1000005995">
           <div class="div__frame-1000005939">
             <div class="div__frame-1000005937">
-              <div class="div__gefzy-123-gmail-com">
-                <span>
-                  <span class="gefzy-123-gmail-com-span">gefzy_123</span>
-                  <span class="gefzy-123-gmail-com-span2">@</span>
-                  <span class="gefzy-123-gmail-com-span">gmail.com</span>
-                </span>
-              </div>
+              <div class="div__gefzy-123-gmail-com">{{ profile.username }}@gmail.com</div>
             </div>
           </div>
           <div class="div__email">Введите свой email</div>
@@ -97,8 +91,8 @@
             <div class="div__frame-10000059372"></div>
             <img class="div__image" src="http://127.0.0.1:8000/robux_buy_pc/image0.png" />
             <div class="div__frame-1000006004">
-              <div class="div__gefzy-123">gefzy_123</div>
-              <div class="div__pass-in-gefzyy-123">Pass in gefzyy_123</div>
+              <div class="div__gefzy-123">{{ profile.username }}</div>
+              <div class="div__pass-in-gefzyy-123">Place: {{ selected_place.name|default:selected_place_id }}</div>
             </div>
           </div>
           <div class="div__frame-10000059393">
@@ -106,14 +100,14 @@
               <div class="div__frame-1000005951"></div>
             </div>
             <div class="div__frame-10000059373">
-              <div class="div___1000-r">1000 R$</div>
+              <div class="div___1000-r">{{ selected_amount }} R$</div>
             </div>
             <div class="div__frame-1000006006">
               <div class="div___0-r">+0R$</div>
               <img class="div__group" src="http://127.0.0.1:8000/robux_buy_pc/group0.svg" />
             </div>
             <div class="div__frame-1000006008">
-              <div class="div___1000-r2">1000 R$</div>
+              <div class="div___1000-r2">{{ selected_amount }} R$</div>
             </div>
           </div>
         </div>
@@ -268,9 +262,9 @@
       </div>
     </div>
     <div class="div__frame-1000005958">
-      <img class="div__image2" src="http://127.0.0.1:8000/robux_buy_pc/image1.png" />
+      <img class="div__image2" src="{{ profile.image_url }}" />
       <div class="div__frame-1000005915">
-        <div class="div__gefzyy-123">gefzyy_123</div>
+        <div class="div__gefzyy-123">{{ profile.username }}</div>
         <div class="div__div13">Перейти в профиль</div>
       </div>
       <img class="div__vector9" src="http://127.0.0.1:8000/robux_buy_pc/vector8.svg" />

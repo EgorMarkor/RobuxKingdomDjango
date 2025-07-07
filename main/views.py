@@ -233,6 +233,8 @@ class CheckPlace(TemplateView):
         context["profile"] = profile
         context["selected_amount"] = self.request.session.get("selected_amount")
         context["selected_account_id"] = self.request.session.get("selected_account_id")
+        context["selected_place_id"] = self.request.session.get("selected_place_id")
+        context["selected_gamepass_id"] = self.request.session.get("selected_gamepass_id")
 
         # Функция для получения всех плейсов пользователя
         def fetch_roblox_places(account_id):
@@ -254,9 +256,12 @@ class CheckPlace(TemplateView):
 
         try:
             places = fetch_roblox_places(profile.account_id)
-            print(places)
             logger.debug("ROBLOX places for account %s: %r", profile.account_id, places)
             context["places"] = places
+            selected_place_id = context.get("selected_place_id")
+            if selected_place_id:
+                selected_place = next((p for p in places if str(p.get("id")) == str(selected_place_id)), None)
+                context["selected_place"] = selected_place
         except requests.RequestException as e:
             logger.error("Failed to fetch ROBLOX places: %s", e)
             context["places"] = []
@@ -286,6 +291,8 @@ class Buy(TemplateView):
         context["profile"] = profile
         context["selected_amount"] = self.request.session.get("selected_amount")
         context["selected_account_id"] = self.request.session.get("selected_account_id")
+        context["selected_place_id"] = self.request.session.get("selected_place_id")
+        context["selected_gamepass_id"] = self.request.session.get("selected_gamepass_id")
 
         # Функция для получения всех плейсов пользователя
         def fetch_roblox_places(account_id):
@@ -307,9 +314,12 @@ class Buy(TemplateView):
 
         try:
             places = fetch_roblox_places(profile.account_id)
-            print(places)
             logger.debug("ROBLOX places for account %s: %r", profile.account_id, places)
             context["places"] = places
+            selected_place_id = context.get("selected_place_id")
+            if selected_place_id:
+                selected_place = next((p for p in places if str(p.get("id")) == str(selected_place_id)), None)
+                context["selected_place"] = selected_place
         except requests.RequestException as e:
             logger.error("Failed to fetch ROBLOX places: %s", e)
             context["places"] = []
