@@ -57,3 +57,20 @@ class Place(models.Model):
     def __str__(self) -> str:  # pragma: no cover - simple representation
         return self.name
 
+
+class Order(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="orders")
+    order_id = models.CharField(max_length=100, unique=True)
+    account = models.CharField(max_length=1000)
+    account_id = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    paid_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    robux_count = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Заказ"
+        verbose_name_plural = "Заказы"
+
+    def __str__(self):  # pragma: no cover - representation
+        return f"Order {self.order_id}"

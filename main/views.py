@@ -335,3 +335,64 @@ def logout_view(request):
     request.session.pop('profile_id', None)
     # стандартный logout очистит аутентификацию
     return redirect('home')
+
+import hashlib
+import uuid
+from decimal import Decimal
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from .models import Order
+
+
+def create_order(request):
+    profile_id = request.session.get("profile_id")
+    amount = request.session.get("selected_amount")
+    if not profile_id or not amount:
+        return redirect("home")
+    try:
+        profile = UserProfile.objects.get(pk=profile_id)
+    except UserProfile.DoesNotExist:
+        return redirect("home")
+
+    order_id = uuid.uuid4().hex
+    sign_str = f"{settings.FREEKASSA_MERCHANT_ID}:{amount}:{settings.FREEKASSA_SECRET_1}:RUB:{order_id}"
+    sign = hashlib.md5(sign_str.encode()).hexdigest()
+    email = request.GET.get("email", "")
+    ip = request.META.get("REMOTE_ADDR", "")
+    pay_url = (
+        f"https://pay.fk.money/?m={settings.FREEKASSA_MERCHANT_ID}"
+        f"&oa={amount}&o={order_id}&currency=RUB&s={sign}&email={email}&ip={ip}&i=36"
+    )
+
+    Order.objects.create(
+        user=profile,
+        order_id=order_id,
+        account=profile.username,
+        account_id=profile.account_id,
+        amount=Decimal(amount),
+        robux_count=int(amount),
+    )
+    return redirect(pay_url)
+
+
+@csrf_exempt
+def freekassa_notify(request):
+    if request.method != "POST":
+        return HttpResponse(status=405)
+    order_id = request.POST.get("MERCHANT_ORDER_ID")
+    amount = request.POST.get("AMOUNT")
+    sign = request.POST.get("SIGN")
+    expected = hashlib.md5(
+        f"{settings.FREEKASSA_MERCHANT_ID}:{amount}:{settings.FREEKASSA_SECRET_2}:{order_id}".encode()
+    ).hexdigest()
+    if sign != expected:
+        return HttpResponse("wrong sign", status=400)
+    try:
+        order = Order.objects.get(order_id=order_id)
+    except Order.DoesNotExist:
+        return HttpResponse("order not found", status=404)
+    order.paid_amount = Decimal(amount)
+    order.save(update_fields=["paid_amount"])
+    return HttpResponse("YES")
+
