@@ -38,30 +38,122 @@
        margin: 0;
        padding: 0;
    }
+
+   
    </style>
+   <style>
+    /* контейнер для всех тостов */
+    #toast-container {
+      position: fixed;
+      top: 5rem;
+      left: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      pointer-events: none; /* чтобы клики сквозь пустые места шли на фон */
+      z-index: 1000;
+    }
+    /* сам тост */
+    .toast {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      padding: 2.5rem 2.9rem 2.4rem 2.2rem;
+      gap: 0.9rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      pointer-events: auto; /* чтобы тосты перехватывали клики */
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .toast .message {
+      color: #ff5151;
+      font-family: "Gilroy-Bold", sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.409rem;
+      font-weight: 700;
+    }
+  </style>
   <title>Document</title>
 </head>
 <body>
+  <div id="toast-container"></div>
+
+  <script>
+    // ваш SVG-иконка
+    const ICON_SVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+           viewBox="0 0 28 28" fill="none">
+        <path d="M14 0C11.2311 0 8.52431 0.821086 6.22202 2.35943C3.91973 3.89776
+                 2.12532 6.08427 1.06569 8.64243C0.00606598 11.2006 -0.271181 14.0155
+                 0.269012 16.7313C0.809205 19.447 2.14258 21.9416 4.10051 23.8995C6.05845
+                 25.8574 8.55301 27.1908 11.2687 27.731C13.9845 28.2712 16.7994 27.9939
+                 19.3576 26.9343C21.9157 25.8747 24.1022 24.0803 25.6406 21.778C27.1789
+                 19.4757 28 16.7689 28 14C27.9961 10.2882 26.5198 6.72949 23.8952
+                 4.10483C21.2705 1.48017 17.7118 0.00391976 14 0ZM12.9231 7.53846C12.9231
+                 7.25284 13.0365 6.97892 13.2385 6.77696C13.4405 6.575 13.7144 6.46154
+                 14 6.46154C14.2856 6.46154 14.5595 6.575 14.7615 6.77696C14.9635 6.97892
+                 15.0769 7.25284 15.0769 7.53846V15.0769C15.0769 15.3625 14.9635 15.6365
+                 14.7615 15.8384C14.5595 16.0404 14.2856 16.1538 14 16.1538C13.7144 16.1538
+                 13.4405 16.0404 13.2385 15.8384C13.0365 15.6365 12.9231 15.3625
+                 12.9231 15.0769V7.53846ZM14 21.5385C13.6805 21.5385 13.3682 21.4437
+                 13.1025 21.2662C12.8369 21.0887 12.6298 20.8364 12.5076 20.5413C12.3853
+                 20.2461 12.3533 19.9213 12.4157 19.6079C12.478 19.2946 12.6318 19.0067
+                 12.8578 18.7808C13.0837 18.5549 13.3715 18.4011 13.6849 18.3387C13.9982
+                 18.2764 14.323 18.3084 14.6182 18.4307C14.9134 18.5529 15.1656 18.76
+                 15.3431 19.0256C15.5206 19.2913 15.6154 19.6036 15.6154 19.9231C15.6154
+                 20.3515 15.4452 20.7624 15.1423 21.0653C14.8393 21.3683 14.4284 21.5385
+                 14 21.5385Z" fill="#FF6363"/>
+      </svg>
+    `;
+
+    function showToast(message, duration = 4000) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = ICON_SVG + `<div class="message">${message}</div>`;
+
+      container.appendChild(toast);
+
+      // запустить анимацию «появления»
+      requestAnimationFrame(() => toast.classList.add('show'));
+
+      // через duration скрыть и удалить
+      setTimeout(() => {
+        toast.classList.remove('show');
+        toast.addEventListener('transitionend', () => toast.remove());
+      }, duration);
+    }
+
+    // для демо
+    window.showToast = showToast;
+  </script>
   <div class="game-pass">
     <div class="game-pass__frame-1000005835">
       <div class="game-pass__frame-1000005844">
-        <div class="game-pass__button">
+        <a class="game-pass__button" href="http://127.0.0.1:8000/buy/">
           <div class="game-pass__heading-2">Я создал Game Pass</div>
-        </div>
+        </a>
         <div class="game-pass__frame-1000005980">
           <div class="game-pass__game-pass2">Настройка Game-Pass</div>
           <div class="game-pass__game-pass-1459-r">
             Создайте Game Pass с ценой {{ expected_gamepass_price|default_if_none:"" }} R$
           </div>
           {% if regional_pricing_enabled %}
-          <div class="regional-pricing-warning">
-            Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова
-          </div>
+          <script>
+            showToast('Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова');
+          </script>
           {% endif %}
           {% if not gamepass_exists %}
-          <div class="gamepass-missing-warning">
-            Геймпасс с ценой {{ expected_gamepass_price }} R$ не найден в выбранном плейсе
-          </div>
+          <script>
+            showToast('Геймпасс с ценой {{ expected_gamepass_price }} R$ не найден в выбранном плейсе');
+          </script>
           {% endif %}
           <img class="game-pass__frame-1000002526" src="http://127.0.0.1:8000/robux_gamepasses_pc/frame-10000025260.svg" />
         </div>

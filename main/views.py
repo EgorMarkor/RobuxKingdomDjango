@@ -263,6 +263,59 @@ class CheckPlace(TemplateView):
 
         return context
     
+class Buy(TemplateView):
+    template_name = "robux_buy_pc/index.html"
+
+    def get(self, request, *args, **kwargs):
+        # place selection happens on gamepass page; nothing to store here
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+
+        if not profile_id:
+            return context
+
+        try:
+            profile = UserProfile.objects.get(pk=profile_id)
+        except UserProfile.DoesNotExist:
+            self.request.session.pop("profile_id", None)
+            return context
+
+        context["profile"] = profile
+        context["selected_amount"] = self.request.session.get("selected_amount")
+        context["selected_account_id"] = self.request.session.get("selected_account_id")
+
+        # Функция для получения всех плейсов пользователя
+        def fetch_roblox_places(account_id):
+            places = []
+            cursor = ""
+            url = f"https://games.roblox.com/v2/users/{account_id}/games"
+
+            while True:
+                resp = requests.get(url, timeout=5)
+                resp.raise_for_status()
+                data = resp.json()
+                places.extend(data.get("data", []))
+                cursor = data.get("nextPageCursor")
+                if not cursor:
+                    break
+                params["cursor"] = cursor
+
+            return places
+
+        try:
+            places = fetch_roblox_places(profile.account_id)
+            print(places)
+            logger.debug("ROBLOX places for account %s: %r", profile.account_id, places)
+            context["places"] = places
+        except requests.RequestException as e:
+            logger.error("Failed to fetch ROBLOX places: %s", e)
+            context["places"] = []
+
+        return context
+    
 def logout_view(request):
     """
     Разлогинивает пользователя, удаляет profile_id из сессии и
