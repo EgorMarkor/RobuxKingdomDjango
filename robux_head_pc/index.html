@@ -11,8 +11,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+/>
   <style>
+    * {
+      font-family: "Wix Madefor Display", sans-serif !important; 
+    }
     html {
       font-size: 0.52vw;
     }
@@ -346,13 +355,13 @@
             }
 
           </style>
-          <a class="div__frame-1000005958 button" href="http://127.0.0.1:8000/account/">
+          <a class="div__frame-1000005958 button" href="http://rbxkingdom.com/account/">
             <img class="div__image2" src="{{ profile.image_url }}" />
             <div class="div__frame-1000005915">
               <div class="div__gefzyy-1232">{{ profile.username }}</div>
               <div class="div__div11">Перейти в профиль</div>
             </div>
-            <img class="div__vector9" src="http://127.0.0.1:8000/robux_account_pc/vector8.svg" />
+            <img class="div__vector9" src="http://rbxkingdom.com/robux_account_pc/vector8.svg" />
           </a>
 
           {% endif %}
@@ -368,7 +377,7 @@
         <div class="div__frame-480959322">
           <div class="div__frame-48095930">
             <div class="div__frame-48095926">
-              <a class="div__div3" href="http://127.0.0.1:8000/">Купить робуксы</a>
+              <a class="div__div3" href="http://rbxkingdom.com/">Купить робуксы</a>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
                 <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
               </div>
@@ -1133,6 +1142,19 @@ document.addEventListener('DOMContentLoaded', () => {
   updateValues();
 });
 </script>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var slider = tns({
+      container: '.div__container3',   // ваш список элементов
+      items: 5,                        // сколько видно за раз (можете менять)
+      slideBy: 'page',                 // перелистывать «экранами»
+      mouseDrag: true,                 // можно тянуть мышкой/тачем
+      swipeAngle: false,               // чтобы перетаскивало ровно по X
+      gutter: 10,                      // расстояние между слайдами (px)
+      controls: true,                  // стрелки «вперёд/назад»
+      nav: false                       // отключаем точечную навигацию
+    });
+  });
+</script>
 
 </html>
