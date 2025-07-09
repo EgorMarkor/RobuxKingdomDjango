@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
-from .models import UserProfile
+from .models import UserProfile, WithdrawalRequest, Order
 import requests
 import logging
 
@@ -103,6 +103,22 @@ class HomeView(TemplateView):
 
 class BonusView(TemplateView):
     template_name = "robux_bonus_pc/index.html"
+
+    def post(self, request, *args, **kwargs):
+        code = request.POST.get("ref_code")
+        profile_id = request.session.get("profile_id")
+        if code and profile_id:
+            try:
+                profile = UserProfile.objects.get(pk=profile_id)
+                if not profile.referrer:
+                    referrer = UserProfile.objects.filter(username=code).first()
+                    if referrer and referrer != profile:
+                        profile.referrer = referrer
+                        profile.referral_id = code
+                        profile.save(update_fields=["referrer", "referral_id"])
+            except UserProfile.DoesNotExist:
+                pass
+        return redirect("bonus")
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -342,7 +358,6 @@ from decimal import Decimal
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from .models import Order
 
 
 def create_order(request):
@@ -392,7 +407,65 @@ def freekassa_notify(request):
         order = Order.objects.get(order_id=order_id)
     except Order.DoesNotExist:
         return HttpResponse("order not found", status=404)
-    order.paid_amount = Decimal(amount)
+    paid = Decimal(amount)
+    order.paid_amount = paid
     order.save(update_fields=["paid_amount"])
+    if order.user:
+        user = order.user
+        try:
+            balance = int(user.balance)
+        except (TypeError, ValueError):
+            balance = 0
+        bonus = int(order.robux_count * 0.05)
+        user.balance = str(balance + order.robux_count + bonus)
+        if user.referrer:
+            referrer = user.referrer
+            try:
+                r_balance = int(referrer.balance)
+            except (TypeError, ValueError):
+                r_balance = 0
+            ref_bonus = int(order.robux_count * 0.05)
+            referrer.balance = str(r_balance + ref_bonus)
+            try:
+                hist = int(referrer.history_balance)
+            except (TypeError, ValueError):
+                hist = 0
+            referrer.history_balance = str(hist + ref_bonus)
+            referrer.save(update_fields=["balance", "history_balance"])
+        user.save(update_fields=["balance"])
     return HttpResponse("YES")
+
+
+class WithdrawView(TemplateView):
+    template_name = "robux_withdraw_pc/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+        if profile_id:
+            try:
+                context["profile"] = UserProfile.objects.get(pk=profile_id)
+            except UserProfile.DoesNotExist:
+                self.request.session.pop("profile_id", None)
+        return context
+
+
+def create_withdraw_request(request):
+    profile_id = request.session.get("profile_id")
+    if not profile_id:
+        return redirect("home")
+    try:
+        profile = UserProfile.objects.get(pk=profile_id)
+    except UserProfile.DoesNotExist:
+        return redirect("home")
+    try:
+        amount = Decimal(profile.balance)
+    except (TypeError, ValueError):
+        amount = Decimal("0")
+    if amount <= 0:
+        return redirect("bonus")
+    WithdrawalRequest.objects.create(user=profile, amount=amount)
+    profile.balance = "0"
+    profile.save(update_fields=["balance"])
+    return redirect("bonus")
 

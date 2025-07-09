@@ -17,6 +17,14 @@ class UserProfile(models.Model):
     referral_id = models.CharField(
         max_length=1000, blank=True, verbose_name="Код друга"
     )
+    referrer = models.ForeignKey(
+        "self",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="referrals",
+        verbose_name="Пригласивший",
+    )
     referral_code = models.CharField(
         max_length=100,
         verbose_name="Код для друга",
@@ -74,3 +82,18 @@ class Order(models.Model):
 
     def __str__(self):  # pragma: no cover - representation
         return f"Order {self.order_id}"
+
+
+class WithdrawalRequest(models.Model):
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.CASCADE, related_name="withdrawals"
+    )
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Заявка на вывод"
+        verbose_name_plural = "Заявки на вывод"
+
+    def __str__(self):  # pragma: no cover - representation
+        return f"Withdraw {self.amount} for {self.user}"
