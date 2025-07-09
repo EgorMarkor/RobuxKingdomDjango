@@ -66,7 +66,7 @@
               <div class="div__frame-1000005939">
                 <div class="div__frame-1000005952">
                   <div class="div__frame-1000005938">
-                    <div class="div__div4">Вывести робуксы</div>
+                    <a href="{% url 'withdraw' %}" class="div__div4">Вывести робуксы</a>
                   </div>
                   <div class="div__frame-1000005951">
                     <div class="div__frame-1000005937">
@@ -153,6 +153,11 @@
                 <div class="div__div10">Твой промокод для приглашения:</div>
               </div>
             </div>
+            <form method="post" style="margin-top: 1rem;">
+              {% csrf_token %}
+              <input type="text" name="ref_code" placeholder="Ник друга" style="padding:0.5rem;" />
+              <button type="submit" style="padding:0.5rem;">Активировать</button>
+            </form>
             <div class="div__frame-1000005978"></div>
             <div class="div__div11">
               Друзья, не использовавшие твой промокод при первой покупке,
