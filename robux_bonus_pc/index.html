@@ -346,14 +346,21 @@
               <div class="div__frame-1000005935">
                 <div class="div__frame-10000059162">
                   <div class="div__frame-1000005932">
-                    <img class="div__image" src="http://rbxkingdom.com/robux_bonus_pc/image0.png" />
-                    <img class="div__image" src="http://rbxkingdom.com/robux_bonus_pc/image1.png" />
-                    <img class="div__image" src="http://rbxkingdom.com/robux_bonus_pc/image2.png" />
-                    <img class="div__image" src="http://rbxkingdom.com/robux_bonus_pc/image3.png" />
-                    <div class="div__frame-1000005933">
-                      <img class="div__image2" src="http://rbxkingdom.com/robux_bonus_pc/image4.png" />
-                      <div class="div__div20">+</div>
-                    </div>
+                    {% with referrals=referrals %}
+                      {% for referral in referrals|slice":4" %}
+                        <img class="div__image" src="{{ referral.image_url }}" alt="{{ referral.username }}" />
+                      {% endfor %}
+                      {% if referrals|length > 4 %}
+                        <div class="div__frame-1000005933">
+                          {% with fifth=referrals|slice:"4:5" %}
+                            {% if fifth %}
+                              <img class="div__image2" src="{{ fifth.0.image_url }}" alt="" />
+                            {% endif %}
+                          {% endwith %}
+                          <div class="div__div20">+</div>
+                        </div>
+                      {% endif %}
+                    {% endwith %}
                   </div>
                 </div>
                 <div class="div__frame-1000005931">

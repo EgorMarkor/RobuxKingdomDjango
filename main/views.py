@@ -125,7 +125,9 @@ class BonusView(TemplateView):
         profile_id = self.request.session.get("profile_id")
         if profile_id:
             try:
-                context["profile"] = UserProfile.objects.get(pk=profile_id)
+                profile = UserProfile.objects.get(pk=profile_id)
+                context["profile"] = profile
+                context["referrals"] = profile.referrals.all()
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
         context["selected_place_id"] = self.request.session.get("selected_place_id")
