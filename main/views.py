@@ -447,6 +447,11 @@ class WithdrawView(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:
                 self.request.session.pop("profile_id", None)
+        # Pass the selected place ID from the session so the template can render
+        # the chosen place name or identifier. Without this key the template's
+        # ``default`` filter would fail to resolve the variable, resulting in a
+        # ``VariableDoesNotExist`` exception when rendering the withdraw page.
+        context["selected_place_id"] = self.request.session.get("selected_place_id")
         return context
 
 
