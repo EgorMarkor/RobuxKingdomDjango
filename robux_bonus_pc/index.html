@@ -65,9 +65,9 @@
               />
               <div class="div__frame-1000005939">
                 <div class="div__frame-1000005952">
-                  <div class="div__frame-1000005938">
-                    <a href="{% url 'withdraw' %}" class="div__div4">Вывести робуксы</a>
-                  </div>
+                  <a href="{% url 'withdraw' %}" class="div__frame-1000005938" style="z-index: 99;">
+                    <div href="{% url 'withdraw' %}" class="div__div4">Вывести робуксы</div>
+                  </a>
                   <div class="div__frame-1000005951">
                     <div class="div__frame-1000005937">
                       <div class="div___100">
@@ -143,21 +143,65 @@
             <div class="div__frame-1000005944">
               <div class="div__frame-1000005941">
                 <div class="div__frame-1000005946">
-                  <div class="div__frame-10000059382">
-                    <div class="div__gefzyy-123">{{ profile.username }}</div>
-                  </div>
-                  <div class="div__frame-10000059393">
-                    <img class="div__group" src="http://rbxkingdom.com/robux_bonus_pc/group0.svg" />
-                  </div>
+<div class="div__frame-10000059382">
+  <div class="div__gefzyy-123" id="username-to-copy">{{ profile.username }}</div>
+</div>
+<div class="div__frame-10000059393" style="z-index: 99;">
+  <img
+    id="copy-username-btn"
+    class="div__group"
+    src="http://rbxkingdom.com/robux_bonus_pc/group0.svg"
+    alt="Copy username"
+    style="cursor: pointer;"
+  />
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('copy-username-btn');
+    const usernameElem = document.getElementById('username-to-copy');
+
+    btn.addEventListener('click', function () {
+      const username = usernameElem.textContent.trim();
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        // современный API
+        navigator.clipboard.writeText(username)
+          .then(() => {
+            console.log('Скопировано в буфер:', username);
+          })
+          .catch(err => {
+            console.error('Ошибка копирования:', err);
+          });
+      } else {
+        // старый фолбэк для браузеров без clipboard API
+        const textarea = document.createElement('textarea');
+        textarea.value = username;
+        // чтобы не влиять на верстку
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+          document.execCommand('copy');
+          console.log('Скопировано (fallback):', username);
+        } catch (err) {
+          console.error('Fallback: не удалось скопировать', err);
+        }
+
+        document.body.removeChild(textarea);
+      }
+    });
+  });
+</script>
+
+
                 </div>
                 <div class="div__div10">Твой промокод для приглашения:</div>
               </div>
             </div>
-            <form method="post" style="margin-top: 1rem;">
-              {% csrf_token %}
-              <input type="text" name="ref_code" placeholder="Ник друга" style="padding:0.5rem;" />
-              <button type="submit" style="padding:0.5rem;">Активировать</button>
-            </form>
             <div class="div__frame-1000005978"></div>
             <div class="div__div11">
               Друзья, не использовавшие твой промокод при первой покупке,
