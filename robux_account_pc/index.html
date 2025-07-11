@@ -58,7 +58,7 @@
                 <div class="div__heading-22">Приглашенно за всё время</div>
               </div>
               <div class="div__frame-1000001986">
-                <div class="div__heading-23">37 друзей</div>
+                <div class="div__heading-23">{{ friends_count }} друзей</div>
               </div>
             </div>
             <div class="div__frame-1000005919">
@@ -68,7 +68,7 @@
                 <div class="div__heading-25">С первого входа</div>
               </div>
               <div class="div__frame-10000019862">
-                <div class="div__heading-23">2 г. 10 мес. 3 дня</div>
+                <div class="div__heading-23">{{ time_on_site|default:"-" }}</div>
               </div>
             </div>
             <div class="div__frame-1000005920">
@@ -81,7 +81,7 @@
                 <div class="div__heading-26">За всё время</div>
               </div>
               <div class="div__frame-10000019863">
-                <div class="div__heading-23">53719.00 R$</div>
+                <div class="div__heading-23">{{ total_robux }} R$</div>
               </div>
             </div>
           </div>
@@ -108,84 +108,33 @@
             <div class="div__div3">История покупок</div>
           </div>
           <div class="div__frame-container">
+            {% for order in orders %}
             <div class="div__frame-1000005913">
-            <div class="div__frame-1000005911">
-              <div class="div__frame-1000005928">
-                <div class="div__label">
-                  <div class="div___152">
-                    <span>
-                      <span class="_152-span">Заказ #152 ·</span>
-                      <span class="_152-span2">Выполнено</span>
-                    </span>
+              <div class="div__frame-1000005911">
+                <div class="div__frame-1000005928">
+                  <div class="div__label">
+                    <div class="div___152">
+                      <span>
+                        <span class="_152-span">Заказ #{{ order.order_id }} ·</span>
+                        <span class="_152-span2">{% if order.paid_amount %}Выполнено✔{% else %}Ожидает{% endif %}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="div__frame-1000005989">
+                    <div class="div___1000-r">{{ order.robux_count }} R$</div>
                   </div>
                 </div>
-                <div class="div__frame-1000005989">
-                  <div class="div___1000-r">1000 R$</div>
+                <div class="div__frame-1000005929">
+                  <div class="div__heading-27">{{ order.created_at|date:"d.m.Y" }}</div>
+                </div>
+                <div class="div__frame-1000005930">
+                  <img class="div___13-metaverse-touch-1" src="http://rbxkingdom.com/robux_account_pc/_13-metaverse-touch-10.png">
                 </div>
               </div>
-              <div class="div__frame-1000005929">
-                <div class="div__heading-27">29.10.2024</div>
-              </div>
-              <div class="div__frame-1000005930">
-                <img class="div___13-metaverse-touch-1" src="http://rbxkingdom.com/robux_account_pc/_13-metaverse-touch-10.png">
-              </div>
             </div>
-              
-              
-              
-            </div>
-            <div class="div__frame-1000005913">
-            <div class="div__frame-1000005911">
-              <div class="div__frame-1000005928">
-                <div class="div__label">
-                  <div class="div___152">
-                    <span>
-                      <span class="_152-span">Заказ #152 ·</span>
-                      <span class="_152-span2">Выполнено</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="div__frame-1000005989">
-                  <div class="div___1000-r">1000 R$</div>
-                </div>
-              </div>
-              <div class="div__frame-1000005929">
-                <div class="div__heading-27">29.10.2024</div>
-              </div>
-              <div class="div__frame-1000005930">
-                <img class="div___13-metaverse-touch-1" src="http://rbxkingdom.com/robux_account_pc/_13-metaverse-touch-10.png">
-              </div>
-            </div>
-              
-              
-              
-            </div>
-            <div class="div__frame-1000005913">
-            <div class="div__frame-1000005911">
-              <div class="div__frame-1000005928">
-                <div class="div__label">
-                  <div class="div___152">
-                    <span>
-                      <span class="_152-span">Заказ #152 ·</span>
-                      <span class="_152-span2">Выполнено</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="div__frame-1000005989">
-                  <div class="div___1000-r">1000 R$</div>
-                </div>
-              </div>
-              <div class="div__frame-1000005929">
-                <div class="div__heading-27">29.10.2024</div>
-              </div>
-              <div class="div__frame-1000005930">
-                <img class="div___13-metaverse-touch-1" src="http://rbxkingdom.com/robux_account_pc/_13-metaverse-touch-10.png">
-              </div>
-            </div>
-              
-              
-              
-            </div>
+            {% empty %}
+            <div class="div__frame-1000005913">Нет покупок</div>
+            {% endfor %}
           </div>
           </div>
         </div>

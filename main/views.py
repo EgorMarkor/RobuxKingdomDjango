@@ -1,5 +1,8 @@
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
+from django.db.models import Sum
+from django.utils import timezone
+from django.utils.timesince import timesince
 
 from .models import UserProfile, WithdrawalRequest, Order
 import requests
@@ -138,15 +141,26 @@ class BonusView(TemplateView):
     
 class AccountView(TemplateView):
     template_name = "robux_account_pc/index.html"
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile_id = self.request.session.get("profile_id")
-        if profile_id:
-            try:
-                context["profile"] = UserProfile.objects.get(pk=profile_id)
-            except UserProfile.DoesNotExist:  # pragma: no cover - edge case
-                self.request.session.pop("profile_id", None)
+        if not profile_id:
+            return context
+
+        try:
+            profile = UserProfile.objects.get(pk=profile_id)
+        except UserProfile.DoesNotExist:  # pragma: no cover - edge case
+            self.request.session.pop("profile_id", None)
+            return context
+
+        context["profile"] = profile
+        context["friends_count"] = profile.referrals.count()
+        total = profile.orders.aggregate(total=Sum("robux_count"))
+        context["total_robux"] = total.get("total") or 0
+        if profile.created_at:
+            context["time_on_site"] = timesince(profile.created_at, timezone.now())
+        context["orders"] = profile.orders.order_by("-created_at")
         context["selected_account_id"] = self.request.session.get("selected_account_id")
         return context
     
