@@ -906,3 +906,31 @@
   transform: translate(-0.047rem, -0.047rem);
   overflow: visible;
 }
+.place__frame-1000005982.selected {
+  box-shadow: 0 0 1rem #007aff;
+}
+.place__checkmark {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: #007aff;
+  border: 0.692rem solid #007aff;
+}
+.place__checkmark::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 0.6rem;
+  width: 0.5rem;
+  height: 1.2rem;
+  border: solid #fff;
+  border-width: 0 0.26rem 0.26rem 0;
+  transform: rotate(45deg);
+}
+.place__frame-1000005982.selected .place__checkmark {
+  display: block;
+}

@@ -53,7 +53,7 @@
         <div class="place__place3">
             Выбери Place, который будет использоваться для покупки
           </div>
-        <div class="place__button">
+        <a id="continue-button" class="place__button" href="#">
           <div class="place__list">
             <div class="place__item"></div>
             <div class="place__item2"></div>
@@ -65,11 +65,12 @@
             <div class="place__item8"></div>
           </div>
           <div class="place__heading-2">Продолжить</div>
-        </div>
-        <div class="place__frame-1000005982">
-          <div class="place__gefzyy-123-place">gefzyy_123 Place</div>
+        </a>
+        <a class="place__frame-1000005982 place-item" data-place-id="1" href="#">
+          <div class="place__checkmark"></div>
           <img class="place__image-78" src="image-780.png" />
-        </div>
+          <div class="place__gefzyy-123-place">gefzyy_123 Place</div>
+        </a>
       </div>
       <div class="place__frame-1000002205">
         <div class="place__footer">
@@ -211,6 +212,36 @@
       <img class="place__vector9" src="vector8.svg" />
     </div>
   </div>
-  
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll(".place-item");
+  let selected = "";
+  function update() {
+    items.forEach(el => {
+      if(el.dataset.placeId === selected) {
+        el.classList.add("selected");
+      } else {
+        el.classList.remove("selected");
+      }
+    });
+    const btn = document.getElementById("continue-button");
+    if(selected) {
+      btn.href = "#";
+    } else {
+      btn.removeAttribute("href");
+    }
+  }
+  items.forEach(el => {
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+      selected = el.dataset.placeId;
+      update();
+    });
+  });
+  update();
+});
+</script>
+
 </body>
 </html>
