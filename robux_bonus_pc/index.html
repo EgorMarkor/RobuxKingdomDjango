@@ -211,6 +211,7 @@
             </div>
           </div>
           <div class="div__frame-1000005967">
+            <a href="{% url 'social_redirect' 'reviews' %}" target="_blank">
             <div class="div__frame-1000005847">
               <div class="div__frame-10000059142">
                 <div class="div__div12">
@@ -242,6 +243,8 @@
                 src="http://rbxkingdom.com/robux_bonus_pc/_6373-e-1-fb-94061-e-4-bfd-702-b-9-f-untitled-2000-2000-px-5-10.png"
               />
             </div>
+            </a>
+            <a href="{% url 'social_redirect' 'telegram' %}" target="_blank">
             <div class="div__frame-1000005844">
               <img
                 class="div__icons-8-telegram-750-1"
@@ -264,6 +267,8 @@
                 </div>
               </div>
             </div>
+            </a>
+            <a href="{% url 'social_redirect' 'youtube' %}" target="_blank">
             <div class="div__frame-1000005846">
               <div class="div__frame-10000059142">
                 <div class="div__you-tube">Подпишись на наш YouTube канал</div>
@@ -286,6 +291,8 @@
                 src="http://rbxkingdom.com/robux_bonus_pc/_925433126825319-6135-c-9190-d-322-10.png"
               />
             </div>
+            </a>
+            <a href="{% url 'social_redirect' 'vk' %}" target="_blank">
             <div class="div__frame-1000005845">
               <div class="div__frame-10000059143">
                 <div class="div__div16">Подпишись на нашу Группу ВК</div>
@@ -308,6 +315,7 @@
                 src="http://rbxkingdom.com/robux_bonus_pc/_2-f-453-c-7-d-3-de-1-4-c-9-d-9-de-4-282-a-8-c-5164-b-1-10.png"
               />
             </div>
+            </a>
           </div>
           <div class="div__frame-1000002104">
             <div class="div__frame-1000002103"></div>
@@ -417,9 +425,9 @@
               <div class="div__frame-10000058752">
                 <div class="div__div23">КОНТАКТЫ</div>
                 <div class="div__frame-1000006053">
-                  <div class="div__you-tube2">Наш YouTube</div>
-                  <div class="div__vk">Наш VK</div>
-                  <div class="div__telegram2">Наш Telegram</div>
+                  <a class="div__you-tube2" href="https://youtube.com/@rbxkingdom" target="_blank">Наш YouTube</a>
+                  <a class="div__vk" href="https://vk.com/rbxkingdom" target="_blank">Наш VK</a>
+                  <a class="div__telegram2" href="https://t.me/rbxkingdom" target="_blank">Наш Telegram</a>
                 </div>
               </div>
             </div>
@@ -477,26 +485,26 @@
         </div>
         <div class="div__frame-48095932">
           <div class="div__frame-48095930">
-            <div class="div__frame-48095926">
+            <a class="div__frame-48095926" href="http://rbxkingdom.com/">
               <div class="div__div27">Купить робуксы</div>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
                 <img class="div__glyph" src="http://rbxkingdom.com/robux_bonus_pc/glyph0.svg" />
               </div>
-            </div>
-            <div class="div__frame-3">
+            </a>
+            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
               <img class="div__group2" src="http://rbxkingdom.com/robux_bonus_pc/group1.svg" />
               <div class="div__div28">Бонусы</div>
-            </div>
-            <div class="div__frame-48095929">
-              <img
-                class="div__coupon-svgrepo-com-1"
-                src="http://rbxkingdom.com/robux_bonus_pc/coupon-svgrepo-com-10.svg"
-              />
+            </a>
+            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
               <div class="div__frame-5">
+                <img
+                  class="div__coupon-svgrepo-com-1"
+                  src="http://rbxkingdom.com/robux_bonus_pc/coupon-svgrepo-com-10.svg"
+                />
                 <div class="div__div29">Промокод</div>
               </div>
-            </div>
-            <div class="div__frame-48095928">
+            </a>
+            <a class="div__frame-48095928" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger4" {% endif %}>
               <div class="div__frame-5">
                 <img
                   class="div__shopping-cart-svgrepo-com-1"
@@ -504,7 +512,7 @@
                 />
                 <div class="div__div30">Мои покупки</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <a class="div__group-197-1" href="http://rbxkingdom.com/">

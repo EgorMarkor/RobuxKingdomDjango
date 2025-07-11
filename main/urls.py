@@ -12,6 +12,7 @@ from .views import (
     create_withdraw_request,
     create_order,
     freekassa_notify,
+    social_redirect,
 )
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path('withdraw/request/', create_withdraw_request, name='create_withdraw'),
     path('pay/', create_order, name='create_order'),
     path('freekassa/notify/', freekassa_notify, name='freekassa_notify'),
+    path('bonus/social/<str:platform>/', social_redirect, name='social_redirect'),
 ]

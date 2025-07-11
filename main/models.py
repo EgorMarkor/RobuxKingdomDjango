@@ -33,6 +33,10 @@ class UserProfile(models.Model):
     )
     places = models.ManyToManyField('Place', related_name='owners', blank=True)
     history_balance = models.CharField(max_length=100, verbose_name="Баланс", default="0")
+    reward_vk = models.BooleanField(default=False)
+    reward_telegram = models.BooleanField(default=False)
+    reward_reviews = models.BooleanField(default=False)
+    reward_youtube = models.BooleanField(default=False)
 
     def __str__(self) -> str:  # pragma: no cover - simple representation
         return self.username
