@@ -905,3 +905,11 @@
   transform: translate(-0.047rem, -0.047rem);
   overflow: visible;
 }
+
+
+button, .button, a > div {
+  transition: transform 0.2s ease;
+}
+button:active, .button:active, a:active > div {
+  transform: scale(0.95);
+}

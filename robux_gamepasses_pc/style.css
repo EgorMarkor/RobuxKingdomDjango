@@ -996,3 +996,11 @@
   font-family: "Wix Madefor Display", sans-serif;
   font-size: 1.6rem;
 }
+
+
+button, .button, a > div {
+  transition: transform 0.2s ease;
+}
+button:active, .button:active, a:active > div {
+  transform: scale(0.95);
+}

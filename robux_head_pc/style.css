@@ -3101,3 +3101,11 @@ a:hover {
   border-radius: 0.5rem;
   text-align: center;
 }
+
+
+button, .button, a > div {
+  transition: transform 0.2s ease;
+}
+button:active, .button:active, a:active > div {
+  transform: scale(0.95);
+}
