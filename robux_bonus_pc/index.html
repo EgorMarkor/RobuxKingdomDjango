@@ -347,20 +347,32 @@
                 <div class="div__frame-10000059162">
                   <div class="div__frame-1000005932">
                     {% with referrals=referrals %}
-                      {% for referral in referrals|slice":4" %}
-                        <img class="div__image" src="{{ referral.image_url }}" alt="{{ referral.username }}" />
-                      {% endfor %}
-                      {% if referrals|length > 4 %}
-                        <div class="div__frame-1000005933">
-                          {% with fifth=referrals|slice:"4:5" %}
-                            {% if fifth %}
-                              <img class="div__image2" src="{{ fifth.0.image_url }}" alt="" />
-                            {% endif %}
-                          {% endwith %}
-                          <div class="div__div20">+</div>
-                        </div>
-                      {% endif %}
-                    {% endwith %}
+  {# Показываем первые 4 элемента #}
+  {% for referral in referrals|slice:":4" %}
+    <img
+      class="div__image"
+      src="{{ referral.image_url }}"
+      alt="{{ referral.username }}"
+    />
+  {% endfor %}
+
+  {# Если элементов больше 4 — выводим пятый и “+” #}
+  {% if referrals|length > 4 %}
+    <div class="div__frame-1000005933">
+      {% with fifth=referrals|slice:"4:5" %}
+        {% if fifth %}
+          <img
+            class="div__image2"
+            src="{{ fifth.0.image_url }}"
+            alt="{{ fifth.0.username }}"
+          />
+        {% endif %}
+      {% endwith %}
+      <div class="div__div20">+</div>
+    </div>
+  {% endif %}
+{% endwith %}
+
                   </div>
                 </div>
                 <div class="div__frame-1000005931">
