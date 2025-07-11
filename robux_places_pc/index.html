@@ -53,7 +53,7 @@
         <div class="place__place3">
             Выбери Place, который будет использоваться для покупки
           </div>
-        <div class="place__button">
+        <a id="continue-button" class="place__button" href="#">
           <div class="place__list">
             <div class="place__item"></div>
             <div class="place__item2"></div>
@@ -65,12 +65,13 @@
             <div class="place__item8"></div>
           </div>
           <div class="place__heading-2">Продолжить</div>
-        </div>
+        </a>
         <div class="flex_container_places">
           {% if places %}
     {% for place in places %}
       {% with pid=place.id %}
-          <a class="place__frame-1000005982" href="{% url 'gamepass' %}?place_id={{ pid }}">
+          <a class="place__frame-1000005982 place-item" data-place-id="{{ pid }}" href="#">
+            <div class="place__checkmark"></div>
             <img class="place__image-78" src="http://rbxkingdom.com/robux_places_pc/image-780.png" />
             <div class="place__gefzyy-123-place">{{ place.name }}</div>
           </a>
@@ -214,5 +215,34 @@
     </div>
   </div>
   
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll(".place-item");
+  let selected = "{{ selected_place_id|default:'' }}";
+  function update() {
+    items.forEach(el => {
+      if(el.dataset.placeId === selected) {
+        el.classList.add("selected");
+      } else {
+        el.classList.remove("selected");
+      }
+    });
+    const btn = document.getElementById("continue-button");
+    if(selected) {
+      btn.href = "{% url 'gamepass' %}?place_id=" + selected;
+    } else {
+      btn.removeAttribute("href");
+    }
+  }
+  items.forEach(el => {
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+      selected = el.dataset.placeId;
+      update();
+    });
+  });
+  update();
+});
+</script>
 </body>
 </html>
