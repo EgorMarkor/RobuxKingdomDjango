@@ -37,6 +37,7 @@ class UserProfile(models.Model):
     reward_telegram = models.BooleanField(default=False)
     reward_reviews = models.BooleanField(default=False)
     reward_youtube = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата регистрации", null=True)
 
     def __str__(self) -> str:  # pragma: no cover - simple representation
         return self.username
