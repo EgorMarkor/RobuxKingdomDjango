@@ -476,3 +476,46 @@ def create_withdraw_request(request):
     profile.save(update_fields=["balance"])
     return redirect("bonus")
 
+
+def social_redirect(request, platform: str):
+    """Award 5 Robux once per social link visit and redirect."""
+    links = {
+        "vk": "https://vk.com/rbxkingdom",
+        "telegram": "https://t.me/rbxkingdom",
+        "reviews": "https://t.me/rbxkingdom_reviews",
+        "support": "https://t.me/rbxkingdom_support_bot",
+        "youtube": "https://youtube.com/@rbxkingdom",
+    }
+    url = links.get(platform)
+    if not url:
+        return redirect("bonus")
+
+
+    profile_id = request.session.get("profile_id")
+    if profile_id:
+        try:
+            profile = UserProfile.objects.get(pk=profile_id)
+            balance = int(profile.balance)
+        except (UserProfile.DoesNotExist, ValueError, TypeError):
+            profile = None
+            balance = 0
+
+        if profile:
+            field_map = {
+                "vk": "reward_vk",
+                "telegram": "reward_telegram",
+                "reviews": "reward_reviews",
+                "youtube": "reward_youtube",
+            }
+            reward_field = field_map.get(platform)
+            if reward_field and not getattr(profile, reward_field, False):
+                hist = int(profile.history_balance or 0)
+                profile.balance = str(balance + 5)
+                profile.history_balance = str(hist + 5)
+                setattr(profile, reward_field, True)
+                profile.save(
+                    update_fields=["balance", "history_balance", reward_field]
+                )
+
+    return redirect(url)
+
