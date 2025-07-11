@@ -383,16 +383,16 @@
                 <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
               </div>
             </div>
-            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger3" {% endif %}>
+            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
               <img class="div__group" src="robux_head_pc/group0.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
-            <div class="div__frame-48095929">
+            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
               <div class="div__frame-5">
                 <img class="div__coupon-svgrepo-com-1" src="robux_head_pc/coupon-svgrepo-com-10.svg" />
                 <div class="div__div5">Промокод</div>
               </div>
-            </div>
+            </a>
             <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
               {% if not profile %} data-fancybox id="triggger4" {% endif %}>
               <div class="div__frame-5">
@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="div__frame-480959322">
           <div class="div__frame-48095930">
             <div class="div__frame-48095926">
-              <div class="div__div3">Купить робуксы</div>
+              <a class="div__div3" href="http://rbxkingdom.com/">Купить робуксы</a>
               <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
                 <img class="div__glyph2" src="robux_head_pc/glyph1.svg" />
               </div>
@@ -945,12 +945,12 @@ document.addEventListener('DOMContentLoaded', () => {
               <img class="div__svg14" src="robux_head_pc/svg13.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
-            <div class="div__frame-48095929">
+            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
               <div class="div__frame-5">
                 <img class="div__coupon-svgrepo-com-12" src="robux_head_pc/coupon-svgrepo-com-11.svg" />
                 <div class="div__div5">Промокод</div>
               </div>
-            </div>
+            </a>
             <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
               {% if not profile %} data-fancybox id="triggger7" {% endif %}>>
               <div class="div__frame-5">
