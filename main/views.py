@@ -473,6 +473,7 @@ def create_order(request):
         account_id=profile.account_id,
         amount=Decimal(amount),
         robux_count=int(amount),
+        status=Order.STATUS_PROCESSING,
     )
     return redirect(pay_url)
 
@@ -488,6 +489,7 @@ def freekassa_notify(request):
         f"{settings.FREEKASSA_MERCHANT_ID}:{amount}:{settings.FREEKASSA_SECRET_2}:{order_id}".encode()
     ).hexdigest()
     if sign != expected:
+        Order.objects.filter(order_id=order_id).update(status=Order.STATUS_ERROR)
         return HttpResponse("wrong sign", status=400)
     try:
         order = Order.objects.get(order_id=order_id)
@@ -495,7 +497,8 @@ def freekassa_notify(request):
         return HttpResponse("order not found", status=404)
     paid = Decimal(amount)
     order.paid_amount = paid
-    order.save(update_fields=["paid_amount"])
+    order.status = Order.STATUS_COMPLETED
+    order.save(update_fields=["paid_amount", "status"])
     if order.user:
         user = order.user
         try:

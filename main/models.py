@@ -72,13 +72,25 @@ class Place(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="orders")
+    STATUS_PROCESSING = "processing"
+    STATUS_COMPLETED = "completed"
+    STATUS_ERROR = "error"
+    STATUS_CHOICES = [
+        (STATUS_PROCESSING, "В обработке"),
+        (STATUS_COMPLETED, "Выполнено"),
+        (STATUS_ERROR, "Ошибка"),
+    ]
+
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="orders"
+    )
     order_id = models.CharField(max_length=100, unique=True)
     account = models.CharField(max_length=1000)
     account_id = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     paid_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     robux_count = models.IntegerField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=STATUS_PROCESSING)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -87,6 +99,14 @@ class Order(models.Model):
 
     def __str__(self):  # pragma: no cover - representation
         return f"Order {self.order_id}"
+
+    def status_css_class(self) -> str:
+        mapping = {
+            self.STATUS_COMPLETED: "status-completed",
+            self.STATUS_PROCESSING: "status-processing",
+            self.STATUS_ERROR: "status-error",
+        }
+        return mapping.get(self.status, "")
 
 
 class WithdrawalRequest(models.Model):

@@ -124,7 +124,9 @@
                     <div class="div___152">
                       <span>
                         <span class="_152-span">Заказ #{{ order.order_id }} ·</span>
-                        <span class="_152-span2">{% if order.paid_amount %}Выполнено✔{% else %}Ожидает{% endif %}</span>
+                        <span class="{% if order.status == 'completed' %}status-completed{% elif order.status == 'error' %}status-error{% else %}status-processing{% endif %}">
+                          {{ order.get_status_display }}
+                        </span>
                       </span>
                     </div>
                   </div>
