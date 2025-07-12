@@ -59,18 +59,18 @@
     }
   </style>
    <style>
-    /* контейнер для всех тостов */
     #toast-container {
       position: fixed;
-      top: 5rem;
-      left: 5rem;
+      right: 5rem;
+      bottom: 5rem;
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      pointer-events: none; /* чтобы клики сквозь пустые места шли на фон */
+      pointer-events: none;
       z-index: 1000;
     }
-    /* сам тост */
+
+    /* общий стиль тоста */
     .toast {
       background: #ffffff;
       border-radius: 1rem;
@@ -79,32 +79,50 @@
       align-items: center;
       padding: 2.5rem 2.9rem 2.4rem 2.2rem;
       gap: 0.9rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      pointer-events: auto; /* чтобы тосты перехватывали клики */
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      pointer-events: auto;
       opacity: 0;
       transform: translateX(-20px);
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
+    /* когда нужно показать */
     .toast.show {
       opacity: 1;
       transform: translateX(0);
     }
+
+    /* текст по умолчанию — красный (ошибка) */
+    .toast.error .message {
+      color: #FF5151;
+    }
+
+    /* текст успеха — зелёный */
+    .toast.success .message {
+      color: #2AC790;
+    }
+
+    /* подкрашиваем путь SVG в нужный цвет (для success) */
+    .toast.success svg path {
+      fill: #2AC790 !important;
+      stroke: #2AC790 !important;
+    }
+
     .toast .message {
-      color: #ff5151;
       font-family: "Gilroy-Bold", sans-serif;
       font-size: 1.4rem;
       line-height: 1.409rem;
       font-weight: 700;
     }
-  </style>
+   </style>
   <title>Создание Game Pass для покупки || Robux Kingdom</title>
 </head>
 <body>
   <div id="toast-container"></div>
 
   <script>
-    // ваш SVG-иконка
-    const ICON_SVG = `
+    // красная иконка (ошибка)
+    const ICON_SVG_ERROR = `
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
            viewBox="0 0 28 28" fill="none">
         <path d="M14 0C11.2311 0 8.52431 0.821086 6.22202 2.35943C3.91973 3.89776
@@ -130,26 +148,42 @@
       </svg>
     `;
 
-    function showToast(message, duration = 4000) {
+    // чёрно-белая галочка, мы перекрасим её в CSS
+    const ICON_SVG_SUCCESS = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+           viewBox="0 0 16 16" fill="none">
+        <path d="M12.8604 3.89453C13.2244 3.53054 13.8147 3.53045 14.1787 3.89453C14.5426 4.25855 14.5427 4.84885 14.1787 5.21289L7.1543 12.2373C6.79055 12.6011 6.20002 12.6013 5.83594 12.2373L2.89453 9.2959C2.53067 8.93183 2.53051 8.34152 2.89453 7.97754C3.25852 7.61386 3.84888 7.61372 4.21289 7.97754L6.49512 10.2598L12.8604 3.89453Z"
+              fill="white" stroke="white" stroke-width="0.757089"/>
+      </svg>
+    `;
+
+    function showToast(message, type = 'error', duration = 4000) {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.innerHTML = ICON_SVG + `<div class="message">${message}</div>`;
+      toast.className = `toast ${type}`;
+      toast.innerHTML = (type === 'success' ? ICON_SVG_SUCCESS : ICON_SVG_ERROR)
+                      + `<div class="message">${message}</div>`;
 
       container.appendChild(toast);
-
-      // запустить анимацию «появления»
       requestAnimationFrame(() => toast.classList.add('show'));
 
-      // через duration скрыть и удалить
       setTimeout(() => {
         toast.classList.remove('show');
         toast.addEventListener('transitionend', () => toast.remove());
       }, duration);
     }
 
-    // для демо
-    window.showToast = showToast;
+    // Удобные обёртки
+    function showErrorToast(msg, dur) {
+      showToast(msg, 'error', dur);
+    }
+    function showSuccessToast(msg, dur) {
+      showToast(msg, 'success', dur);
+    }
+
+    // Для демонстрации в консоли
+    window.showErrorToast   = showErrorToast;
+    window.showSuccessToast = showSuccessToast;
   </script>
   <div class="game-pass">
     <div class="game-pass__frame-1000005835">
@@ -164,12 +198,12 @@
           </div>
           {% if regional_pricing_enabled %}
           <script>
-            showToast('Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова');
+            showErrorToast('Выключите Regional Pricing (уберите галочку) в настройках геймпасса и попробуйте снова');
           </script>
           {% endif %}
           {% if not gamepass_exists %}
           <script>
-            showToast('Геймпасс с ценой {{ expected_gamepass_price }} R$ не найден в выбранном плейсе');
+            showErrorToast('Не найден геймпасс с ценой {{ expected_gamepass_price }} R$, попробуйте ещё раз!');
           </script>
           {% endif %}
           <img class="game-pass__frame-1000002526" style="cursor: pointer;" onclick="window.history.back()" src="http://rbxkingdom.com/robux_gamepasses_pc/frame-10000025260.svg" />
@@ -229,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
       copyTextToClipboard(priceText)
         .then(() => {
           // любое дружелюбное уведомление
-          alert(`Скопировано: ${priceText}`);
+          showSuccessToast("Скопировано!");
         })
         .catch(err => {
           console.error('Ошибка копирования:', err);
