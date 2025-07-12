@@ -417,15 +417,50 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     </div>
-    <div class="game-pass__frame-1000005958">
+    <a id="account-button" class="game-pass__frame-1000005958 button" href="#">
       <img class="game-pass__image" src="{{ profile.image_url }}" />
       <div class="game-pass__frame-1000005915">
         <div class="game-pass__gefzyy-123">{{ profile.username }}</div>
         <div class="game-pass__div8">Перейти в профиль</div>
       </div>
       <img class="game-pass__vector10" src="http://rbxkingdom.com/robux_gamepasses_pc/vector9.svg" />
-    </div>
+    </a>
   </div>
+          <div id="account-menu" class="account-menu">
+            <a class="account-menu-item account-menu-item--stats" href="http://rbxkingdom.com/account/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/group0_2.svg" />
+              <div class="account-menu-text">Статистика аккаунта</div>
+            </a>
+            <a class="account-menu-item account-menu-item--purchases" href="http://rbxkingdom.com/buy/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10_2.svg" />
+              <div class="account-menu-text">Мои покупки</div>
+            </a>
+            <a class="account-menu-item account-menu-item--bonus" href="http://rbxkingdom.com/bonus/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/svg0_2.svg" />
+              <div class="account-menu-text">Бонусы</div>
+            </a>
+            <a class="account-menu-item account-menu-item--logout" href="http://rbxkingdom.com/logout/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/icon-left0_2.svg" />
+              <div class="account-menu-text">Выйти</div>
+            </a>
+          </div>
   
 </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accountBtn = document.getElementById('account-button');
+      const menu = document.getElementById('account-menu');
+
+      accountBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!accountBtn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </html>

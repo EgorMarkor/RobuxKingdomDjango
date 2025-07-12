@@ -40,6 +40,71 @@
        padding: 0;
    }
    </style>
+  <style>
+  .account-menu {
+    transition: .3s;
+    position: absolute;
+    left: 141.2rem;
+    overflow: hidden;
+    top: 12rem;
+    width: 23.3rem;
+    background-color: #2e313d;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 0;
+  }
+  #account-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  .account-menu-item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.9rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #798cb4;
+    font-family: "Inter-Medium", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.326rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .account-menu-item img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .account-menu-item--stats:hover {
+    background-color: #3FC28C;
+    color: #ffffff;
+  }
+  .account-menu-item--purchases:hover {
+    background-color: #CF6EFF;
+    color: #ffffff;
+  }
+  .account-menu-item--bonus:hover {
+    background-color: #F7A013;
+    color: #ffffff;
+  }
+  .account-menu-item--logout:hover {
+    background-color: #E56B6B;
+    color: #ffffff;
+  }
+  .account-menu-icon {
+    transition: filter 0.2s ease;
+  }
+  /* Белая иконка при ховере */
+  .account-menu-item:hover .account-menu-icon {
+    filter: brightness(0) invert(1);
+  }
+  </style>
   <title>Подтверждение вывода средств || Robux Kingdom</title>
 </head>
 <body>
@@ -260,15 +325,50 @@
         </div>
       </div>
     </div>
-    <div class="div__frame-1000005958">
+    <a id="account-button" class="div__frame-1000005958 button" href="#">
       <img class="div__image2" src="{{ profile.image_url }}" />
       <div class="div__frame-1000005915">
         <div class="div__gefzyy-123">{{ profile.username }}</div>
         <div class="div__div13">Перейти в профиль</div>
       </div>
       <img class="div__vector9" src="http://rbxkingdom.com/robux_buy_pc/vector8.svg" />
-    </div>
+    </a>
   </div>
+          <div id="account-menu" class="account-menu">
+            <a class="account-menu-item account-menu-item--stats" href="http://rbxkingdom.com/account/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/group0_2.svg" />
+              <div class="account-menu-text">Статистика аккаунта</div>
+            </a>
+            <a class="account-menu-item account-menu-item--purchases" href="http://rbxkingdom.com/buy/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10_2.svg" />
+              <div class="account-menu-text">Мои покупки</div>
+            </a>
+            <a class="account-menu-item account-menu-item--bonus" href="http://rbxkingdom.com/bonus/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/svg0_2.svg" />
+              <div class="account-menu-text">Бонусы</div>
+            </a>
+            <a class="account-menu-item account-menu-item--logout" href="http://rbxkingdom.com/logout/">
+              <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/icon-left0_2.svg" />
+              <div class="account-menu-text">Выйти</div>
+            </a>
+          </div>
   
 </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accountBtn = document.getElementById('account-button');
+      const menu = document.getElementById('account-menu');
+
+      accountBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!accountBtn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </html>
