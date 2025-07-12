@@ -1325,3 +1325,54 @@
 .status-error {
   color: #ff2828;
 }
+
+/* context menu for account button */
+.account-menu {
+  position: absolute;
+  right: 0;
+  top: 11rem;
+  width: 23.3rem;
+  background-color: #2e313d;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 0;
+}
+.account-menu.show {
+  display: flex;
+}
+.account-menu-item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #798cb4;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.326rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.account-menu-item img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.account-menu-item--stats:hover {
+  background-color: #3FC28C;
+  color: #ffffff;
+}
+.account-menu-item--purchases:hover {
+  background-color: #CF6EFF;
+  color: #ffffff;
+}
+.account-menu-item--bonus:hover {
+  background-color: #F7A013;
+  color: #ffffff;
+}
+.account-menu-item--logout:hover {
+  background-color: #E56B6B;
+  color: #ffffff;
+}
