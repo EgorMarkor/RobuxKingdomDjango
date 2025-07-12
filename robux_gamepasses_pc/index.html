@@ -138,7 +138,7 @@
   <div class="game-pass">
     <div class="game-pass__frame-1000005835">
       <div class="game-pass__frame-1000005844">
-        <a class="game-pass__button" href="http://rbxkingdom.com/buy/">
+        <a class="game-pass__button{% if not allow_proceed %} disabled{% endif %}" {% if allow_proceed %}href="http://rbxkingdom.com/buy/"{% else %}href="#"{% endif %}>
           <div class="game-pass__heading-2">Я создал Game Pass</div>
         </a>
         <div class="game-pass__frame-1000005980">

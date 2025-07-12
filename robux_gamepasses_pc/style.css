@@ -37,6 +37,10 @@
   left: 7.5rem;
   top: 56rem;
 }
+.game-pass__button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .game-pass__heading-2 {
   color: #ffffff;
   text-align: center;
