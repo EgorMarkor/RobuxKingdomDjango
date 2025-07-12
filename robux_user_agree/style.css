@@ -1,0 +1,782 @@
+.div,
+.div * {
+  box-sizing: border-box;
+}
+.div {
+  height: 177rem;
+  position: relative;
+  overflow: hidden;
+}
+.div__frame-1000005835 {
+  background: #f1f5fa;
+  width: 192.4rem;
+  height: 150rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+}
+.div__frame-1000005844 {
+  background: #ffffff;
+  border-radius: 3.8850000000000002rem;
+  width: 141.5rem;
+  height: 116rem;
+  position: absolute;
+  left: 24.7rem;
+  top: 15.9rem;
+  overflow: hidden;
+}
+.div__frame-1000005980 {
+  gap: 1.5rem;
+  align-items: center;
+  display: flex;
+  width: 70rem;
+  height: 7.7rem;
+  position: absolute;
+  left: 6rem;
+  top: 5.8rem;
+}
+.div__div2 {
+  color: #1f1f31;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 3rem;
+  line-height: 2.981rem;
+  font-weight: 700;
+  /* position: absolute; */
+  /* left: 5.7rem; */
+  /* top: 0.5rem; */
+  width: 49.9rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-1000002526 {
+  border-radius: 161.31400000000002rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.613rem;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  /* position: absolute; */
+  /* left: 0rem; */
+  /* top: 0rem; */
+  overflow: visible;
+}
+.div___1-2-3-4-4-1-4-2-4-3-4-4-4-5-4-6-4-7-5-6-7-8-9 {
+  color: #353b47;
+  text-align: justified;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 2rem;
+  line-height: 2.981rem;
+  font-weight: 500;
+  position: absolute;
+  left: 6rem;
+  top: 15.8rem;
+  width: 53rem;
+  display: flex;
+  align-items: center;
+}
+.div___1-https-rbxkingdom-gg-https-rbxkingdom-gg-https-rbxkingdom-gg-2-2-1-2-2-https-rbxkingdom-gg-3-3-1-3-2-https-rbxkingdom-gg-3-3-3-4-3-5-3-6-https-rbxkingdom-gg-https-rbxkingdom-gg-rbxkingdom-gg-4-4-1-4-2-4-3-4-4-4-5-4-6-4-7-5-5-1-5-2-5-3-5-4-6-6-1-6-2-6-3-6-4-6-5-6-6-6-7-6-8-6-9-6-10-6-11-6-12-6-13-18-6-14-6-15-6-16-6-17-6-17-1-visa-mastercard-maestro-1-2-3-4-5-cvc-2-cvv-2-6-17-2-3-d-secure-7-8-8-1-8-2-8-3-8-4-9-email-rbxkingdom-gg-gmail-com-beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica {
+  color: #565f72;
+  text-align: justified;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 2rem;
+  line-height: 2.981rem;
+  font-weight: 500;
+  position: absolute;
+  left: 62.5rem;
+  top: 14.8rem;
+  width: 69.2rem;
+  height: 100rem;
+  overflow-y: auto;
+  /* display: flex; */
+  /* align-items: center; */
+}
+.div___2-1 {
+  width: 44.8rem;
+  height: 44.8rem;
+  position: absolute;
+  left: 8.3rem;
+  top: 66.8rem;
+  object-fit: cover;
+}
+.div__frame-1000002205 {
+  background: #070913;
+  border-radius: 3rem 3rem 0rem 0rem;
+  width: 192.4rem;
+  height: 41.9rem;
+  position: absolute;
+  left: 0rem;
+  top: 135.1rem;
+  overflow: hidden;
+}
+.div__footer {
+  width: 97.83%;
+  height: 28.101999999999997rem;
+  position: absolute;
+  right: 1.08%;
+  left: 1.09%;
+  bottom: -0.002rem;
+}
+.div__frame-1000005910 {
+  width: 100.587rem;
+  height: 13.921000000000001rem;
+  position: absolute;
+  left: 62.2rem;
+  top: -3.6rem;
+}
+.div__frame-1000005875 {
+  display: flex;
+  flex-direction: row;
+  gap: 14.8rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 6.9rem;
+  top: 0rem;
+}
+.div__frame-1000005873 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 20.8rem;
+  position: relative;
+}
+.div__div3 {
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.622360610961914rem;
+  line-height: 1.714rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  height: 2.025rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-1000006053 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__div4 {
+  color: rgba(155, 163, 180, 0.8);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: relative;
+  width: 20.9rem;
+}
+.div__frame-10000058752 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 20.8rem;
+  position: relative;
+}
+.div__you-tube {
+  color: rgba(155, 163, 180, 0.8);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: relative;
+  width: 20.9rem;
+}
+.div__vk {
+  color: rgba(155, 163, 180, 0.8);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: relative;
+  width: 20.9rem;
+}
+.div__telegram {
+  color: rgba(155, 163, 180, 0.8);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: relative;
+  width: 20.9rem;
+}
+.div__frame-1000005850 {
+  width: 35.987rem;
+  height: 13.921000000000001rem;
+  position: absolute;
+  left: 64.6rem;
+  top: 0rem;
+}
+.div__background {
+  background: #89de5d;
+  border-radius: 0.44400000000000006rem;
+  width: 0.8880000000000001rem;
+  height: 0.8880000000000001rem;
+  position: absolute;
+  right: 18.358rem;
+  top: 12.554rem;
+}
+.div__div5 {
+  color: rgba(155, 163, 180, 0.7);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.4381250381469726rem;
+  line-height: 1.556rem;
+  font-weight: 600;
+  position: absolute;
+  left: 18.961000000000002rem;
+  top: 12.020999999999999rem;
+  width: 17.026rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-1000006041 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.494rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 16rem;
+  position: absolute;
+  left: 20rem;
+  top: 0rem;
+}
+.div__svg {
+  flex-shrink: 0;
+  width: 6.1259999999999994rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__svg2 {
+  flex-shrink: 0;
+  width: 6.817rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+}
+.div__vector {
+  width: 99.65%;
+  height: 99.63%;
+  position: absolute;
+  right: -0.02%;
+  left: 0.37%;
+  bottom: 0.18%;
+  top: 0.19%;
+  overflow: visible;
+}
+.div__frame-1000006010 {
+  width: 71.04%;
+  height: 37.32%;
+  position: absolute;
+  right: 12%;
+  left: 16.96%;
+  bottom: 29.66%;
+  top: 33.02%;
+}
+.div__page-1 {
+  height: 1.3rem;
+  position: absolute;
+  left: -0.001rem;
+  top: 0rem;
+  overflow: visible;
+}
+.div__svg3 {
+  flex-shrink: 0;
+  width: 6.817rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__svg4 {
+  flex-shrink: 0;
+  width: 7.659000000000001rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__rbxkingdom-gg-2024 {
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.2157031059265138rem;
+  line-height: 1.778rem;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 20.993000000000002rem;
+  width: 101.401rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div__subsections {
+  width: 38.4rem;
+  height: 17.387999999999998rem;
+  position: absolute;
+  left: 23.7rem;
+  top: 9.5rem;
+}
+.div__frame-1000005876 {
+  width: 31.129rem;
+  height: 17.39rem;
+  position: absolute;
+  left: 1.3rem;
+  top: -1.1rem;
+}
+.div__beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica-rbxkingdom-gmail-com {
+  color: rgba(155, 163, 180, 0.6);
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.3556008338928223rem;
+  line-height: 2.086rem;
+  font-weight: 400;
+  position: absolute;
+  left: 1.3rem;
+  top: 7.2rem;
+  width: 33.6rem;
+}
+.div__logo {
+  padding: 1.043rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.834rem;
+  align-items: center;
+  justify-content: flex-start;
+  height: 5.3rem;
+  position: absolute;
+  left: 0rem;
+  top: 0.521rem;
+}
+.div__frame-1000006060 {
+  flex-shrink: 0;
+  width: 3.8rem;
+  height: 4.4rem;
+  position: relative;
+}
+.div__frame-1000005974 {
+  width: 3.723rem;
+  height: 3.475rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  overflow: visible;
+}
+.div__robux-kingdom {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 2.919755744934082rem;
+  font-weight: 700;
+  position: relative;
+}
+.div__frame-54 {
+  background: #f1f5fa;
+  width: 191.9rem;
+  height: 14.2rem;
+  position: absolute;
+  left: 0.1rem;
+  top: 0rem;
+  overflow: hidden;
+}
+.div__frame-1000002206 {
+  background: #0a0d1b;
+  border-radius: 3rem;
+  width: 142.4rem;
+  height: 8.474rem;
+  position: absolute;
+  left: 24.3rem;
+  top: 2.9rem;
+  overflow: hidden;
+}
+.div__frame-48095931 {
+  width: 145.967rem;
+  height: 5.338rem;
+  position: absolute;
+  left: 4.816rem;
+  top: 1.575rem;
+}
+.div__frame-48095932 {
+  padding: 0.9259999999999999rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9259999999999999rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 73.539rem;
+  position: absolute;
+  left: 22.9rem;
+  top: 0.6rem;
+}
+.div__frame-48095930 {
+  border-radius: 9.948rem;
+  padding: 1.575rem 3.9829999999999997rem 1.575rem 3.9829999999999997rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(0.199rem);
+}
+.div__frame-48095926 {
+  flex-shrink: 0;
+  width: 16rem;
+  height: 2.2rem;
+  position: relative;
+}
+.div__div6 {
+  color: #798cb4;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.8489999999999998rem;
+  font-weight: 500;
+  position: absolute;
+  left: 3.191rem;
+  top: -0.049rem;
+  width: 12.8rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__home-yg-39-z-0-c-5-js-4-n-1 {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: -0.009rem;
+  top: 0.099rem;
+  overflow: hidden;
+}
+.div__glyph {
+  width: 83.33%;
+  height: 91.66%;
+  position: absolute;
+  right: 8.33%;
+  left: 8.34%;
+  bottom: 4.17%;
+  top: 4.18%;
+  overflow: visible;
+}
+.div__frame-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4060000000000001rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__group {
+  flex-shrink: 0;
+  width: 1.8510000000000002rem;
+  height: 1.799rem;
+  position: relative;
+  overflow: visible;
+}
+.div__div7 {
+  color: #798cb4;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.8489999999999998rem;
+  font-weight: 500;
+  position: relative;
+  width: 6.2rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-48095929 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4060000000000001rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__coupon-svgrepo-com-1 {
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-5 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.228rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__div8 {
+  color: #798cb4;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4899999999999998rem;
+  font-weight: 500;
+  position: relative;
+  width: 8.4rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-480959302 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4060000000000001rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__shopping-cart-svgrepo-com-1 {
+  flex-shrink: 0;
+  width: 1.9989999999999999rem;
+  height: 1.9989999999999999rem;
+  position: relative;
+  overflow: visible;
+}
+.div__div9 {
+  color: #7a8cb4;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4899999999999998rem;
+  font-weight: 600;
+  position: relative;
+  width: 10.5rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__group-197-1 {
+  width: 15.716rem;
+  height: 4.2rem;
+  position: absolute;
+  left: 6.4rem;
+  top: 2.2rem;
+  overflow: hidden;
+}
+.div__frame-1000005973 {
+  width: 7.468000000000001rem;
+  height: 1.436rem;
+  position: absolute;
+  left: 5.497rem;
+  top: 0.5rem;
+  overflow: visible;
+}
+.div__vector2 {
+  width: 8.12%;
+  height: 33.24%;
+  position: absolute;
+  right: 56.9%;
+  left: 34.97%;
+  bottom: 4.35%;
+  top: 62.41%;
+  overflow: visible;
+}
+.div__vector3 {
+  width: 1.65%;
+  height: 33.24%;
+  position: absolute;
+  right: 54%;
+  left: 44.35%;
+  bottom: 4.35%;
+  top: 62.41%;
+  overflow: visible;
+}
+.div__vector4 {
+  width: 7.89%;
+  height: 33.24%;
+  position: absolute;
+  right: 43.58%;
+  left: 48.53%;
+  bottom: 4.35%;
+  top: 62.41%;
+  overflow: visible;
+}
+.div__vector5 {
+  width: 8.38%;
+  height: 34.19%;
+  position: absolute;
+  right: 33.33%;
+  left: 58.29%;
+  bottom: 3.87%;
+  top: 61.94%;
+  overflow: visible;
+}
+.div__vector6 {
+  width: 8.73%;
+  height: 33.24%;
+  position: absolute;
+  right: 22.41%;
+  left: 68.86%;
+  bottom: 4.35%;
+  top: 62.41%;
+  overflow: visible;
+}
+.div__vector7 {
+  width: 9.57%;
+  height: 34.19%;
+  position: absolute;
+  right: 11.6%;
+  left: 78.83%;
+  bottom: 3.87%;
+  top: 61.94%;
+  overflow: visible;
+}
+.div__vector8 {
+  width: 9.72%;
+  height: 33.24%;
+  position: absolute;
+  right: 0%;
+  left: 90.28%;
+  bottom: 4.35%;
+  top: 62.41%;
+  overflow: visible;
+}
+.div__frame-10000059742 {
+  width: 4.496rem;
+  height: 4.197rem;
+  position: absolute;
+  left: 0rem;
+  top: -0.2rem;
+  overflow: visible;
+}
+.div__frame-1000006215 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  width: 12.3rem;
+  height: 3.1rem;
+  position: absolute;
+  left: 99.7rem;
+  top: 2.7rem;
+}
+.div__frame-1000005905-variant-3 {
+  border-radius: 12.4rem;
+  flex-shrink: 0;
+  width: 3.1rem;
+  height: 3.1rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-1000005907-variant-2 {
+  border-radius: 12.4rem;
+  flex-shrink: 0;
+  width: 3.1rem;
+  height: 3.1rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-1000005906-variant-1 {
+  border-radius: 12.4rem;
+  flex-shrink: 0;
+  width: 3.1rem;
+  height: 3.1rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-1000005958 {
+  width: 19.9rem;
+  height: 5.6rem;
+  position: absolute;
+  left: 141.2rem;
+  top: 4.5rem;
+}
+.div__image {
+  border-radius: 50%;
+  width: 5.6rem;
+  height: 5.6rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  object-fit: cover;
+}
+.div__frame-1000005915 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 13.4rem;
+  position: absolute;
+  left: 6.5rem;
+  top: 0.7rem;
+}
+.div__gefzyy-123 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.988rem;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__div10 {
+  color: #80889a;
+  text-align: left;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.356rem;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__vector9 {
+  width: 0.708rem;
+  height: 1.423rem;
+  position: absolute;
+  left: 19.2rem;
+  top: 1.5rem;
+  transform: translate(-0.047rem, -0.047rem);
+  overflow: visible;
+}

@@ -32,7 +32,7 @@ urlpatterns = [
     path('pay/', create_order, name='create_order'),
     path('freekassa/notify/', freekassa_notify, name='freekassa_notify'),
     path('bonus/social/<str:platform>/', social_redirect, name='social_redirect'),
-    path('politika-konfidencialnosti', PolitConf, name='politconf'),
-    path('politika-vozvrata-sredstv', MoneyBack, name='moneyback'),
-    path('polzovatelskoe-soglashenie', UserSogl, name='usersogl'),
+    path('politika-konfidencialnosti/', PolitConf.as_view(), name='politconf'),
+    path('politika-vozvrata-sredstv/', MoneyBack.as_view(), name='moneyback'),
+    path('polzovatelskoe-soglashenie/', UserSogl.as_view(), name='usersogl'),
 ]

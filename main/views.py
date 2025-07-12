@@ -105,7 +105,7 @@ class HomeView(TemplateView):
 
 
 class PolitConf(TemplateView):
-    template_name = "robux_head_pc/index.html"
+    template_name = "robux_politconf_pc/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -115,12 +115,11 @@ class PolitConf(TemplateView):
                 context["profile"] = UserProfile.objects.get(pk=profile_id)
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
-        context["selected_amount"] = self.request.session.get("selected_amount")
         return context
     
     
 class MoneyBack(TemplateView):
-    template_name = "robux_head_pc/index.html"
+    template_name = "robux_back_money_pc/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -135,7 +134,7 @@ class MoneyBack(TemplateView):
 
 
 class UserSogl(TemplateView):
-    template_name = "robux_head_pc/index.html"
+    template_name = "robux_user_agree/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
