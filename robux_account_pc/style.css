@@ -1328,20 +1328,28 @@
 
 /* context menu for account button */
 .account-menu {
+  transition: .3s;
   position: absolute;
-  right: 0;
-  top: 11rem;
+  left: 141.2rem;
+  overflow: hidden;
+  top: 12rem;
   width: 23.3rem;
   background-color: #2e313d;
   border-radius: 10px;
-  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   flex-direction: column;
   z-index: 1000;
   padding: 0;
 }
-.account-menu.show {
-  display: flex;
+#account-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
+
 .account-menu-item {
   display: flex;
   flex-direction: row;
@@ -1375,4 +1383,13 @@
 .account-menu-item--logout:hover {
   background-color: #E56B6B;
   color: #ffffff;
+}
+
+.account-menu-icon {
+  transition: filter 0.2s ease;
+}
+
+/* Белая иконка при ховере */
+.account-menu-item:hover .account-menu-icon {
+  filter: brightness(0) invert(1);
 }
