@@ -289,6 +289,10 @@ class GamePass(TemplateView):
         else:
             context["regional_pricing_enabled"] = False
 
+        context["allow_proceed"] = (
+            context["gamepass_exists"] and not context["regional_pricing_enabled"]
+        )
+
         return context
     
 class CheckPlace(TemplateView):
@@ -353,7 +357,24 @@ class Buy(TemplateView):
     template_name = "robux_buy_pc/index.html"
 
     def get(self, request, *args, **kwargs):
-        # place selection happens on gamepass page; nothing to store here
+        place_id = request.session.get("selected_place_id")
+        amount = request.session.get("selected_amount")
+        gamepass_id = request.session.get("selected_gamepass_id")
+
+        try:
+            amount_int = int(amount) if amount else None
+        except (TypeError, ValueError):
+            amount_int = None
+
+        if (
+            not place_id
+            or amount_int is None
+            or not gamepass_exists_for_price(place_id, amount_int)
+            or not gamepass_id
+            or check_regional_pricing(gamepass_id)
+        ):
+            return redirect("gamepass")
+
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
