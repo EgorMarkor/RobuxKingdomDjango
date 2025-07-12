@@ -13,6 +13,9 @@ from .views import (
     create_order,
     freekassa_notify,
     social_redirect,
+    PolitConf,
+    MoneyBack,
+    UserSogl
 )
 
 urlpatterns = [
@@ -29,4 +32,7 @@ urlpatterns = [
     path('pay/', create_order, name='create_order'),
     path('freekassa/notify/', freekassa_notify, name='freekassa_notify'),
     path('bonus/social/<str:platform>/', social_redirect, name='social_redirect'),
+    path('politika-konfidencialnosti', PolitConf, name='politconf'),
+    path('politika-vozvrata-sredstv', MoneyBack, name='moneyback'),
+    path('polzovatelskoe-soglashenie', UserSogl, name='usersogl'),
 ]

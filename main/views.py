@@ -104,6 +104,52 @@ class HomeView(TemplateView):
         return context
 
 
+class PolitConf(TemplateView):
+    template_name = "robux_head_pc/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+        if profile_id:
+            try:
+                context["profile"] = UserProfile.objects.get(pk=profile_id)
+            except UserProfile.DoesNotExist:  # pragma: no cover - edge case
+                self.request.session.pop("profile_id", None)
+        context["selected_amount"] = self.request.session.get("selected_amount")
+        return context
+    
+    
+class MoneyBack(TemplateView):
+    template_name = "robux_head_pc/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+        if profile_id:
+            try:
+                context["profile"] = UserProfile.objects.get(pk=profile_id)
+            except UserProfile.DoesNotExist:  # pragma: no cover - edge case
+                self.request.session.pop("profile_id", None)
+        context["selected_amount"] = self.request.session.get("selected_amount")
+        return context
+
+
+class UserSogl(TemplateView):
+    template_name = "robux_head_pc/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile_id = self.request.session.get("profile_id")
+        if profile_id:
+            try:
+                context["profile"] = UserProfile.objects.get(pk=profile_id)
+            except UserProfile.DoesNotExist:  # pragma: no cover - edge case
+                self.request.session.pop("profile_id", None)
+        context["selected_amount"] = self.request.session.get("selected_amount")
+        return context
+
+
+
 class BonusView(TemplateView):
     template_name = "robux_bonus_pc/index.html"
 
