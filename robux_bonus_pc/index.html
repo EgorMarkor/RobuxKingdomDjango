@@ -218,7 +218,7 @@
           </div>
           <div class="div__frame-1000005967">
             <a href="{% url 'social_redirect' 'reviews' %}" target="_blank">
-            <div class="div__frame-1000005847">
+            <div class="div__frame-1000005847 {% if profile.reward_reviews %}task-completed{% endif %}">
               <div class="div__frame-10000059142">
                 <div class="div__div12">
                   <span>
@@ -251,7 +251,7 @@
             </div>
             </a>
             <a href="{% url 'social_redirect' 'telegram' %}" target="_blank">
-            <div class="div__frame-1000005844">
+            <div class="div__frame-1000005844 {% if profile.reward_telegram %}task-completed{% endif %}">
               <img
                 class="div__icons-8-telegram-750-1"
                 src="http://rbxkingdom.com/robux_bonus_pc/icons-8-telegram-750-10.png"
@@ -275,7 +275,7 @@
             </div>
             </a>
             <a href="{% url 'social_redirect' 'youtube' %}" target="_blank">
-            <div class="div__frame-1000005846">
+            <div class="div__frame-1000005846 {% if profile.reward_youtube %}task-completed{% endif %}">
               <div class="div__frame-10000059142">
                 <div class="div__you-tube">Подпишись на наш YouTube канал</div>
                 <div class="div__div15">
@@ -299,7 +299,7 @@
             </div>
             </a>
             <a href="{% url 'social_redirect' 'vk' %}" target="_blank">
-            <div class="div__frame-1000005845">
+            <div class="div__frame-1000005845 {% if profile.reward_vk %}task-completed{% endif %}">
               <div class="div__frame-10000059143">
                 <div class="div__div16">Подпишись на нашу Группу ВК</div>
                 <div class="div__div17">
