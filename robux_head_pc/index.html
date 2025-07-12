@@ -19,6 +19,8 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
 />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+
   <style>
     * {
       font-family: "Wix Madefor Display", sans-serif !important; 
@@ -387,7 +389,7 @@
               <img class="div__group" src="robux_head_pc/group0.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
-            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
+            <a class="div__frame-48095929" href="" data-fancybox id="triggger9">
               <div class="div__frame-5">
                 <img class="div__coupon-svgrepo-com-1" src="robux_head_pc/coupon-svgrepo-com-10.svg" />
                 <div class="div__div5">Промокод</div>
@@ -434,11 +436,11 @@
                     <div class="div__item7"></div>
                     <div class="div__item8"></div>
                   </div>
-                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger5" {% endif %}>Купить робуксы</a>
+                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox {% endif %}>Купить робуксы</a>
                 </div>
               </div>
               <div class="div__button2">
-                <div class="div__div7">Ввести промокод</div>
+                <a class="div__div7" id="triggger8" href="#input_promo" data-fancybox>Ввести промокод</a>
                 <img class="div__svg" src="robux_head_pc/svg0.svg" />
               </div>
               <div class="div__frame-1000006016">
@@ -528,8 +530,8 @@
               </div>
             </div>
             <div class="div__frame-1000005850">
-              <div class="div__background6"></div>
-              <div class="div__div11">Все системы в порядке</div>
+              <div class="div__background6" style="right: 14rem;"></div>
+              <div class="div__div11" style="top: 12.1rem; left: 23rem;">Все системы в порядке</div>
               <div class="div__frame-1000006041">
                 <img class="div__svg3" src="robux_head_pc/svg2.svg" />
                 <div class="div__svg4">
@@ -579,11 +581,8 @@
               <div class="div__frame-1000002215">
                 <div class="div__frame-48095973"></div>
                 <div class="div__frame-1000005860">
-                  <div class="div__frame-1000005859">
-                    <div class="div__ellipse-6"></div>
-                    <img class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2"
-                      src="robux_head_pc/_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-20.png" />
-                  </div>
+                  <img class="div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2"
+                      src="robux_head_pc/plashka.png" />
                 </div>
               </div>
             </div>
@@ -609,6 +608,65 @@
               <div class="div__frame-1000005857">
                 <div class="div__frame-1000005863">
                   <div class="div__container3">
+                    <div class="div__background7">
+                      <div class="div___803-r">803 R$</div>
+                      <div class="div__gar-28">gar...28</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter0.png" />
+                      </div>
+                    </div>
+                    <div class="div__background7">
+                      <div class="div___406-r">406 R$</div>
+                      <div class="div___021-20">021...20</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter1.png" />
+                      </div>
+                    </div>
+                    <div class="div__background7">
+                      <div class="div___110-r">110 R$</div>
+                      <div class="div__tac-og">TAC...Og</div>
+                      <div class="div__background9">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter2.png" />
+                      </div>
+                    </div>
+                    <div class="div__background7">
+                      <div class="div___100-r">100 R$</div>
+                      <div class="div__bac-07">bac...07</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter3.png" />
+                      </div>
+                    </div>
+                    <div class="div__background7">
+                      <div class="div___1008-r">1008 R$</div>
+                      <div class="div__msv-a-s">Msv...aS</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter4.png" />
+                      </div>
+                    </div>
+                    <div class="div__background7">
+                      <div class="div___100">100</div>
+                      <div class="div__bac-072">bac...07</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter5.png" />
+                      </div>
+                    </div>
+                    <div class="div__background10">
+                      <div class="div___1008">1008</div>
+                      <div class="div__msv-a-s2">Msv...aS</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter6.png" />
+                      </div>
+                    </div>
+                    <div class="div__background10">
+                      <div class="div___1008">1008</div>
+                      <div class="div__svg9">
+                        <img class="div__clip-path-group3" src="robux_head_pc/clip-path-group2.svg" />
+                      </div>
+                      <div class="div__msv-a-s2">Msv...aS</div>
+                      <div class="div__background8">
+                        <img class="div__no-filter" src="robux_head_pc/no-filter7.png" />
+                      </div>
+                    </div>
                     <div class="div__background7">
                       <div class="div___803-r">803 R$</div>
                       <div class="div__gar-28">gar...28</div>
@@ -840,6 +898,25 @@
   padding: 0.8rem 1.5rem;
 }
 
+.div___1000 {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+
+.div__slider {
+  transition: box-shadow 0.25s ease-out;
+}
+
+/* когда ховер на input, применяем тень к соседнему .div__slider */
+.range-overlay:hover + .div__slider {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 0 0 6px rgba(138, 168, 234, 0.5);
+}
+
 </style>
 <script>
   // дожидаемся, когда DOM прогрузится
@@ -941,11 +1018,11 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
             <a class="div__frame-3 button" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}"
-              {% if not profile %} data-fancybox id="triggger6" {% endif %}>
+              {% if not profile %} data-fancybox {% endif %}>
               <img class="div__svg14" src="robux_head_pc/svg13.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
-            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
+            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox {% endif %}>
               <div class="div__frame-5">
                 <img class="div__coupon-svgrepo-com-12" src="robux_head_pc/coupon-svgrepo-com-11.svg" />
                 <div class="div__div5">Промокод</div>
@@ -1029,12 +1106,45 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 
+  <div class="promo-container" id="input_promo">
+    <div class="promo-frame-graphic">
+      <img class="telegram-icon" src="robux_head_pc/icons-8-telegram-750-10.png" alt="Telegram Icon" />
+    </div>
+    <div class="promo-frame-content">
+      <div class="promo-text-block">
+        <div class="promo-description">
+          Вступайте в наш Telegram канал, где мы регулярно проводим раздачи
+          промокодов на бесплатные робуксы!
+        </div>
+        <div class="promo-subheading">Нет промокода?</div>
+      </div>
+      <div class="telegram-button">
+        <div class="telegram-button-text">Telegram канал</div>
+        <img class="telegram-button-icon" src="robux_head_pc/vector0_2.svg" alt="Arrow Icon" />
+      </div>
+    </div>
+    <div class="activate-button">
+      <div class="activate-button-text">Активировать</div>
+    </div>
+    <div class="promo-heading">Промокод</div>
+    <div class="promo-input-frame">
+      <div class="promo-input-placeholder">Введите промокод</div>
+    </div>
+    <div class="error-icon-frame">
+      <img class="error-icon" src="robux_head_pc/error-svgrepo-com-10.svg" alt="Error Icon" />
+    </div>
+  </div>
+
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
 <script>
+  document.getElementById("triggger8").addEventListener("click", () => {
+    Fancybox.show([{ src: "#input_promo", type: "inline" }]);
+  });
+
   document.getElementById("triggger").addEventListener("click", () => {
     Fancybox.show([{ src: "#auth", type: "inline" }]);
   });
@@ -1043,15 +1153,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Fancybox.show([{ src: "#auth", type: "inline" }]);
   });
 
-  document.getElementById("triggger3").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
   document.getElementById("triggger4").addEventListener("click", () => {
     Fancybox.show([{ src: "#auth", type: "inline" }]);
   });
 
-  document.getElementById("triggger5").addEventListener("click", () => {
+  document.getElementById("buy-button").addEventListener("click", () => {
     Fancybox.show([{ src: "#auth", type: "inline" }]);
   });
 
@@ -1062,6 +1168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("triggger7").addEventListener("click", () => {
     Fancybox.show([{ src: "#auth", type: "inline" }]);
   });
+
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -1126,18 +1233,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var slider = tns({
-      container: '.div__container3',   // ваш список элементов
-      items: 5,                        // сколько видно за раз (можете менять)
-      slideBy: 'page',                 // перелистывать «экранами»
-      mouseDrag: true,                 // можно тянуть мышкой/тачем
-      swipeAngle: false,               // чтобы перетаскивало ровно по X
-      gutter: 10,                      // расстояние между слайдами (px)
-      controls: true,                  // стрелки «вперёд/назад»
-      nav: false                       // отключаем точечную навигацию
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = tns({
+      container: '.div__container3',
+      items: 6,           // 4 карточки в строке
+      gutter: 16,         // отступ между ними (px)
+      slideBy: 4,         // листаем сразу по 4
+      mouseDrag: true,    // тащить мышью/тапом
+      controls: false,     // стрелки «‹ ›»
+      nav: false,         // точки-навигация отключили
+      loop: false,        // без зацикливания
+      speed: 400,         // скорость анимации (мс)
+      edgePadding: 0      // без внутреннего отступа у краёв
     });
   });
 </script>
+
+
 
 </html>

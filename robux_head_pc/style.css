@@ -1332,6 +1332,7 @@
   line-height: 1.556rem;
   font-weight: 600;
   position: absolute;
+  top: 11.9rem;
   left: 18.961000000000002rem;
   top: 12.020999999999999rem;
   width: 17.026rem;
@@ -1579,11 +1580,11 @@
   transform: rotate(-0.23deg) scale(1, 1);
 }
 .div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2 {
-  width: 84.474rem;
-  height: 49.122rem;
+  width: 100%;
+  height: 97%;
   position: absolute;
   left: -2.6100000000000003rem;
-  top: -2.5420000000000003rem;
+  top: 0.46rem;
   object-fit: cover;
 }
 .div___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-22 {
@@ -3101,3 +3102,198 @@ a:hover {
   border-radius: 0.5rem;
   text-align: center;
 }
+*, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    menu, ol, ul { list-style: none; }
+
+    /* Container */
+    .promo-container {
+      width: 56rem;
+      background: #0d1222 !important;
+      border-radius: 2.637rem !important;
+      height: 66.451rem !important;
+      display: none;
+      box-shadow: 0 0.435rem 1.741rem rgba(0, 0, 0, 0.16) !important;
+      overflow: hidden !important;
+    }
+
+    /* Left frame with Telegram graphic */
+    .promo-frame-graphic {
+      width: 41.935rem;
+      height: 20.219rem;
+      position: absolute;
+      left: 6.153rem;
+      top: 48.344rem;
+    }
+    .telegram-icon {
+      width: 25.842rem;
+      height: 29.422rem;
+      position: absolute;
+      left: 33.05rem;
+      top: -13.888rem;
+      object-fit: cover;
+    }
+
+    /* Content frame */
+    .promo-frame-content {
+      width: 38.851rem;
+      height: 26.721rem;
+      position: absolute;
+      left: 4.922rem;
+      top: 34.983rem;
+    }
+    .promo-text-block {
+      width: 38.851rem;
+      height: 26.721rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .promo-description {
+      color: #798cb4;
+      text-align: left;
+      font-family: "PlusJakartaSans-Medium", sans-serif;
+      font-size: 2.11rem;
+      line-height: 150%;
+      font-weight: 500;
+      position: absolute;
+      left: 0;
+      top: 5.737rem;
+      width: 35.511rem;
+      height: 12.482rem;
+    }
+    .promo-subheading {
+      color: #fff;
+      text-align: center;
+      font-family: "RobotoFlex-Bold", sans-serif;
+      font-size: 2.461rem;
+      line-height: 4.294rem;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 21.041rem;
+      height: 4.395rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Telegram channel button */
+    .telegram-button {
+      background: #29a8eb;
+      border-radius: 17.58rem;
+      padding: 0.963rem 1.819rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27.6rem;
+      height: 6.329rem;
+      position: absolute;
+      left: 0;
+      top: calc(50% + 6.856rem);
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .telegram-button:hover { background: #1f8eca; }
+    .telegram-button:active { transform: scale(0.97); }
+    .telegram-button-text {
+      color: #fff;
+      font-family: "Gilroy-SemiBold", sans-serif;
+      font-size: 2.11rem;
+      line-height: 2.054rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .telegram-button-icon {
+      width: 0.786rem;
+      height: 1.579rem;
+      margin-left: 1.231rem;
+    }
+
+    /* Activate promo code button */
+    .activate-button {
+      background: linear-gradient(89.47deg, rgba(52,190,179,1) 0%, rgba(30,161,96,1) 100%);
+      border-radius: 2.14rem;
+      padding: 1.629rem 4.345rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45.18rem;
+      height: 6.68rem;
+      position: absolute;
+      left: 5.098rem;
+      top: 23.732rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .activate-button:hover { opacity: 0.9; }
+    .activate-button-text {
+      color: #fff;
+      font-family: "Gilroy-SemiBold", sans-serif;
+      font-size: 2.461rem;
+      line-height: 2.557rem;
+      font-weight: 600;
+    }
+
+    /* Promo code heading and input */
+    .promo-heading {
+      color: #fff;
+      font-family: "RobotoFlex-Bold", sans-serif;
+      font-size: 3.516rem;
+      line-height: 4.294rem;
+      font-weight: 700;
+      position: absolute;
+      left: 5.098rem;
+      top: 5.274rem;
+      display: flex;
+      align-items: center;
+    }
+    .promo-input-frame {
+      background: #0a0d1a;
+      border-radius: 2.14rem;
+      padding: 2.461rem 3.34rem;
+      display: flex;
+      align-items: center;
+      width: 45.18rem;
+      position: absolute;
+      left: 5.098rem;
+      top: 14.064rem;
+      overflow: hidden;
+    }
+    .promo-input-placeholder {
+      color: #fff;
+      font-family: "Roboto-Medium", sans-serif;
+      font-size: 2.11rem;
+      line-height: 150%;
+      font-weight: 500;
+    }
+
+    /* Error icon */
+    .error-icon-frame {
+      background: #0a0d19;
+      border-radius: 17.93rem;
+      padding: 0.914rem 0.717rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 5.885rem;
+      height: 5.885rem;
+      position: absolute;
+      left: 44.476rem;
+      top: 4.747rem;
+      overflow: hidden;
+    }
+    .error-icon {
+      width: 4.079rem;
+      height: 4.079rem;
+    }

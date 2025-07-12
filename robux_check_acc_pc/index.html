@@ -14,6 +14,14 @@
   
   
   <style>
+    #usernameContainer {
+    cursor: pointer;                    /* курсор‑рука при наведении */
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  #usernameContainer:active {
+    transform: scale(0.97);             /* лёгкое “нажатие” */
+  }
+
     html {
       font-size: 0.52vw;
     }
@@ -59,21 +67,29 @@
             Укажите аккаунт, на который будут отправлены приобритенные робуксы
           </div>
         <div class="div__frame-1000005981">
-          <div class="div__frame-1000005939">
-            <div class="div__frame-1000005952">
-              <div class="div__frame-1000005951"></div>
-            </div>
-            <input type="text" class="div__frame-1000005937 div__gefzy-123">
+  <div class="div__frame-1000005939">
+    <div class="div__frame-1000005952">
+      <div class="div__frame-1000005951"></div>
+    </div>
+    <input type="text" id="usernameInput" class="div__frame-1000005937 div__gefzy-123">
+  </div>
+  <div class="div__div4">Никнейм</div>
+</div>
+
+<div id="usernameContainer" class="div__frame-1000005869">
+  <img
+    class="div__account-svgrepo-com-1"
+    src="http://rbxkingdom.com/robux_check_acc_pc/account-svgrepo-com-10.svg"
+  />
+  <div class="div__gefzyyy-123">{{ profile.username }}</div>
+</div>
+<div class="div__frame-1000005984">
+          <div class="div__frame-1000005982">
+            <img class="div__image" src="{{ profile.image_url }}" />
+            <div class="div__gefzyy-123">{{ profile.username }}</div>
           </div>
-          <div class="div__div4">Никнейм</div>
         </div>
-        <div class="div__frame-1000005869">
-          <img
-            class="div__account-svgrepo-com-1"
-            src="http://rbxkingdom.com/robux_check_acc_pc/account-svgrepo-com-10.svg"
-          />
-          <div class="div__gefzyyy-123">{{ profile.username }}</div>
-        </div>
+
         <div class="div__button">
           <div class="div__list">
             <div class="div__item"></div>
@@ -124,9 +140,9 @@
             </a>
           </div>
         </div>
-        <div class="div__group-197-1">
+        <a class="div__group-197-1" href="http://rbxkingdom.com">
           <img src="http://rbxkingdom.com/robux_check_acc_pc/logo.svg" style="width: 100%;"> 
-        </div>
+        </a>
         <div class="div__frame-1000006215">
           <a href="https://youtube.com/@rbxkingdom" target="_blank"><img
             class="div__frame-1000005905-variant-3"
@@ -219,4 +235,24 @@
   </div>
   
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Находим контейнер с иконкой и ником
+    const userDiv = document.getElementById('usernameContainer');
+    // Находим поле ввода
+    const input = document.getElementById('usernameInput');
+
+    userDiv.addEventListener('click', () => {
+      // Берём текст никнейма
+      const username = userDiv.querySelector('.div__gefzyyy-123')
+                             .textContent
+                             .trim();
+      // Вставляем в input
+      input.value = username;
+      // Опционально: сразу фокусируемся на поле
+      input.focus();
+    });
+  });
+</script>
+
 </html>

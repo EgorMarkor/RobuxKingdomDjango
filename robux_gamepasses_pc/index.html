@@ -156,7 +156,7 @@
             showToast('Геймпасс с ценой {{ expected_gamepass_price }} R$ не найден в выбранном плейсе');
           </script>
           {% endif %}
-          <img class="game-pass__frame-1000002526" onclick="window.history.back()" src="http://rbxkingdom.com/robux_gamepasses_pc/frame-10000025260.svg" />
+          <img class="game-pass__frame-1000002526" style="cursor: pointer;" onclick="window.history.back()" src="http://rbxkingdom.com/robux_gamepasses_pc/frame-10000025260.svg" />
         </div>
         <div class="game-pass__frame-1000005944"></div>
         <div class="game-pass__frame-1000005988">
@@ -169,6 +169,60 @@
                 <img class="game-pass__group" src="http://rbxkingdom.com/robux_gamepasses_pc/group0.svg" />
               </div>
             </div>
+            <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // универсальная функция копирования
+  function copyTextToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      // современный способ
+      return navigator.clipboard.writeText(text);
+    } else {
+      // fallback для старых браузеров
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';  // чтобы не скроллить страницу
+      textarea.style.top = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return Promise.resolve();
+      } catch (err) {
+        document.body.removeChild(textarea);
+        return Promise.reject(err);
+      }
+    }
+  }
+
+  document.querySelectorAll('.game-pass__group').forEach(icon => {
+    icon.style.cursor = 'pointer';
+    icon.addEventListener('click', () => {
+      const priceContainer = icon
+        .closest('.game-pass__frame-1000005939')
+        .previousElementSibling
+        .querySelector('.game-pass___1459-r');
+
+      if (!priceContainer) {
+        console.error('Элемент с ценой не найден');
+        return;
+      }
+
+      const priceText = priceContainer.textContent.trim();
+      copyTextToClipboard(priceText)
+        .then(() => {
+          // любое дружелюбное уведомление
+          alert(`Скопировано: ${priceText}`);
+        })
+        .catch(err => {
+          console.error('Ошибка копирования:', err);
+          alert('Не удалось скопировать цену.');
+        });
+    });
+  });
+});
+</script>
             <div class="game-pass__game-pass3">
               Выставите цену на Game-Pass равную
             </div>
@@ -186,7 +240,10 @@
           </div>
         </div>
       </div>
-      <img class="game-pass__image-76" src="http://rbxkingdom.com/robux_gamepasses_pc/image-760.png" />
+      <div class="game-pass__image-76">
+        <div style='font-size: 3rem; color: white; left: 6rem; position: absolute; top: 26.2rem; font-family: "Wix Madefor Display", sans-serif;'>{{ expected_gamepass_price|default_if_none:"" }}</div>
+        <img style="height: auto; width: 47rem;" src="http://rbxkingdom.com/robux_gamepasses_pc/check.gif" />
+      </div>
     </div>
     <div class="game-pass__frame-1000002205">
       <div class="game-pass__footer">
@@ -291,17 +348,9 @@
             </a>
           </div>
         </div>
-        <div class="game-pass__group-197-1">
-          <img class="game-pass__frame-1000005973" src="http://rbxkingdom.com/robux_gamepasses_pc/frame-10000059730.svg" />
-          <img class="game-pass__vector3" src="http://rbxkingdom.com/robux_gamepasses_pc/vector2.svg" />
-          <img class="game-pass__vector4" src="http://rbxkingdom.com/robux_gamepasses_pc/vector3.svg" />
-          <img class="game-pass__vector5" src="http://rbxkingdom.com/robux_gamepasses_pc/vector4.svg" />
-          <img class="game-pass__vector6" src="http://rbxkingdom.com/robux_gamepasses_pc/vector5.svg" />
-          <img class="game-pass__vector7" src="http://rbxkingdom.com/robux_gamepasses_pc/vector6.svg" />
-          <img class="game-pass__vector8" src="http://rbxkingdom.com/robux_gamepasses_pc/vector7.svg" />
-          <img class="game-pass__vector9" src="http://rbxkingdom.com/robux_gamepasses_pc/vector8.svg" />
-          <img class="game-pass__frame-10000059742" src="http://rbxkingdom.com/robux_gamepasses_pc/frame-10000059741.svg" />
-        </div>
+        <a class="game-pass__group-197-1"  href="http://rbxkingdom.com/">
+          <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
+        </a>
         <div class="game-pass__frame-1000006215">
           <img
             class="game-pass__frame-1000005905-variant-3"

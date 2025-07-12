@@ -227,10 +227,10 @@
   width: 19.687rem;
   height: 20.088rem;
   position: absolute;
-  left: 24.363rem;
+  left: 29.363rem;
   top: -1.3039999999999998rem;
   transform-origin: 0 0;
-  transform: rotate(29.634deg) scale(-1, 1);
+  transform: rotate(-12.37deg) scale(-1, 1);
   object-fit: cover;
 }
 .div__frame-10000022623 {
@@ -438,7 +438,7 @@
   gap: 0.3rem;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 20.3rem;
+  width: 45.3rem;
   height: 6.6rem;
   position: absolute;
   left: 12.1rem;
@@ -446,7 +446,7 @@
 }
 .div__label {
   flex-shrink: 0;
-  width: 20.9rem;
+  width: 60.9rem;
   height: 2.7rem;
   position: static;
 }
@@ -468,7 +468,7 @@
 }
 .div__frame-1000005989 {
   flex-shrink: 0;
-  width: 10.4rem;
+  width: 50.4rem;
   height: 4.3rem;
   position: relative;
 }
@@ -482,7 +482,7 @@
   position: absolute;
   left: 0rem;
   top: 1rem;
-  width: 11.5rem;
+  width: 20.5rem;
   height: 4.3rem;
   display: flex;
   align-items: center;

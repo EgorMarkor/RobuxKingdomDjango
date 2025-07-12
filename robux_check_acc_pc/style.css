@@ -227,18 +227,20 @@
   object-fit: cover;
 }
 .div__gefzyy-123 {
+  left: -7rem;
   color: #1f1f31;
-  text-align: left;
+  text-align: center;
   font-family: "Wix Madefor Display", sans-serif;
   font-size: 2.2rem;
   line-height: 4.615rem;
   font-weight: 700;
+  width: 25rem;
   position: relative;
   align-self: stretch;
   height: 3.7rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .div__frame-1000005986 {
   background: #f1f5fa;
