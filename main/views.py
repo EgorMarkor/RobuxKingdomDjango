@@ -131,6 +131,10 @@ class BonusView(TemplateView):
                 profile = UserProfile.objects.get(pk=profile_id)
                 context["profile"] = profile
                 context["referrals"] = profile.referrals.all()
+                try:
+                    context["balance_int"] = int(profile.balance)
+                except (TypeError, ValueError):
+                    context["balance_int"] = 0
             except UserProfile.DoesNotExist:  # pragma: no cover - edge case
                 self.request.session.pop("profile_id", None)
         context["selected_place_id"] = self.request.session.get("selected_place_id")
@@ -483,7 +487,7 @@ def create_withdraw_request(request):
         amount = Decimal(profile.balance)
     except (TypeError, ValueError):
         amount = Decimal("0")
-    if amount <= 0:
+    if amount < Decimal("50"):
         return redirect("bonus")
     WithdrawalRequest.objects.create(user=profile, amount=amount)
     profile.balance = "0"

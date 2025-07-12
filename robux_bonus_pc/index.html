@@ -66,13 +66,19 @@
               />
               <div class="div__frame-1000005939">
                 <div class="div__frame-1000005952">
+                  {% if balance_int >= 50 %}
                   <a href="{% url 'withdraw' %}" class="div__frame-1000005938" style="z-index: 99;">
-                    <div href="{% url 'withdraw' %}" class="div__div4">Вывести робуксы</div>
+                    <div class="div__div4">Вывести робуксы</div>
                   </a>
+                  {% else %}
+                  <a class="div__frame-1000005938" style="z-index: 99; pointer-events:none; opacity:0.5;">
+                    <div class="div__div4">Вывести робуксы</div>
+                  </a>
+                  {% endif %}
                   <div class="div__frame-1000005951">
                     <div class="div__frame-1000005937">
                       <div class="div___100">
-                        Вывод доступен от 100 бонусных робуксов на балансе
+                        Вывод доступен от 50 бонусных робуксов на балансе
                       </div>
                     </div>
                   </div>
