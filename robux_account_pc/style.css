@@ -1313,3 +1313,15 @@
   transform: translate(-0.047rem, -0.047rem);
   overflow: visible;
 }
+
+.status-completed {
+  color: #00c28b;
+}
+
+.status-processing {
+  color: #d29c05;
+}
+
+.status-error {
+  color: #ff2828;
+}
