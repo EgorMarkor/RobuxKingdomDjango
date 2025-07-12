@@ -907,7 +907,7 @@
   overflow: visible;
 }
 .place__frame-1000005982.selected {
-  box-shadow: 0 0 1rem #007aff;
+  box-shadow: 0 0 1rem #2AC790;
 }
 .place__checkmark {
   display: none;
@@ -917,19 +917,20 @@
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  background: #007aff;
-  border: 0.692rem solid #007aff;
+  background: #2AC790;
+  border: 0.692rem solid #2AC790;
 }
 .place__checkmark::after {
   content: "";
   position: absolute;
-  left: 0.8rem;
-  top: 0.6rem;
-  width: 0.5rem;
-  height: 1.2rem;
-  border: solid #fff;
-  border-width: 0 0.26rem 0.26rem 0;
-  transform: rotate(45deg);
+  left: 50%;
+  top: 50%;
+  width: 1.3rem;
+  height: 1rem;
+  transform: translate(-50%, -50%);
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M10.8604 0.894531C11.2244 0.530539 11.8147 0.530452 12.1787 0.894531C12.5426 1.25855 12.5427 1.84885 12.1787 2.21289L5.1543 9.2373C4.79055 9.60105 4.20002 9.60135 3.83594 9.2373L0.894531 6.2959C0.53067 5.93183 0.530511 5.34152 0.894531 4.97754C1.25852 4.61386 1.84888 4.61372 2.21289 4.97754L4.49512 7.25977L10.8604 0.894531Z" fill="white" stroke="white" stroke-width="0.757089"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .place__frame-1000005982.selected .place__checkmark {
   display: block;
