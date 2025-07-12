@@ -515,9 +515,9 @@
               <div class="div__frame-1000005873">
                 <div class="div__div9">Важная информация</div>
                 <div class="div__frame-1000006053">
-                  <div class="div__div10">Политика конфиденциальности</div>
-                  <div class="div__div10">Пользовательское соглашение</div>
-                  <div class="div__div10">Политика возврата средств</div>
+                  <a class="div__div10" href="{% url 'politconf' %}">Политика конфиденциальности</a>
+                  <a class="div__div10" href="{% url 'usersogl' %}">Пользовательское соглашение</a>
+                  <a class="div__div10" href="{% url 'moneyback' %}">Политика возврата средств</a>
                 </div>
               </div>
               <div class="div__frame-10000058752">
@@ -1092,9 +1092,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="popup-agreement">
           <span class="gray">Прочел и согласен с </span>
-          <span class="link">Пользовательским соглашением</span><span class="gray">, </span>
-          <span class="link">Политикой возврата средств</span><span class="gray">, </span>
-          <span class="link">Политикой конфиденциальности</span>
+          <a href="{% url 'usersogl' %}" class="link">Пользовательским соглашением</a><span class="gray">, </span>
+          <a href="{% url 'moneyback' %}" class="link">Политикой возврата средств</a><span class="gray">, </span>
+          <a href="{% url 'politconf' %}" class="link">Политикой конфиденциальности</a>
         </div>
       </div>
 
