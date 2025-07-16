@@ -1,0 +1,1013 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'home/vars.css' %}">
+  <link rel="stylesheet" href="{% static 'home/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="jquery.fancybox.min.js"></script>
+  
+  <style>
+    .hoverable {
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hoverable:hover {
+  /* эффект при наведении */
+  transform: translateY(-2px);
+  /* лёгкое высветление */
+  filter: brightness(1.05);
+}
+
+.hoverable:active {
+  /* эффект при клике */
+  transform: translateY(0);
+  /* чуть затемнение при нажатии */
+  filter: brightness(0.9);
+}
+
+    * {
+      font-family: "Wix Madefor Display", sans-serif !important;
+    }
+    html {
+      font-size: 2.52vw;
+    }
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Document</title>
+</head>
+<body>
+  {% include 'side.html' %}
+  {% include 'header_2.html' %}
+  <div class="i-phone-14-15-pro-1">
+    <div class="i-phone-14-15-pro-1__frame-1000006028">
+      <div class="i-phone-14-15-pro-1__frame-1000006025">
+        <img class="i-phone-14-15-pro-1__image-14" src="{% static 'home/image-140.png' %}" />
+        <div class="i-phone-14-15-pro-1__frame-1000002207">
+          <div class="i-phone-14-15-pro-1__rectangle-1117"></div>
+          <div class="i-phone-14-15-pro-1__rectangle-1118"></div>
+          <div class="i-phone-14-15-pro-1__rectangle-1119"></div>
+        </div>
+        <div class="i-phone-14-15-pro-1__frame-48095932"></div>
+      </div>
+      <img
+        class="i-phone-14-15-pro-1__frame-1000005851"
+        src="{% static 'home/frame-10000058510.svg' %}"
+      />
+      <div class="i-phone-14-15-pro-1__frame-48095922">
+        <div class="i-phone-14-15-pro-1__background">
+          <div class="i-phone-14-15-pro-1__frame-1000005862">
+            <div class="i-phone-14-15-pro-1__overlay">
+              <div class="i-phone-14-15-pro-1__fire-z-39-vox-3-x-9-kl-5-1">
+                <img class="i-phone-14-15-pro-1__group" src="{% static 'home/group0.svg' %}" />
+              </div>
+              <div class="i-phone-14-15-pro-1__div">
+                Самый выгодный курс робуксов
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000005871">
+              <div class="i-phone-14-15-pro-1__background-border">
+                <div class="i-phone-14-15-pro-1__label">Ты платишь</div>
+                <div class="i-phone-14-15-pro-1__input">
+                  <div class="i-phone-14-15-pro-1___10">10 ₽</div>
+                </div>
+                <div class="i-phone-14-15-pro-1__label2">
+                  14.81 min и 14814.81 max
+                </div>
+              </div>
+              <div class="i-phone-14-15-pro-1__background-border2">
+                <div class="i-phone-14-15-pro-1__label3">Ты получаешь</div>
+                <div class="i-phone-14-15-pro-1__input2">
+                  <div class="i-phone-14-15-pro-1___14-r">14 R$</div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background2">
+                  <div class="i-phone-14-15-pro-1__background3"></div>
+                  <div class="i-phone-14-15-pro-1__background4"></div>
+                  <div class="i-phone-14-15-pro-1__slider">
+                    <div class="i-phone-14-15-pro-1___1000">1000</div>
+                    <img class="i-phone-14-15-pro-1__svg" src="{% static 'home/svg0.svg' %}" />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__container">
+                  <div class="i-phone-14-15-pro-1__background5">
+                    <div class="i-phone-14-15-pro-1__frame-1000006006">
+                      <div class="i-phone-14-15-pro-1___0-r">+0R$</div>
+                      <img class="i-phone-14-15-pro-1__group2" src="{% static 'home/group1.svg' %}" />
+                    </div>
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__label4">20 min и 20000 max</div>
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000005861">
+              <div class="i-phone-14-15-pro-1__button">
+                <div class="i-phone-14-15-pro-1__list">
+                  <div class="i-phone-14-15-pro-1__item"></div>
+                  <div class="i-phone-14-15-pro-1__item2"></div>
+                  <div class="i-phone-14-15-pro-1__item3"></div>
+                  <div class="i-phone-14-15-pro-1__item4"></div>
+                  <div class="i-phone-14-15-pro-1__item5"></div>
+                  <div class="i-phone-14-15-pro-1__item6"></div>
+                  <div class="i-phone-14-15-pro-1__item7"></div>
+                  <div class="i-phone-14-15-pro-1__item8"></div>
+                </div>
+                <div class="i-phone-14-15-pro-1__heading-2">Купить робуксы</div>
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000006038">
+              <div class="i-phone-14-15-pro-1__button2">
+                <div class="i-phone-14-15-pro-1__div2">Ввести промокод</div>
+                <img class="i-phone-14-15-pro-1__svg2" src="{% static 'home/svg1.svg' %}" />
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000006016">
+              <div class="i-phone-14-15-pro-1__frame-1000006015">
+                <div class="i-phone-14-15-pro-1__label5">В наличии:</div>
+                <div class="i-phone-14-15-pro-1__label6">288 660 R$</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="i-phone-14-15-pro-1__frame"></div>
+    <div class="i-phone-14-15-pro-1__frame-1000006037">
+      <div class="i-phone-14-15-pro-1__frame-1000002216">
+        <div class="i-phone-14-15-pro-1__frame-1000002217">
+          <div class="i-phone-14-15-pro-1__frame-1000002215">
+            <div class="i-phone-14-15-pro-1__frame-48095973">
+              <div class="i-phone-14-15-pro-1__frame-1000005997">
+                <img
+                  class="i-phone-14-15-pro-1__busts-in-silhouette-1-1"
+                  src="{% static 'home/busts-in-silhouette-1-10.png' %}"
+                />
+                <div class="i-phone-14-15-pro-1__div3">
+                  <span>
+                    <span class="div-3-span">
+                      Куча игроков уже пользуются нашим
+                    </span>
+                    <span class="div-3-span2">сервисом</span>
+                  </span>
+                </div>
+                <div class="i-phone-14-15-pro-1__div4">
+                  Наш магазин предлагает вам лучшие условия и гарантирует
+                  безопасность сделок. Покупайте игровую валюту по лучшему курсу и
+                  погружайтесь в мир увлекательных приключений!
+                </div>
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000005860">
+              <div class="i-phone-14-15-pro-1__frame-1000005859">
+                <div class="i-phone-14-15-pro-1__ellipse-6"></div>
+                <img
+                  class="i-phone-14-15-pro-1___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-2"
+                  src="{% static 'home/_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-20.png' %}"
+                />
+              </div>
+              <img
+                class="i-phone-14-15-pro-1___7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-22"
+                src="{% static 'home/_7-ddecb-6-d-0-e-4-b-644-db-8-a-983-e-824-c-8-f-586-21.png' %}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000006031">
+        <div class="i-phone-14-15-pro-1__div5">Лучший курс робуксов</div>
+        <div class="i-phone-14-15-pro-1___1-1-35-r">1Р = 1.35 R$</div>
+        <img
+          class="i-phone-14-15-pro-1___13-metaverse-touch-1"
+          src="{% static 'home/_13-metaverse-touch-10.png' %}"
+        />
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000005844">
+        <div class="i-phone-14-15-pro-1__section">
+          <div class="i-phone-14-15-pro-1__frame-1000005857">
+            <div class="i-phone-14-15-pro-1__frame-1000005863">
+              <div class="i-phone-14-15-pro-1__container2">
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___803-r">803 R$</div>
+                  <div class="i-phone-14-15-pro-1__gar-28">gar...28</div>
+                  <div class="i-phone-14-15-pro-1__background7">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter"
+                      src="{% static 'home/no-filter0.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___406-r">406 R$</div>
+                  <div class="i-phone-14-15-pro-1___021-20">021...20</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter2"
+                      src="{% static 'home/no-filter1.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___110-r">110 R$</div>
+                  <div class="i-phone-14-15-pro-1__tac-og">TAC...Og</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter3"
+                      src="{% static 'home/no-filter2.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___100-r">100 R$</div>
+                  <div class="i-phone-14-15-pro-1__bac-07">bac...07</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter4"
+                      src="{% static 'home/no-filter3.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___1008-r">1008 R$</div>
+                  <div class="i-phone-14-15-pro-1__msv-a-s">Msv...aS</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter5"
+                      src="{% static 'home/no-filter4.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background6">
+                  <div class="i-phone-14-15-pro-1___100">100</div>
+                  <div class="i-phone-14-15-pro-1__svg3">
+                    <img
+                      class="i-phone-14-15-pro-1__clip-path-group"
+                      src="{% static 'home/clip-path-group0.svg' %}"
+                    />
+                  </div>
+                  <div class="i-phone-14-15-pro-1__bac-07">bac...07</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter6"
+                      src="{% static 'home/no-filter5.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background9">
+                  <div class="i-phone-14-15-pro-1___1008">1008</div>
+                  <div class="i-phone-14-15-pro-1__svg4">
+                    <img
+                      class="i-phone-14-15-pro-1__clip-path-group2"
+                      src="{% static 'home/clip-path-group1.svg' %}"
+                    />
+                  </div>
+                  <div class="i-phone-14-15-pro-1__msv-a-s">Msv...aS</div>
+                  <div class="i-phone-14-15-pro-1__background7">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter7"
+                      src="{% static 'home/no-filter6.png' %}"
+                    />
+                  </div>
+                </div>
+                <div class="i-phone-14-15-pro-1__background9">
+                  <div class="i-phone-14-15-pro-1___1008">1008</div>
+                  <div class="i-phone-14-15-pro-1__svg5">
+                    <img
+                      class="i-phone-14-15-pro-1__clip-path-group3"
+                      src="{% static 'home/clip-path-group2.svg' %}"
+                    />
+                  </div>
+                  <div class="i-phone-14-15-pro-1__msv-a-s">Msv...aS</div>
+                  <div class="i-phone-14-15-pro-1__background8">
+                    <img
+                      class="i-phone-14-15-pro-1__no-filter8"
+                      src="{% static 'home/no-filter7.png' %}"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__frame-1000006023">
+              <img
+                class="i-phone-14-15-pro-1__time-l-9-dttlv-7-tivj-1"
+                src="{% static 'home/time-l-9-dttlv-7-tivj-10.svg' %}"
+              />
+              <div class="i-phone-14-15-pro-1__div6">Последние покупки</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000006030">
+        <div class="i-phone-14-15-pro-1__frame-1000006029">
+          <div class="i-phone-14-15-pro-1__frame-1000001871">
+            <div class="i-phone-14-15-pro-1__div7">
+              <span>
+                <span class="div-7-span">
+                  Статистика сайта
+                  <br />
+                </span>
+                <span class="div-7-span2">в реальном времени</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="i-phone-14-15-pro-1__frame-1000002136">
+          <div class="i-phone-14-15-pro-1__frame-1000002135">
+            <div class="i-phone-14-15-pro-1__frame-1000005975">
+              <div class="i-phone-14-15-pro-1___3-712">3,712</div>
+              <div class="i-phone-14-15-pro-1__div8">Всего покупок</div>
+            </div>
+          </div>
+          <img
+            class="i-phone-14-15-pro-1___9-metaverse-items-1"
+            src="{% static 'home/_9-metaverse-items-10.png' %}"
+          />
+          <div class="i-phone-14-15-pro-1__rectangle-156574"></div>
+          <img
+            class="i-phone-14-15-pro-1___8-metaverse-friend-1"
+            src="{% static 'home/_8-metaverse-friend-10.png' %}"
+          />
+        </div>
+        <div class="i-phone-14-15-pro-1__frame-1000002134">
+          <div class="i-phone-14-15-pro-1__image"></div>
+          <img
+            class="i-phone-14-15-pro-1___19-multiverse-1"
+            src="{% static 'home/_19-multiverse-10.png' %}"
+          />
+          <div class="i-phone-14-15-pro-1__frame-10000059752">
+            <div class="i-phone-14-15-pro-1___1-029">1,029</div>
+            <div class="i-phone-14-15-pro-1__div9">Пользователей сайта</div>
+          </div>
+          <img
+            class="i-phone-14-15-pro-1___7-metaverse-virtual-world-1"
+            src="{% static 'home/_7-metaverse-virtual-world-10.png' %}"
+          />
+        </div>
+        <div class="i-phone-14-15-pro-1__frame-1000002141">
+          <div class="i-phone-14-15-pro-1__frame-10000059753">
+            <div class="i-phone-14-15-pro-1___55-414-r">55.414R$</div>
+            <div class="i-phone-14-15-pro-1__div10">Куплено робуксов</div>
+          </div>
+          <img
+            class="i-phone-14-15-pro-1___13-metaverse-touch-12"
+            src="{% static 'home/_13-metaverse-touch-11.png' %}"
+          />
+        </div>
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000005847">
+        <div class="i-phone-14-15-pro-1__frame-10000021412">
+          <div class="i-phone-14-15-pro-1__div11">
+            Ответы на самые популярные вопросы
+          </div>
+          <img
+            class="i-phone-14-15-pro-1__card-index-dividers-1"
+            src="{% static 'home/card-index-dividers-10.png' %}"
+          />
+        </div>
+        
+          <!-- 3. HTML самих FAQ‑пунктов: -->
+          <div class="faq-item">
+            <div class="faq-question">Как мне купить робуксы?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> На главной странице покупки укажите количество робуксов, которое вы бы хотели купить. Затем просто следуйте инструкции!
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Могу ли я доверять Robux Kingdom?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Да, конечно! Мы, Robux Kingdom, выполняем абсолютно все заказы без исключений. Если вы в нас сомневаетесь, попробуйте в начале совершить покупку на небольшое количество робуксов и убедитесь в нашей честности. Дополнительно у нас есть отзывы в Telegram.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Как получить робуксы бесплатно?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Вы можете посмотреть нашу страницу «Бонусы». Также мы часто проводим розыгрыши робуксов совершенно бесплатно в наших социальных сетях. Они доступны на главной странице.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Когда придут робуксы?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Если робуксы в наличии на момент покупки, валюта доставляется на ваш аккаунт в кратчайшие сроки. В самом Roblox статус «Pending Robux» может держаться до 5–7 дней. Отследить робуксы можно по ссылке: 
+              <a href="https://www.roblox.com/transactions" target="_blank">roblox.com/transactions</a>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Как пригласить друга?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> На странице «Бонусы» будет отображён ваш код. Скопируйте и отправьте его другу. Если он использует его при первой покупке на сумму от 250 R$, вы оба получите по 20 R$.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть деньги после оплаты?</div>
+            <div class="faq-answer">
+              <strong>Ответ:</strong> Покупки на нашем сайте окончательные. После отправки робуксов вернуть деньги за заказ нельзя. Если вы запросили отмену до выполнения заказа, ваша просьба может быть принята платёжной системой.
+            </div>
+          </div>
+
+<!-- И так далее… -->
+<style>
+  /* контейнер */
+.faq-item {
+  width: 140.4rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;          /* чтобы контент «выезжал» за рамки мягко */
+  transition: box-shadow .3s;
+}
+
+/* вопрос */
+.faq-question {
+  position: relative;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.07;
+  color: #050f27;
+}
+
+/* плюс/минус */
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.faq-item.open .faq-question::after {
+  content: '–';
+}
+
+/* ответ (скрыт по умолчанию) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height .4s ease, padding .4s ease;
+  
+  /* ваша типографика */
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: justify;
+}
+
+/* когда открыт — даём отступы и большой max-height */
+.faq-item.open .faq-answer {
+  max-height: 500px;   /* чуть больше реальной высоты контента */
+  padding: 0.8rem 1.5rem;
+}
+
+.div___1000 {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+
+.div__slider {
+  transition: box-shadow 0.25s ease-out;
+}
+
+/* когда ховер на input, применяем тень к соседнему .div__slider */
+.range-overlay:hover + .div__slider {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 0 0 6px rgba(138, 168, 234, 0.5);
+}
+
+</style>
+<script>
+  // дожидаемся, когда DOM прогрузится
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+      question.addEventListener('click', function() {
+        // просто переключаем класс open у родительского .faq-item
+        this.parentNode.classList.toggle('open');
+      });
+    });
+  });
+</script>
+      </div>
+      <div class="i-phone-14-15-pro-1__background10">
+        <img class="i-phone-14-15-pro-1__svg6" src="{% static 'home/svg5.svg' %}" />
+        <div class="i-phone-14-15-pro-1__frame-1000006020">
+          <div class="i-phone-14-15-pro-1__frame-1000006019">
+            <div class="i-phone-14-15-pro-1__frame-1000006018">
+              <div class="i-phone-14-15-pro-1__div16">
+                Покупай робуксы дешевле, чем где-либо
+              </div>
+              <div class="i-phone-14-15-pro-1__div17">
+                Покупайте робуксы быстро и выгодно, не переживая за то, что вас
+                обманут. Если у вас возникнут какие-либо проблемы, вы всегда
+                можете написать нам в нашу поддержку.
+              </div>
+            </div>
+            <div class="i-phone-14-15-pro-1__button3 hoverable">
+              <div class="i-phone-14-15-pro-1__div18">Купить робуксы</div>
+              <img class="i-phone-14-15-pro-1__vector" src="{% static 'home/vector0.svg' %}" />
+            </div>
+          </div>
+        </div>
+        <img class="i-phone-14-15-pro-1__svg7" src="{% static 'home/svg6.svg' %}" />
+        <img
+          class="i-phone-14-15-pro-1___13-metaverse-touch-13"
+          src="{% static 'home/_13-metaverse-touch-12.png' %}"
+        />
+        <img
+          class="i-phone-14-15-pro-1___13-metaverse-touch-2"
+          src="{% static 'home/_13-metaverse-touch-20.png' %}"
+        />
+        <img
+          class="i-phone-14-15-pro-1___13-metaverse-touch-3"
+          src="{% static 'home/_13-metaverse-touch-30.png' %}"
+        />
+        <img class="i-phone-14-15-pro-1___1-2" src="{% static 'home/_1-20.png' %}" />
+      </div>
+      <div class="i-phone-14-15-pro-1__background10">
+        <img class="i-phone-14-15-pro-1__svg8" src="{% static 'home/svg7.svg' %}" />
+        <div class="i-phone-14-15-pro-1__frame-1000006021">
+          <div class="i-phone-14-15-pro-1__frame-1000006017">
+            <div class="i-phone-14-15-pro-1__div19">Остались вопросы?</div>
+            <div class="i-phone-14-15-pro-1__robux-kingdom-roblox">
+              Присоединяйтесь к сообществу Robux Kingdom в нашем телеграмм канале.
+              Там вы можете бесплатно выиграть робуксы, отдохнуть и повеселиться с
+              другими игроками Roblox, а также получить поддержку при любых
+              возникших трудностях при покупке.
+            </div>
+          </div>
+          <div class="i-phone-14-15-pro-1__button4 hoverable">
+            <div class="i-phone-14-15-pro-1__telegram">Telegram канал</div>
+            <img class="i-phone-14-15-pro-1__vector2" src="{% static 'home/vector1.svg' %}" />
+          </div>
+        </div>
+        <img class="i-phone-14-15-pro-1__svg9" src="{% static 'home/svg8.svg' %}" />
+        <img
+          class="i-phone-14-15-pro-1__icons-8-telegram-750-1"
+          src="{% static 'home/icons-8-telegram-750-10.png' %}"
+        />
+      </div>
+    </div>
+    <div class="i-phone-14-15-pro-1__frame-1000002205">
+      <div class="i-phone-14-15-pro-1__footer"></div>
+      <div class="i-phone-14-15-pro-1__subsections">
+        <div class="i-phone-14-15-pro-1__frame-1000005876">
+          <div class="i-phone-14-15-pro-1__logo-footer">
+            <div class="i-phone-14-15-pro-1__logo">
+              <div class="i-phone-14-15-pro-1__frame-1000006055">
+                <img
+                  class="i-phone-14-15-pro-1__frame-1000005974"
+                  src="{% static 'home/frame-10000059740.svg' %}"
+                />
+              </div>
+              <div class="i-phone-14-15-pro-1__robux-kingdom2">RobuxKingdom</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="i-phone-14-15-pro-1__beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica-rbxkingdom-gmail-com"
+        >
+          Beneficiary: INTERNATIONAL BUSINESS SYSTEMS S.R.L.
+          <br />
+          Reg. number: 3-102-693823
+          <br />
+          Beneficiary&#039;s address: SAN JOSE-SANTA ANA,THREE HUNDRED AND FIFTY
+          METERS OF THE RESTAURANT CEVICHE DEL REY, COSTA-RICA
+          <br />
+          <br />
+          rbxkingdom@gmail.com
+        </div>
+        <div class="i-phone-14-15-pro-1__frame-1000006053">
+          <div class="i-phone-14-15-pro-1__div20">
+            Политика конфиденциальности
+          </div>
+          <div class="i-phone-14-15-pro-1__div20">
+            Пользовательское соглашение
+          </div>
+          <div class="i-phone-14-15-pro-1__div20">Политика возврата средств</div>
+        </div>
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000006041">
+        <img class="i-phone-14-15-pro-1__svg10" src="{% static 'home/svg9.svg' %}" />
+        <div class="i-phone-14-15-pro-1__svg11">
+          <img class="i-phone-14-15-pro-1__vector3" src="{% static 'home/vector2.svg' %}" />
+          <div class="i-phone-14-15-pro-1__frame-1000006010">
+            <img class="i-phone-14-15-pro-1__page-1" src="{% static 'home/page-10.svg' %}" />
+          </div>
+        </div>
+        <img class="i-phone-14-15-pro-1__svg12" src="{% static 'home/svg11.svg' %}" />
+        <img class="i-phone-14-15-pro-1__svg13" src="{% static 'home/svg12.svg' %}" />
+      </div>
+      <div class="i-phone-14-15-pro-1__rbxkingdom-gg-2024">
+        rbxkingdom.gg © 2024 все права защищены
+      </div>
+      <div class="i-phone-14-15-pro-1__frame-1000006215">
+        <img
+          class="i-phone-14-15-pro-1__frame-1000005905-variant-3"
+          src="{% static 'home/frame-1000005905-variant-30.svg' %}"
+        />
+        <img
+          class="i-phone-14-15-pro-1__frame-1000005907-variant-2"
+          src="{% static 'home/frame-1000005907-variant-20.svg' %}"
+        />
+        <img
+          class="i-phone-14-15-pro-1__frame-1000005906-variant-1"
+          src="{% static 'home/frame-1000005906-variant-10.svg' %}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div id="popup_auth"
+    style="
+      background: #0d1222;
+      border-radius: 1.75rem;
+      width: 31.4rem;
+      height: 52.2rem;
+      position: relative;
+      box-shadow: 0rem 0.461rem 1.846rem 0rem rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+    "
+  >
+    <div
+      style="
+        background: #f1f5fa;
+        width: 34.396rem;
+        height: 20.041999999999998rem;
+        position: absolute;
+        left: -0.9630000000000001rem;
+        top: 0rem;
+        overflow: hidden;
+      "
+    >
+      <img
+        class="image-14"
+        style="
+          width: 34.483rem;
+          height: 48.924rem;
+          position: absolute;
+          left: -0.088rem;
+          top: 0rem;
+          object-fit: cover;
+        "
+        src="{% static 'popup_auth/image-140.png' %}"
+      />
+      <div
+        style="
+          background: #0a0d19;
+          width: 32.5rem;
+          height: 53.1rem;
+          position: absolute;
+          left: -0.037rem;
+          top: 0rem;
+          overflow: hidden;
+        "
+      >
+        <img
+          class="image-142"
+          style="
+            width: 37.182rem;
+            height: 53.134rem;
+            position: absolute;
+            left: 0.11699999999999999rem;
+            top: 0rem;
+            object-fit: cover;
+          "
+          src="{% static 'popup_auth/image-141.png' %}"
+        />
+      </div>
+      <div
+        style="
+          background: #0a0d19;
+          border-radius: 10.2rem;
+          padding: 0.52rem 0.40800000000000003rem 0.52rem 0.40800000000000003rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 3.348rem;
+          height: 3.348rem;
+          position: absolute;
+          left: 27.262999999999998rem;
+          top: 2rem;
+          overflow: hidden;
+        "
+      >
+        <img
+          class="error-svgrepo-com-1"
+          style="
+            flex-shrink: 0;
+            width: 2.32rem;
+            height: 2.32rem;
+            position: relative;
+            overflow: visible;
+          "
+          src="{% static 'popup_auth/error-svgrepo-com-10.svg' %}"
+        />
+      </div>
+    </div>
+    <div
+      style="
+        width: 26.1rem;
+        height: 20.4rem;
+        position: absolute;
+        left: 2.7rem;
+        top: 22.5rem;
+      "
+    >
+      <div
+        style="
+          width: 27.2rem;
+          height: 18.7rem;
+          position: absolute;
+          left: 0rem;
+          top: 0rem;
+        "
+      >
+        <div
+          style="
+            width: 27rem;
+            height: 18.7rem;
+            position: absolute;
+            left: 0.034rem;
+            top: 0rem;
+          "
+        >
+          <div
+            style="
+              width: 27.110000000000003rem;
+              height: 30.031rem;
+              position: absolute;
+              left: -0.034rem;
+              top: 0rem;
+            "
+          >
+            <div
+              style="
+                width: 27.076rem;
+                height: 22.075rem;
+                position: absolute;
+                left: 0.034rem;
+                top: 0rem;
+              "
+            >
+              <div
+                style="
+                  color: #687798;
+                  text-align: left;
+                  font-family: 'WixMadeforDisplay-Medium', sans-serif;
+                  font-size: 1.2rem;
+                  line-height: 150%;
+                  font-weight: 500;
+                  position: absolute;
+                  left: 0.002rem;
+                  top: 5.1rem;
+                  width: 26.358999999999998rem;
+                  height: 2.947rem;
+                "
+              >
+                Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
+              </div>
+              <div
+                style="
+                  color: #ffffff;
+                  text-align: left;
+                  font-family: 'WixMadeforDisplay-Bold', sans-serif;
+                  font-size: 2rem;
+                  line-height: 2.6260000000000003rem;
+                  font-weight: 700;
+                  position: absolute;
+                  left: 0rem;
+                  top: 0rem;
+                  width: 20.2rem;
+                  height: 2.6rem;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                "
+              >
+                Мой аккаунт
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: #0a0d19;
+              border-radius: 1.158rem;
+              width: 26.076rem;
+              height: 4.0009999999999994rem;
+              position: absolute;
+              left: 0rem;
+              top: 10.311rem;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                color: #ffffff;
+                text-align: center;
+                font-family: 'WixMadeforDisplay-Medium', sans-serif;
+                font-size: 1.2rem;
+                line-height: 150%;
+                font-weight: 500;
+                position: absolute;
+                left: 2.066rem;
+                top: 1.589rem;
+                width: 13.8rem;
+                height: 1.1rem;
+              "
+            >
+              Введите свой никнейм
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: #3a93ef;
+          border-radius: 1.158rem;
+          padding: 1.048rem 2.7960000000000003rem 0.978rem 2.7960000000000003rem;
+          display: flex;
+          flex-direction: row;
+          gap: 0.6990000000000001rem;
+          align-items: center;
+          justify-content: center;
+          width: 26.076rem;
+          height: 3.715rem;
+          position: absolute;
+          left: -0.034rem;
+          top: 16.8rem;
+        "
+      >
+        <div
+          style="
+            color: #ffffff;
+            text-align: center;
+            font-family: 'WixMadeforDisplay-SemiBold', sans-serif;
+            font-size: 1.4003283500671386rem;
+            line-height: 1.645rem;
+            font-weight: 600;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          Войти
+        </div>
+      </div>
+      <div
+        style="
+          text-align: left;
+          font-family: 'WixMadeforDisplay-Medium', sans-serif;
+          font-size: 1.0502463340759278rem;
+          line-height: 1.068rem;
+          font-weight: 500;
+          position: absolute;
+          left: -0.034rem;
+          top: 22.331rem;
+          width: 25.5rem;
+          height: 4.1rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        "
+      >
+        <span>
+          <span class="div-3-span">Прочел и согласен с</span>
+          <span class="div-3-span2">Пользовательским соглашением</span>
+          <span class="div-3-span">,</span>
+          <span class="div-3-span2">Политикой возврата средств</span>
+          <span class="div-3-span">
+            ,
+            <br />
+          </span>
+          <span class="div-3-span2">Политикой конфиденциальности</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const youPayEl = document.querySelector('.i-phone-14-15-pro-1___10');
+  const youGetEl = document.querySelector('.i-phone-14-15-pro-1___14-r');
+  const track    = document.querySelector('.i-phone-14-15-pro-1__background2');
+  const fill     = document.querySelector('.i-phone-14-15-pro-1__background3');
+  const thumb    = document.querySelector('.i-phone-14-15-pro-1__slider');
+  if (!youPayEl || !youGetEl || !track || !fill || !thumb) return;
+
+  const MIN  = 1;
+  const MAX  = 20000;
+  const RATE = 1.35;
+  let current = parseInt(youPayEl.textContent, 10) || MIN;
+  current = Math.max(MIN, Math.min(MAX, current));
+
+  // Вшиваем все нужные стили через JS
+  Object.assign(track.style, { position: 'relative', touchAction: 'none' });
+  Object.assign(fill.style,  { position: 'absolute', top: '0', left: '0', height: '100%', width: '0%', zIndex: '1', pointerEvents: 'none' });
+  Object.assign(thumb.style, { position: 'absolute', zIndex: '2', cursor: 'pointer', touchAction: 'none' });
+
+  function update(val) {
+    // Обновляем числа
+    youPayEl.textContent = `${val} ₽`;
+    youGetEl.textContent = `${Math.round(val * RATE)} R$`;
+
+    // Считаем позицию и заливку
+    const tr = track.getBoundingClientRect();
+    const th = thumb.getBoundingClientRect();
+    const usable = tr.width - th.width;
+    const ratio = (val - MIN) / (MAX - MIN);
+    const left  = ratio * usable;
+
+    thumb.style.left      = `${left}px`;
+    thumb.style.top       = '50%';
+    thumb.style.transform = 'translateY(-50%)';
+    fill.style.width      = `${ratio * 100}%`;
+  }
+
+  update(current);
+
+  let dragging = false;
+
+  function onPointerMove(e) {
+    if (!dragging) return;
+    const tr = track.getBoundingClientRect();
+    const th = thumb.getBoundingClientRect();
+    let x = e.clientX - tr.left - th.width / 2;
+    x = Math.max(0, Math.min(x, tr.width - th.width));
+    const ratio = x / (tr.width - th.width);
+    current = Math.round(MIN + ratio * (MAX - MIN));
+    update(current);
+  }
+
+  function onPointerUp() {
+    dragging = false;
+  }
+
+  // Ловим и на десктоп, и на тач: pointerdown на сам thumb
+  thumb.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    dragging = true;
+    thumb.setPointerCapture(e.pointerId);
+  });
+  // А также клики и нажатия по треку — сразу переместим thumb туда
+  track.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    dragging = true;
+    onPointerMove(e);
+    thumb.setPointerCapture(e.pointerId);
+  });
+
+  document.addEventListener('pointermove', onPointerMove);
+  document.addEventListener('pointerup',   onPointerUp);
+  document.addEventListener('pointercancel',onPointerUp);
+});
+
+</script>
+</body>
+</html>

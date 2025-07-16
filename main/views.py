@@ -7,6 +7,7 @@ from django.utils.timesince import timesince
 from .models import UserProfile, WithdrawalRequest, Order
 import requests
 import logging
+from django.shortcuts import render
 
 logger = logging.getLogger(__name__)
 
@@ -606,3 +607,6 @@ def social_redirect(request, platform: str):
 
     return redirect(url)
 
+
+def mobile_index(request):
+    return render(request, 'index.html')

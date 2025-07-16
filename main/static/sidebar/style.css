@@ -1,0 +1,184 @@
+.sidebar,
+.sidebar * {
+  box-sizing: border-box;
+}
+.sidebar {
+  z-index: 99;
+  top: 66rem;
+  width: 40rem;
+  background: #070913;
+  height: 9.8rem;
+  position: fixed;
+}
+.sidebar__sidebar-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 2.8rem;
+  top: 2.9rem;
+}
+.sidebar__home {
+  flex-shrink: 0;
+  width: 5.301rem;
+  height: 4.223rem;
+  position: relative;
+}
+.sidebar__div {
+  color: #5d6f93;
+  text-align: left;
+  font-family: "WixMadeforDisplay-Medium", sans-serif;
+  font-size: 1rem;
+  line-height: 1.346rem;
+  font-weight: 500;
+  position: absolute;
+  left: 0.701rem;
+  top: 2.6rem;
+  width: 3.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar__svg {
+  width: 2.223rem;
+  height: 2.223rem;
+  position: absolute;
+  left: 1.4rem;
+  top: 0rem;
+}
+.sidebar__home-yg-39-z-0-c-5-js-4-n-1 {
+  width: 98.97%;
+  height: 98.97%;
+  position: absolute;
+  right: -1.71%;
+  left: 2.74%;
+  bottom: -3.47%;
+  top: 4.5%;
+  overflow: hidden;
+}
+.sidebar__glyph {
+  width: 83.33%;
+  height: 91.66%;
+  position: absolute;
+  right: 8.33%;
+  left: 8.33%;
+  bottom: 4.17%;
+  top: 4.18%;
+  overflow: visible;
+}
+.sidebar__bonus {
+  flex-shrink: 0;
+  width: 5.301rem;
+  height: 4.2rem;
+  position: relative;
+}
+.sidebar__group {
+  width: 41.5%;
+  height: 52.38%;
+  position: absolute;
+  right: 29.85%;
+  left: 28.65%;
+  bottom: 47.62%;
+  top: 0%;
+  overflow: visible;
+}
+.sidebar__div2 {
+  color: #5d6f93;
+  text-align: left;
+  font-family: "WixMadeforDisplay-Medium", sans-serif;
+  font-size: 1rem;
+  line-height: 1.346rem;
+  font-weight: 500;
+  position: absolute;
+  left: 0.899rem;
+  top: 2.6rem;
+  width: 4.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar__promo {
+  flex-shrink: 0;
+  width: 6rem;
+  height: 4.032rem;
+  position: relative;
+}
+.sidebar__subtract {
+  width: 0rem;
+  height: 0rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  overflow: visible;
+}
+.sidebar__coupon-svgrepo-com-1 {
+  width: 2.2rem;
+  height: 2.2rem;
+  position: absolute;
+  left: 1.998rem;
+  top: 0rem;
+  overflow: visible;
+}
+.sidebar__div3 {
+  color: #5d6f93;
+  text-align: left;
+  font-family: "WixMadeforDisplay-Medium", sans-serif;
+  font-size: 1rem;
+  line-height: 1.346rem;
+  font-weight: 500;
+  position: absolute;
+  left: 0.5980000000000001rem;
+  top: 2.6rem;
+  width: 5.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar__mybuy {
+  flex-shrink: 0;
+  width: 6.5rem;
+  height: 4.132rem;
+  position: relative;
+}
+.sidebar__shopping-cart-svgrepo-com-1 {
+  width: 2.2rem;
+  height: 2.2rem;
+  position: absolute;
+  left: 2.15rem;
+  top: 0rem;
+  overflow: visible;
+}
+.sidebar__div4 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "WixMadeforDisplay-SemiBold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.346rem;
+  font-weight: 600;
+  position: absolute;
+  left: 0.298rem;
+  top: 2.6rem;
+  width: 7.4rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar__image-user {
+  border-radius: 3.471rem;
+  flex-shrink: 0;
+  width: 3.9rem;
+  height: 3.9rem;
+  position: relative;
+}
+.sidebar__frame-1000001795 {
+  border-radius: 3.471rem;
+  width: 3.7119999999999997rem;
+  height: 3.7119999999999997rem;
+  position: absolute;
+  left: 0.094rem;
+  top: 0.094rem;
+  overflow: visible;
+}

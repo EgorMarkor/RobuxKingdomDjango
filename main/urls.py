@@ -15,7 +15,8 @@ from .views import (
     social_redirect,
     PolitConf,
     MoneyBack,
-    UserSogl
+    UserSogl,
+    mobile_index
 )
 
 urlpatterns = [
@@ -35,4 +36,5 @@ urlpatterns = [
     path('politika-konfidencialnosti/', PolitConf.as_view(), name='politconf'),
     path('politika-vozvrata-sredstv/', MoneyBack.as_view(), name='moneyback'),
     path('polzovatelskoe-soglashenie/', UserSogl.as_view(), name='usersogl'),
+    path('mobile_index/', mobile_index, name='mobile_index'),
 ]

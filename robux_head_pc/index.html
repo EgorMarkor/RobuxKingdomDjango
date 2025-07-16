@@ -262,31 +262,31 @@
 </head>
 
 <body>
+  <div id="account-menu" class="account-menu">
+      <a class="account-menu-item account-menu-item--stats" href="http://rbxkingdom.com/account/">
+        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/group0_2.svg" />
+        <div class="account-menu-text">Статистика аккаунта</div>
+      </a>
+      <a class="account-menu-item account-menu-item--purchases" href="http://rbxkingdom.com/buy/">
+        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10_2.svg" />
+        <div class="account-menu-text">Мои покупки</div>
+      </a>
+      <a class="account-menu-item account-menu-item--bonus" href="http://rbxkingdom.com/bonus/">
+        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/svg0_2.svg" />
+        <div class="account-menu-text">Бонусы</div>
+      </a>
+      <a class="account-menu-item account-menu-item--logout" href="http://rbxkingdom.com/logout/">
+        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/icon-left0_2.svg" />
+        <div class="account-menu-text">Выйти</div>
+      </a>
+    </div>
   <div class="div">
-    <div class="div__frame-1000005832">
-      <img class="div__image-14" src="robux_head_pc/image-140.png" />
-      <div class="div__frame-1000005854">
-        <div class="div__kingdom">
-          KINGDOM
-          <br />
-        </div>
-        <div class="div__kingdom2">
-          KINGDOM
-          <br />
-        </div>
-      </div>
-      <div class="div__frame-1000002207">
-        <div class="div__rectangle-1117"></div>
-        <div class="div__rectangle-1118"></div>
-        <div class="div__rectangle-1119"></div>
-      </div>
-      <div class="div__frame-48095932"></div>
-      <div class="div__frame-1000002206">
+    <div class="div__frame-1000002206">
 
         <div class="div__frame-48095931">
           {% if not profile %}
             <div class="div__button-2">
-              <a class="div__div2" href="#auth" data-fancybox id="triggger">Войти в аккаунт</a>
+              <a class="div__div2" href="#auth" id="triggger">Войти в аккаунт</a>
             </div>
           {% endif %}
           {% if profile %}
@@ -358,7 +358,7 @@
             }
 
           </style>
-          <a class="div__frame-1000005958 button" href="http://rbxkingdom.com/account/">
+          <a id="account-button" class="div__frame-1000005958 button" href="#">
             <img class="div__image2" src="{{ profile.image_url }}" />
             <div class="div__frame-1000005915">
               <div class="div__gefzyy-1232">{{ profile.username }}</div>
@@ -366,6 +366,24 @@
             </div>
             <img class="div__vector9" src="http://rbxkingdom.com/robux_account_pc/vector8.svg" />
           </a>
+          
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accountBtn = document.getElementById('account-button');
+      const menu = document.getElementById('account-menu');
+
+      accountBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!accountBtn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+  </script>
 
           {% endif %}
           
@@ -385,18 +403,18 @@
                 <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
               </div>
             </div>
-            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
+            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} id="triggger6" {% endif %}>
               <img class="div__group" src="robux_head_pc/group0.svg" />
               <div class="div__div4">Бонусы</div>
             </a>
-            <a class="div__frame-48095929" href="" data-fancybox id="triggger9">
+            <a class="div__frame-48095929" href="" id="triggger9">
               <div class="div__frame-5">
                 <img class="div__coupon-svgrepo-com-1" src="robux_head_pc/coupon-svgrepo-com-10.svg" />
                 <div class="div__div5">Промокод</div>
               </div>
             </a>
             <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
-              {% if not profile %} data-fancybox id="triggger4" {% endif %}>
+              {% if not profile %} id="triggger4" {% endif %}>
               <div class="div__frame-5">
                 <img class="div__shopping-cart-svgrepo-com-1" src="robux_head_pc/shopping-cart-svgrepo-com-10.svg" />
                 <div class="div__div6">Мои покупки</div>
@@ -408,6 +426,24 @@
           <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
         </a>
       </div>
+    <div class="div__frame-1000005832">
+      <img class="div__image-14" src="robux_head_pc/image-140.png" />
+      <div class="div__frame-1000005854">
+        <div class="div__kingdom">
+          KINGDOM
+          <br />
+        </div>
+        <div class="div__kingdom2">
+          KINGDOM
+          <br />
+        </div>
+      </div>
+      <div class="div__frame-1000002207">
+        <div class="div__rectangle-1117"></div>
+        <div class="div__rectangle-1118"></div>
+        <div class="div__rectangle-1119"></div>
+      </div>
+      <div class="div__frame-48095932"></div>
       <div class="div__frame-1000005853">
         <div class="div__frame-1000005851">
           <div class="div__img-6195-2"></div>
@@ -436,7 +472,7 @@
                     <div class="div__item7"></div>
                     <div class="div__item8"></div>
                   </div>
-                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox {% endif %}>Купить робуксы</a>
+                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} {% endif %}>Купить робуксы</a>
                 </div>
               </div>
               <div class="div__button2">
@@ -997,53 +1033,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     </div>
-    <div class="div__frame-54">
-      <div class="div__frame-10000022062">
-        {% if not profile %}
-        <div class="div__frame-48095931">
-          <div class="div__button-2">
-            <a class="div__div2" href="#auth" data-fancybox id="triggger2">Войти в аккаунт</a>
-          </div>
-        </div>
-        {% endif %}
-        <a class="div__group-197-1" href="http://rbxkingdom.com/">
-          <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
-        </a>
-        <div class="div__frame-480959322">
-          <div class="div__frame-48095930">
-            <div class="div__frame-48095926">
-              <a class="div__div3" href="http://rbxkingdom.com/">Купить робуксы</a>
-              <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                <img class="div__glyph2" src="robux_head_pc/glyph1.svg" />
-              </div>
-            </div>
-            <a class="div__frame-3 button" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}"
-              {% if not profile %} data-fancybox {% endif %}>
-              <img class="div__svg14" src="robux_head_pc/svg13.svg" />
-              <div class="div__div4">Бонусы</div>
-            </a>
-            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox {% endif %}>
-              <div class="div__frame-5">
-                <img class="div__coupon-svgrepo-com-12" src="robux_head_pc/coupon-svgrepo-com-11.svg" />
-                <div class="div__div5">Промокод</div>
-              </div>
-            </a>
-            <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
-              {% if not profile %} data-fancybox id="triggger7" {% endif %}>>
-              <div class="div__frame-5">
-                <img class="div__shopping-cart-svgrepo-com-12" src="robux_head_pc/shopping-cart-svgrepo-com-11.svg" />
-                <div class="div__div6">Мои покупки</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="div__frame-10000062152">
-          <a href="https://youtube.com/@rbxkingdom" target="_blank"><img class="div__frame-1000005905-variant-32" src="robux_head_pc/frame-1000005905-variant-31.svg"  style="cursor: pointer;" /></a>
-          <a href="https://vk.com/rbxkingdom" target="_blank"><img class="div__frame-1000005907-variant-22" src="robux_head_pc/frame-1000005907-variant-21.svg"  style="cursor: pointer;" /></a>
-          <a href="https://t.me/rbxkingdom" target="_blank"><img class="div__frame-1000005906-variant-12" src="robux_head_pc/frame-1000005906-variant-11.svg"  style="cursor: pointer;" /></a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div id="login-popup" class="popup">
@@ -1085,6 +1074,53 @@ document.addEventListener('DOMContentLoaded', () => {
           {% csrf_token %}
           <input type="text" name="username" required class="popup-input-container"
             style="padding-left: 2rem; font-size: 4rem; color: white;">
+            <div id="user-suggestions" class="user-suggestions"></div>
+            <style>
+              /* контейнер подсказок */
+.user-suggestions {
+  display: none;               /* спрятан по умолчанию */
+  margin-top: 0.5rem;
+  background: #2e313d;
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow-x: auto;            /* горизонтальный скролл */
+  display: flex;
+  gap: 0.75rem;
+  scroll-behavior: smooth;
+}
+
+/* когда есть подсказки */
+.user-suggestions.show {
+  display: flex;
+}
+
+/* каждая подсказка */
+.user-suggestion {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-suggestion img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-bottom: 0.25rem;
+}
+
+.user-suggestion span {
+  color: #ffffff;
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+            </style>
           <button class="popup-button">
             <div class="popup-button-text">Войти</div>
           </button>
@@ -1097,6 +1133,81 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="{% url 'politconf' %}" class="link">Политикой конфиденциальности</a>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('.popup-input-container');
+  const suggestions = document.getElementById('user-suggestions');
+  let controller; // для отмены предыдущего fetch
+
+  input.addEventListener('input', async () => {
+    const q = input.value.trim();
+    if (!q) {
+      suggestions.classList.remove('show');
+      suggestions.innerHTML = '';
+      return;
+    }
+
+    // отменяем предыдущий запрос, если ещё не завершён
+    if (controller) controller.abort();
+    controller = new AbortController();
+    const { signal } = controller;
+
+    try {
+      // 1) ищем по нику
+      const resUsers = await fetch(
+        `https://users.roblox.com/v1/users/search?keyword=${encodeURIComponent(q)}&limit=10`,
+        { signal }
+      );
+      const { data: users } = await resUsers.json();
+      if (!users.length) throw 'no users';
+
+      // 2) берём аватарки
+      const ids = users.map(u => u.id).join(',');
+      const resThumbs = await fetch(
+        `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${ids}&size=48x48&format=Png&isCircular=true`,
+        { signal }
+      );
+      const thumbs = await resThumbs.json();
+      const thumbMap = {};
+      thumbs.data.forEach(t => thumbMap[t.targetId] = t.imageUrl);
+
+      // 3) рисуем подсказки
+      suggestions.innerHTML = '';
+      users.forEach(u => {
+        const url = thumbMap[u.id] || '';
+        const div = document.createElement('div');
+        div.className = 'user-suggestion';
+        div.innerHTML = `
+          <img src="${url}" alt="${u.name}" />
+          <span>${u.name}</span>
+        `;
+        div.onclick = () => {
+          input.value = u.name;
+          suggestions.classList.remove('show');
+        };
+        suggestions.append(div);
+      });
+      suggestions.classList.add('show');
+
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        suggestions.classList.remove('show');
+        suggestions.innerHTML = '';
+        console.error(err);
+      }
+    }
+  });
+
+  // скрываем, если клик вне поля/списка
+  document.addEventListener('click', e => {
+    if (!input.contains(e.target) && !suggestions.contains(e.target)) {
+      suggestions.classList.remove('show');
+    }
+  });
+});
+
+      </script>
 
       <!-- Правая часть: иллюстрация -->
       <div class="popup-image-frame">

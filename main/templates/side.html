@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'sidebar/vars.css' %}">
+  <link rel="stylesheet" href="{% static 'sidebar/style.css' %}">
+  
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar__sidebar-bar">
+      <div class="sidebar__home">
+        <div class="sidebar__div">Главная</div>
+        <div class="sidebar__svg">
+          <div class="sidebar__home-yg-39-z-0-c-5-js-4-n-1">
+            <img class="sidebar__glyph" src="{% static 'sidebar/glyph0.svg' %}" />
+          </div>
+        </div>
+      </div>
+      <div class="sidebar__bonus">
+        <img class="sidebar__group" src="{% static 'sidebar/group0.svg' %}" />
+        <div class="sidebar__div2">Бонусы</div>
+      </div>
+      <div class="sidebar__promo">
+        <img class="sidebar__subtract" src="{% static 'sidebar/subtract0.svg' %}" />
+        <img
+          class="sidebar__coupon-svgrepo-com-1"
+          src="{% static 'sidebar/coupon-svgrepo-com-10.svg' %}"
+        />
+        <div class="sidebar__div3">Промокод</div>
+      </div>
+      <div class="sidebar__mybuy">
+        <img
+          class="sidebar__shopping-cart-svgrepo-com-1"
+          src="{% static 'sidebar/shopping-cart-svgrepo-com-10.svg' %}"
+        />
+        <div class="sidebar__div4">Мои покупки</div>
+      </div>
+      <div class="sidebar__image-user">
+        <img class="sidebar__frame-1000001795" src="{% static 'sidebar/frame-10000017950.svg' %}" />
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
