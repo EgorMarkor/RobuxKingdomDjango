@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="robux_head_pc/./style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
@@ -262,170 +261,8 @@
 </head>
 
 <body>
-  <div id="account-menu" class="account-menu">
-      <a class="account-menu-item account-menu-item--stats" href="http://rbxkingdom.com/account/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/group0_2.svg" />
-        <div class="account-menu-text">Статистика аккаунта</div>
-      </a>
-      <a class="account-menu-item account-menu-item--purchases" href="http://rbxkingdom.com/buy/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10_2.svg" />
-        <div class="account-menu-text">Мои покупки</div>
-      </a>
-      <a class="account-menu-item account-menu-item--bonus" href="http://rbxkingdom.com/bonus/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/svg0_2.svg" />
-        <div class="account-menu-text">Бонусы</div>
-      </a>
-      <a class="account-menu-item account-menu-item--logout" href="http://rbxkingdom.com/logout/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/icon-left0_2.svg" />
-        <div class="account-menu-text">Выйти</div>
-      </a>
-    </div>
   <div class="div">
-    <div class="div__frame-1000002206">
-
-        <div class="div__frame-48095931">
-          {% if not profile %}
-            <div class="div__button-2">
-              <a class="div__div2" href="#auth" id="triggger">Войти в аккаунт</a>
-            </div>
-          {% endif %}
-          {% if profile %}
-
-          <style>
-            .div__frame-1000005958 {
-              width: 19.9rem;
-              height: 5.6rem;
-              position: absolute;
-              left: 111.2rem;
-              top: -0.5rem;
-            }
-            .div__image2 {
-              border-radius: 50%;
-              width: 5.6rem;
-              height: 5.6rem;
-              position: absolute;
-              left: 0rem;
-              top: 0rem;
-              object-fit: cover;
-            }
-            .div__frame-1000005915 {
-              display: flex;
-              flex-direction: column;
-              gap: 0.5rem;
-              align-items: flex-start;
-              justify-content: flex-start;
-              width: 13.4rem;
-              position: absolute;
-              left: 6.5rem;
-              top: 0.7rem;
-            }
-            .div__gefzyy-1232 {
-              color: #ffffff;
-              text-align: left;
-              font-family: "Gilroy-Bold", sans-serif;
-              font-size: 1.6rem;
-              line-height: 2.988rem;
-              font-weight: 700;
-              position: relative;
-              align-self: stretch;
-              height: 1.9rem;
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-            }
-            .div__div11 {
-              left: 0rem;
-              top: -0.5rem;
-              color: #80889a;
-              text-align: left;
-              font-family: "Gilroy-Medium", sans-serif;
-              font-size: 1.2rem;
-              line-height: 1.356rem;
-              font-weight: 500;
-              position: relative;
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-            }
-            .div__vector9 {
-              width: 0.708rem;
-              height: 1.423rem;
-              position: absolute;
-              left: 19.2rem;
-              top: 1.5rem;
-              transform: translate(-0.047rem, -0.047rem);
-              overflow: visible;
-            }
-
-          </style>
-          <a id="account-button" class="div__frame-1000005958 button" href="#">
-            <img class="div__image2" src="{{ profile.image_url }}" />
-            <div class="div__frame-1000005915">
-              <div class="div__gefzyy-1232">{{ profile.username }}</div>
-              <div class="div__div11">Перейти в профиль</div>
-            </div>
-            <img class="div__vector9" src="http://rbxkingdom.com/robux_account_pc/vector8.svg" />
-          </a>
-          
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const accountBtn = document.getElementById('account-button');
-      const menu = document.getElementById('account-menu');
-
-      accountBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        menu.classList.toggle('show');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!accountBtn.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.remove('show');
-        }
-      });
-    });
-  </script>
-
-          {% endif %}
-          
-          
-
-          <div class="div__frame-1000006215">
-            <a href="https://youtube.com/@rbxkingdom" target="_blank"><img class="div__frame-1000005905-variant-3" src="robux_head_pc/frame-1000005905-variant-30.svg"  style="cursor: pointer;" /></a>
-            <a href="https://vk.com/rbxkingdom" target="_blank"><img class="div__frame-1000005907-variant-2" src="robux_head_pc/frame-1000005907-variant-20.svg"  style="cursor: pointer;" /></a>
-            <a href="https://t.me/rbxkingdom" target="_blank"><img class="div__frame-1000005906-variant-1" src="robux_head_pc/frame-1000005906-variant-10.svg"  style="cursor: pointer;" /></a>
-          </div>
-        </div>
-        <div class="div__frame-480959322">
-          <div class="div__frame-48095930">
-            <div class="div__frame-48095926">
-              <a class="div__div3" href="http://rbxkingdom.com/">Купить робуксы</a>
-              <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                <img class="div__glyph" src="robux_head_pc/glyph0.svg" />
-              </div>
-            </div>
-            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} id="triggger6" {% endif %}>
-              <img class="div__group" src="robux_head_pc/group0.svg" />
-              <div class="div__div4">Бонусы</div>
-            </a>
-            <a class="div__frame-48095929" href="" id="triggger9">
-              <div class="div__frame-5">
-                <img class="div__coupon-svgrepo-com-1" src="robux_head_pc/coupon-svgrepo-com-10.svg" />
-                <div class="div__div5">Промокод</div>
-              </div>
-            </a>
-            <a class="div__frame-48095928 button" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}"
-              {% if not profile %} id="triggger4" {% endif %}>
-              <div class="div__frame-5">
-                <img class="div__shopping-cart-svgrepo-com-1" src="robux_head_pc/shopping-cart-svgrepo-com-10.svg" />
-                <div class="div__div6">Мои покупки</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <a class="div__group-197-1" href="http://rbxkingdom.com/">
-          <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
-        </a>
-      </div>
+    {% include 'header.html' %}
     <div class="div__frame-1000005832">
       <img class="div__image-14" src="robux_head_pc/image-140.png" />
       <div class="div__frame-1000005854">
@@ -461,22 +298,15 @@
           <div class="div__background">
             <div class="div__frame-1000005862">
               <div class="div__frame-1000005861">
-                <div class="div__button">
-                  <div class="div__list">
-                    <div class="div__item"></div>
-                    <div class="div__item2"></div>
-                    <div class="div__item3"></div>
-                    <div class="div__item4"></div>
-                    <div class="div__item5"></div>
-                    <div class="div__item6"></div>
-                    <div class="div__item7"></div>
-                    <div class="div__item8"></div>
-                  </div>
-                  <a id="buy-button" class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %} {% endif %}>Купить робуксы</a>
-                </div>
+                <a class="div__button" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if profile %}id="buy-button"{% else %}data-fancybox{% endif %}>
+                  <div class="div__heading-2" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if not profile %}data-fancybox{% endif %}>Купить робуксы</div>
+                </a>
               </div>
               <div class="div__button2">
-                <a class="div__div7" id="triggger8" href="#input_promo" data-fancybox>Ввести промокод</a>
+                <a class="div__div7" href="#input_promo" data-fancybox data-options='{
+    "buttons": [],       /* полностью отключаем тулбар */
+    "smallBtn": false    /* отключаем маленький крестик в углу */
+  }'>Ввести промокод</a>
                 <img class="div__svg" src="robux_head_pc/svg0.svg" />
               </div>
               <div class="div__frame-1000006016">
@@ -493,21 +323,43 @@
                 <div class="div__frame-1000005871">
                   <div class="div__background-border">
                     <div class="div__label3">Ты платишь</div>
-                    <div class="div__input">
-                      <div class="div___10">10 ₽</div>
+                    <div class="div__label3" style="font-size: 4rem;
+top: 6.5rem;
+left: 52rem;">₽</div>
+                    <input type="text" class="div__input div___10">
+                  </div>
+                  <div class="butt_">
+                    <div class="butt____500-rubles button">
+                      <div class="butt____500">500 ₽</div>
+                    </div>
+                    <div class="butt____1000-r button">
+                      <div class="butt____1000">1000 ₽</div>
+                    </div>
+                    <div class="butt___background-border button">
+                      <div class="butt____1500">1500 ₽</div>
                     </div>
                   </div>
                   <div class="div__background-border2">
                     <div class="div__label5">Ты получаешь</div>
-                    <div class="div__input2">
-                      <div class="div___14-r">
-                        <span>
-                          <span class="_14-r-span">14</span>
-                          <span class="_14-r-span">R$</span>
-                        </span>
-                      </div>
+                    <div class="div__label5" style="font-size: 4rem;
+top: 6.5rem;
+left: 50rem;">R$</div>
+                    <input type="text" class="div__input2">
+                    <div class="div__container">
                     </div>
-                    <div class="div__background2">
+                  </div>
+                  <div class="butt_" style="top: -2rem;">
+                    <div class="butt____500-rubles button">
+                      <div class="butt____500">500 R$</div>
+                    </div>
+                    <div class="butt____1000-r button">
+                      <div class="butt____1000">1000 R$</div>
+                    </div>
+                    <div class="butt___background-border button">
+                      <div class="butt____1500">1500 R$</div>
+                    </div>
+                  </div>
+                  <div class="div__background2">
                       <input type="range" min="20" max="20000" value="1000" class="range-overlay" />
                       <div class="div__background3"></div>
                       <div class="div__background4"></div>
@@ -516,15 +368,13 @@
                         <img class="div__svg2" src="robux_head_pc/svg1.svg" />
                       </div>
                     </div>
-                    <div class="div__container">
-                      <div class="div__background5">
+                    <div class="div__background5" style="left: 44.2rem;
+top: 56.3rem;">
                         <div class="div__frame-1000006006">
                           <div class="div___0-r">+0R$</div>
                           <img class="div__group2" src="robux_head_pc/group1.svg" />
                         </div>
                       </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1080,13 +930,16 @@ document.addEventListener('DOMContentLoaded', () => {
 .user-suggestions {
   display: none;               /* спрятан по умолчанию */
   margin-top: 0.5rem;
-  background: #2e313d;
   border-radius: 8px;
   padding: 0.5rem;
   overflow-x: auto;            /* горизонтальный скролл */
   display: flex;
-  gap: 0.75rem;
+  gap: 2.75rem;
   scroll-behavior: smooth;
+  width: 36rem;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 48rem;
 }
 
 /* когда есть подсказки */
@@ -1096,28 +949,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* каждая подсказка */
 .user-suggestion {
+  background: #0a0d19;
+  border-radius: 1.5rem;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 4rem;
+  width: 16rem;
   cursor: pointer;
   text-align: center;
 }
 
 .user-suggestion img {
-  width: 3rem;
-  height: 3rem;
+  width: 10rem;
+  height: auto;
   border-radius: 50%;
-  margin-bottom: 0.25rem;
+  margin-bottom: 2rem;
 }
 
 .user-suggestion span {
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  margin-bottom: 2rem;
 }
 
             </style>
@@ -1135,79 +991,125 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <script>
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.popup-input-container');
   const suggestions = document.getElementById('user-suggestions');
-  let controller; // для отмены предыдущего fetch
+  let controller = null;
+  let backoffUntil = 0;
 
-  input.addEventListener('input', async () => {
+  // Debounce, чтобы не спамить запросами
+  const debounce = (fn, ms) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), ms);
+    };
+  };
+
+  const fetchUsers = async () => {
     const q = input.value.trim();
-    if (!q) {
+    const now = Date.now();
+    // не пытаемся при слишком частых эроверах
+    if (now < backoffUntil) return;
+
+    // минимальная длина 3 символа
+    if (q.length < 3) {
       suggestions.classList.remove('show');
       suggestions.innerHTML = '';
       return;
     }
-
-    // отменяем предыдущий запрос, если ещё не завершён
     if (controller) controller.abort();
     controller = new AbortController();
     const { signal } = controller;
 
     try {
-      // 1) ищем по нику
-      const resUsers = await fetch(
-        `https://users.roblox.com/v1/users/search?keyword=${encodeURIComponent(q)}&limit=10`,
+      const res = await fetch(
+        `/api/roblox/search?q=${encodeURIComponent(q)}`,
         { signal }
       );
-      const { data: users } = await resUsers.json();
-      if (!users.length) throw 'no users';
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-      // 2) берём аватарки
+      const json = await res.json();
+
+      // Обработка ошибок из тела
+      if (Array.isArray(json.errors) && json.errors.length) {
+        const err = json.errors[0];
+        if (err.code === 6) {
+          // слишком коротко — просто скрываем подсказки
+          suggestions.classList.remove('show');
+          suggestions.innerHTML = '';
+          return;
+        }
+        if (err.code === 0) {
+          // too many requests — даём бэкофф в 1 секунду
+          backoffUntil = now + 1000;
+          console.warn('Roblox API rate limit, backing off for 1s');
+          return;
+        }
+        // другие ошибки
+        throw new Error(err.message);
+      }
+
+      // основной массив
+      const users = Array.isArray(json.data) ? json.data : [];
+      if (!users.length) {
+        suggestions.classList.remove('show');
+        suggestions.innerHTML = '';
+        return;
+      }
+
+      // Получаем аватарки
       const ids = users.map(u => u.id).join(',');
-      const resThumbs = await fetch(
-        `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${ids}&size=48x48&format=Png&isCircular=true`,
+      const thumbRes = await fetch(
+        `/api/roblox/avatar-headshot?` +
+          `userIds=${encodeURIComponent(ids)}` +
+          `&size=48x48&format=Png&isCircular=true`,
         { signal }
       );
-      const thumbs = await resThumbs.json();
+      const thumbs = await thumbRes.json();
       const thumbMap = {};
       thumbs.data.forEach(t => thumbMap[t.targetId] = t.imageUrl);
+      
 
-      // 3) рисуем подсказки
+      // Рендерим подсказки
       suggestions.innerHTML = '';
       users.forEach(u => {
-        const url = thumbMap[u.id] || '';
         const div = document.createElement('div');
         div.className = 'user-suggestion';
         div.innerHTML = `
-          <img src="${url}" alt="${u.name}" />
+          <img src="${thumbMap[u.id] || ''}" alt="${u.name}" />
           <span>${u.name}</span>
         `;
-        div.onclick = () => {
+        document.querySelector('.popup-image-frame').style.display = "none";
+        document.querySelector('.popup-form').style.left = '3rem';
+        div.addEventListener('click', () => {
           input.value = u.name;
           suggestions.classList.remove('show');
-        };
+        });
         suggestions.append(div);
       });
       suggestions.classList.add('show');
 
     } catch (err) {
       if (err.name !== 'AbortError') {
+        console.error(err);
         suggestions.classList.remove('show');
         suggestions.innerHTML = '';
-        console.error(err);
       }
     }
-  });
+  };
 
-  // скрываем, если клик вне поля/списка
+  input.addEventListener('input', debounce(fetchUsers, 600));
   document.addEventListener('click', e => {
     if (!input.contains(e.target) && !suggestions.contains(e.target)) {
       suggestions.classList.remove('show');
     }
   });
 });
+</script>
 
-      </script>
+
+
 
       <!-- Правая часть: иллюстрация -->
       <div class="popup-image-frame">
@@ -1239,45 +1141,40 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="promo-heading">Промокод</div>
     <input type="text" class="promo-input-placeholder promo-input-frame">
-    <div class="error-icon-frame">
+    <button class="error-icon-frame promo-close" data-fancybox-close>
       <img class="error-icon" src="robux_head_pc/error-svgrepo-com-10.svg" alt="Error Icon" />
-    </div>
+    </button>
   </div>
 
+<style>
+  .fancybox-close-small {
+    display: none !important;
+  }
+</style>
+
+<script>
+document.addEventListener('click', e => {
+  // если клик именно по вашему крестику
+  if (e.target.matches('.promo-close')) {
+    Fancybox.close();  // для Fancybox 4+
+    // или $.fancybox.close();  // для Fancybox 3
+  }
+});
+</script>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<!-- 1) jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- 2) Fancybox v3 -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 
 <script>
   document.getElementById("triggger8").addEventListener("click", () => {
     Fancybox.show([{ src: "#input_promo", type: "inline" }]);
   });
-
-  document.getElementById("triggger").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
-  document.getElementById("triggger2").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
-  document.getElementById("triggger4").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
-  document.getElementById("buy-button").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
-  document.getElementById("triggger6").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
-  document.getElementById("triggger7").addEventListener("click", () => {
-    Fancybox.show([{ src: "#auth", type: "inline" }]);
-  });
-
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -1357,6 +1254,76 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slider       = document.querySelector('.range-overlay');
+  const payInput     = document.querySelector('.div__input');   // «Ты платишь»
+  const receiveInput = document.querySelector('.div__input2');  // «Ты получаешь»
+  const sliderLabel  = document.querySelector('.div__slider .div___1000'); // цифра над ползунком
+  const rate         = 1.35; // курс R$ → ₽
+
+  function updateFromSlider() {
+    const robux = Number(slider.value);
+    // округляем ТОЛЬКО в робуксах
+    const rubles = Number((robux / rate).toFixed(2));
+    payInput.value     = rubles;
+    receiveInput.value = robux;
+    sliderLabel.textContent = robux;
+  }
+
+  function updateFromPay() {
+    let val = Math.max(Number(payInput.value), Number(slider.min));
+    val = Math.min(val, Number(slider.max));
+    slider.value = val;
+    updateFromSlider();
+  }
+
+  function updateFromReceive() {
+    // получаем точное число робуксов
+    const rob = Number(receiveInput.value);
+    // переводим в рубли без округления
+    const rub = rob / rate;
+    // обрезаем по границам слайдера
+    const min = Number(slider.min);
+    const max = Number(slider.max);
+    const clamped = Math.min(Math.max(rub, min), max);
+    slider.value = clamped;
+    updateFromSlider();
+  }
+
+  slider.addEventListener('input', updateFromSlider);
+  payInput.addEventListener('input', updateFromPay);
+  receiveInput.addEventListener('input', updateFromReceive);
+
+  // кнопки «500 ₽ / 1000 ₽ / 1500 ₽»
+  const payButtons = document.querySelectorAll('.butt_')[0].querySelectorAll('.button');
+  payButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const rub = parseFloat(btn.textContent);
+      slider.value = rub * rate;
+      updateFromSlider();
+    });
+  });
+
+  // кнопки «500 R$ / 1000 R$ / 1500 R$»
+  const receiveButtons = document.querySelectorAll('.butt_')[1].querySelectorAll('.button');
+  receiveButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const robux = parseFloat(btn.textContent);
+      const rub = robux; // теперь без округления
+      slider.value = rub;
+      updateFromSlider();
+    });
+  });
+
+  // начальная синхронизация
+  updateFromSlider();
+});
+</script>
+
+
 
 
 

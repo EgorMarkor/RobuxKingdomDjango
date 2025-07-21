@@ -16,7 +16,9 @@ from .views import (
     PolitConf,
     MoneyBack,
     UserSogl,
-    mobile_index
+    mobile_index,
+    roblox_search,
+    roblox_thumb
 )
 
 urlpatterns = [
@@ -37,4 +39,6 @@ urlpatterns = [
     path('politika-vozvrata-sredstv/', MoneyBack.as_view(), name='moneyback'),
     path('polzovatelskoe-soglashenie/', UserSogl.as_view(), name='usersogl'),
     path('mobile_index/', mobile_index, name='mobile_index'),
+    path('api/roblox/search', roblox_search, name='roblox_search'),
+    path('api/roblox/avatar-headshot', roblox_thumb, name='roblox_thumb'),
 ]

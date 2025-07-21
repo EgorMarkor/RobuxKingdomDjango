@@ -8,9 +8,77 @@ from .models import UserProfile, WithdrawalRequest, Order
 import requests
 import logging
 from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.http import require_GET
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
 
 logger = logging.getLogger(__name__)
 
+def cors_json(data, origin="http://rbxkingdom.com", status=200):
+    resp = JsonResponse(data, status=status, safe=False)
+    resp["Access-Control-Allow-Origin"] = origin
+    return resp
+
+
+@csrf_exempt
+@require_http_methods(["OPTIONS", "GET"])
+def roblox_search(request):
+    if request.method == "OPTIONS":
+        response = HttpResponse()
+        response["Access-Control-Allow-Origin"]  = "http://rbxkingdom.com"
+        response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+        response["Access-Control-Allow-Headers"] = "Content-Type"
+        return response
+
+    q = request.GET.get('q','').strip()
+    if len(q) < 2:
+        return cors_json({"data": []})
+
+    try:
+        r = requests.get(
+            "https://users.roblox.com/v1/users/search",
+            params={"keyword": q, "limit": 10},
+            timeout=5
+        )
+        data = r.json()
+    except Exception:
+        data = {"data": []}
+
+    return cors_json(data)
+
+
+@csrf_exempt
+@require_http_methods(["OPTIONS", "GET"])
+def roblox_thumb(request):
+    """
+    Проксируем thumbnail-запрос:
+    GET params: userIds (csv), size, format, isCircular
+    """
+    if request.method == "OPTIONS":
+        response = HttpResponse()
+        response["Access-Control-Allow-Origin"]  = "http://rbxkingdom.com"
+        response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+        response["Access-Control-Allow-Headers"] = "Content-Type"
+        return response
+
+    params = {
+        "userIds": request.GET.get("userIds",""),
+        "size":     request.GET.get("size","48x48"),
+        "format":   request.GET.get("format","Png"),
+        "isCircular": request.GET.get("isCircular","true"),
+    }
+    try:
+        r = requests.get(
+            "https://thumbnails.roblox.com/v1/users/avatar-headshot",
+            params=params,
+            timeout=5
+        )
+        data = r.json()
+    except Exception:
+        data = {"data": []}
+
+    return cors_json(data)
 
 
 def check_regional_pricing(gamepass_id: str) -> bool:
@@ -86,6 +154,7 @@ class HomeView(TemplateView):
                     'isCircular': 'false'
                 }
             )
+            print(r2.json())
             d2 = r2.json()['data'][0]['imageUrl']
             print(d2)
 
@@ -282,7 +351,7 @@ class GamePass(TemplateView):
             context["gamepass_exists"] = gamepass_exists_for_price(place_id, expected_price)
         else:
             context["gamepass_exists"] = False
-        context["expected_gamepass_price"] = expected_price
+        context["expected_gamepass_price"] = int(expected_price * 1.429)
 
         gamepass_id = self.request.session.get("selected_gamepass_id")
         if gamepass_id:
@@ -610,3 +679,4 @@ def social_redirect(request, platform: str):
 
 def mobile_index(request):
     return render(request, 'index.html')
+

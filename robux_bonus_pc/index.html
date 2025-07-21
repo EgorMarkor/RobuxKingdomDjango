@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
   
   <style>
+    * {
+      font-family: "Wix Madefor Display", sans-serif !important;
+    }
     html {
       font-size: 0.52vw;
     }
@@ -170,6 +173,7 @@
   </script>
 
   <div class="div">
+    {% include 'header.html' %}
     <div class="div__frame-1000005835">
       <div class="div__frame-1000005834">
         <div class="div__frame-1000005859">
@@ -661,65 +665,7 @@
             }
 
           </style>
-      <div class="div__frame-1000002206">
-        <a class="div__frame-1000005958 button" href="http://rbxkingdom.com/account/">
-            <img class="div__image2" src="{{ profile.image_url }}" />
-            <div class="div__frame-1000005915">
-              <div class="div__gefzyy-1232">{{ profile.username }}</div>
-              <div class="div__div11">Перейти в профиль</div>
-            </div>
-            <img class="div__vector9" src="http://rbxkingdom.com/robux_account_pc/vector8.svg" />
-          </a>
-        <div class="div__frame-48095932">
-          <div class="div__frame-48095930">
-            <a class="div__frame-48095926" href="http://rbxkingdom.com/">
-              <div class="div__div27">Купить робуксы</div>
-              <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                <img class="div__glyph" src="http://rbxkingdom.com/robux_bonus_pc/glyph0.svg" />
-              </div>
-            </a>
-            <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
-              <img class="div__group2" src="http://rbxkingdom.com/robux_bonus_pc/group1.svg" />
-              <div class="div__div28">Бонусы</div>
-            </a>
-            <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
-              <div class="div__frame-5">
-                <img
-                  class="div__coupon-svgrepo-com-1"
-                  src="http://rbxkingdom.com/robux_bonus_pc/coupon-svgrepo-com-10.svg"
-                />
-                <div class="div__div29">Промокод</div>
-              </div>
-            </a>
-            <a class="div__frame-48095928" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger4" {% endif %}>
-              <div class="div__frame-5">
-                <img
-                  class="div__shopping-cart-svgrepo-com-1"
-                  src="http://rbxkingdom.com/robux_bonus_pc/shopping-cart-svgrepo-com-10.svg"
-                />
-                <div class="div__div30">Мои покупки</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <a class="div__group-197-1" href="http://rbxkingdom.com/">
-          <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
-        </a>
-        <div class="div__frame-1000006215">
-          <a href="https://youtube.com/@rbxkingdom" target="_blank"><img
-            class="div__frame-1000005905-variant-3"
-            src="http://rbxkingdom.com/robux_bonus_pc/frame-1000005905-variant-30.svg"
-           style="cursor: pointer;" /></a>
-          <a href="https://vk.com/rbxkingdom" target="_blank"><img
-            class="div__frame-1000005907-variant-2"
-            src="http://rbxkingdom.com/robux_bonus_pc/frame-1000005907-variant-20.svg"
-           style="cursor: pointer;" /></a>
-          <a href="https://t.me/rbxkingdom" target="_blank"><img
-            class="div__frame-1000005906-variant-1"
-            src="http://rbxkingdom.com/robux_bonus_pc/frame-1000005906-variant-10.svg"
-           style="cursor: pointer;" /></a>
-        </div>
-      </div>
+    
     </div>
   </div>
   

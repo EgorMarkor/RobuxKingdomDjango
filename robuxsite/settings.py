@@ -44,6 +44,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -81,7 +82,11 @@ UNFOLD = {
     ],
 }
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',   # <- обязательно первым
+    'django.middleware.common.CommonMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

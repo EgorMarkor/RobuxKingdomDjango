@@ -50,6 +50,7 @@
   <title>Личный кабинет и история покупок || Robux Kingdom</title>
 </head>
 <body>
+  {% include 'header.html' %}
   <div class="div">
     <div class="div__frame-1000005835">
       <div class="div__frame-1000005858">
@@ -149,60 +150,6 @@
           </div>
         </div>
       </div>
-      <div class="div__frame-54">
-        <div class="div__frame-1000002206">
-          <div class="div__frame-48095931"></div>
-          <div class="div__frame-48095932">
-            <div class="div__frame-48095930">
-              <a class="div__frame-48095926" href="http://rbxkingdom.com/">
-                <div class="div__div4">Купить робуксы</div>
-                <div class="div__home-yg-39-z-0-c-5-js-4-n-1">
-                  <img class="div__glyph" src="http://rbxkingdom.com/robux_account_pc/glyph0.svg" />
-                </div>
-              </a>
-              <a class="div__frame-3" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
-                <img class="div__group" src="http://rbxkingdom.com/robux_account_pc/group0.svg" />
-                <div class="div__div5">Бонусы</div>
-              </a>
-              <a class="div__frame-48095929" href="{% if profile %}{% url 'bonus' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger6" {% endif %}>
-                <div class="div__frame-5">
-                  <img
-                    class="div__coupon-svgrepo-com-1"
-                    src="http://rbxkingdom.com/robux_account_pc/coupon-svgrepo-com-10.svg"
-                  />
-                  <div class="div__div6">Промокод</div>
-                </div>
-              </a>
-              <a class="div__frame-480959302" href="{% if profile %}{% url 'account' %}{% else %}#auth{% endif %}" {% if not profile %} data-fancybox id="triggger4" {% endif %}>
-                <div class="div__frame-5">
-                  <img
-                    class="div__shopping-cart-svgrepo-com-1"
-                    src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10.svg"
-                  />
-                  <div class="div__div7">Мои покупки</div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <a class="div__group-197-1" href="http://rbxkingdom.com/">
-            <img src="http://rbxkingdom.com/robux_bonus_pc/logo.svg" style="width: 100%;"> 
-          </a>
-          <div class="div__frame-1000006215">
-            <a href="https://youtube.com/@rbxkingdom" target="_blank"><img
-              class="div__frame-1000005905-variant-3"
-              src="http://rbxkingdom.com/robux_account_pc/frame-1000005905-variant-30.svg"
-             style="cursor: pointer;" /></a>
-            <a href="https://vk.com/rbxkingdom" target="_blank"><img
-              class="div__frame-1000005907-variant-2"
-              src="http://rbxkingdom.com/robux_account_pc/frame-1000005907-variant-20.svg"
-             style="cursor: pointer;" /></a>
-            <a href="https://t.me/rbxkingdom" target="_blank"><img
-              class="div__frame-1000005906-variant-1"
-              src="http://rbxkingdom.com/robux_account_pc/frame-1000005906-variant-10.svg"
-             style="cursor: pointer;" /></a>
-          </div>
-        </div>
-      </div>
       <div class="div__frame-1000002205">
         <div class="div__footer">
           <div class="div__frame-1000005910">
@@ -269,50 +216,7 @@
         </div>
       </div>
     </div>
-    <a id="account-button" class="div__frame-1000005958 button" href="#">
-      <img class="div__image2" src="{{ profile.image_url }}" />
-      <div class="div__frame-1000005915">
-        <div class="div__gefzyy-1232">{{ profile.username }}</div>
-        <div class="div__div11">Перейти в профиль</div>
-      </div>
-      <img class="div__vector9" src="http://rbxkingdom.com/robux_account_pc/vector8.svg" />
-    </a>
-    <div id="account-menu" class="account-menu">
-      <a class="account-menu-item account-menu-item--stats" href="http://rbxkingdom.com/account/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/group0_2.svg" />
-        <div class="account-menu-text">Статистика аккаунта</div>
-      </a>
-      <a class="account-menu-item account-menu-item--purchases" href="http://rbxkingdom.com/buy/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/shopping-cart-svgrepo-com-10_2.svg" />
-        <div class="account-menu-text">Мои покупки</div>
-      </a>
-      <a class="account-menu-item account-menu-item--bonus" href="http://rbxkingdom.com/bonus/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/svg0_2.svg" />
-        <div class="account-menu-text">Бонусы</div>
-      </a>
-      <a class="account-menu-item account-menu-item--logout" href="http://rbxkingdom.com/logout/">
-        <img class="account-menu-icon" src="http://rbxkingdom.com/robux_account_pc/icon-left0_2.svg" />
-        <div class="account-menu-text">Выйти</div>
-      </a>
-    </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const accountBtn = document.getElementById('account-button');
-      const menu = document.getElementById('account-menu');
-
-      accountBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        menu.classList.toggle('show');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!accountBtn.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.remove('show');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
