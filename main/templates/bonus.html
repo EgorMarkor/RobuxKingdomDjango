@@ -55,7 +55,7 @@
               заданий
             </div>
             <div class="i-phone-14-15-pro-2__frame-1000005916">
-              <div class="i-phone-14-15-pro-2__heading-2">53719.00 R$</div>
+              <div class="i-phone-14-15-pro-2__heading-2">{{ profile.balance }} R$</div>
             </div>
           </div>
           <img
@@ -64,9 +64,15 @@
           />
           <div class="i-phone-14-15-pro-2__frame-1000005939">
             <div class="i-phone-14-15-pro-2__frame-1000005952">
-              <div class="i-phone-14-15-pro-2__frame-1000005938">
-                <div class="i-phone-14-15-pro-2__div3">Вывести</div>
-              </div>
+              {% if balance_int >= 50 %}
+              <a href="{% url 'withdraw' %}" class="i-phone-14-15-pro-2__frame-1000005938" style="z-index: 99;">
+                <div class="i-phone-14-15-pro-2__div3">Вывести робуксы</div>
+              </a>
+              {% else %}
+              <a class="i-phone-14-15-pro-2__frame-1000005938" style="z-index: 99; pointer-events:none; opacity:0.5;">
+                <div class="i-phone-14-15-pro-2__div3">Вывести робуксы</div>
+              </a>
+              {% endif %}
               <div class="i-phone-14-15-pro-2__frame-1000005951">
                 <div class="i-phone-14-15-pro-2__frame-1000005937">
                   <div class="i-phone-14-15-pro-2___100">
@@ -163,11 +169,37 @@
             <div class="i-phone-14-15-pro-2__frame-1000005941">
               <div class="i-phone-14-15-pro-2__frame-1000005946">
                 <div class="i-phone-14-15-pro-2__frame-10000059383">
-                  <div class="i-phone-14-15-pro-2__gefzyy-123">gefzyy_123</div>
+                  <div class="i-phone-14-15-pro-2__gefzyy-123" id="username-to-copy">{{ profile.username }}</div>
                 </div>
                 <div class="i-phone-14-15-pro-2__frame-10000059394">
-                  <img class="i-phone-14-15-pro-2__group" src="{% static 'bonus/group0.svg' %}" />
+                  <img class="i-phone-14-15-pro-2__group" src="{% static 'bonus/group0.svg' %}" id="copy-username-btn" style="cursor: pointer;" />
                 </div>
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const btn = document.getElementById('copy-username-btn');
+                    const usernameElem = document.getElementById('username-to-copy');
+                    btn.addEventListener('click', function () {
+                      const username = usernameElem.textContent.trim();
+                      if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(username).catch(err => { console.error('Ошибка копирования:', err); });
+                      } else {
+                        const textarea = document.createElement('textarea');
+                        textarea.value = username;
+                        textarea.setAttribute('readonly', '');
+                        textarea.style.position = 'absolute';
+                        textarea.style.left = '-9999px';
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try {
+                          document.execCommand('copy');
+                        } catch (err) {
+                          console.error('Fallback: не удалось скопировать', err);
+                        }
+                        document.body.removeChild(textarea);
+                      }
+                    });
+                  });
+                </script>
               </div>
               <div class="i-phone-14-15-pro-2__div10">
                 Твой промокод для приглашения::
@@ -326,14 +358,21 @@
           <div class="i-phone-14-15-pro-2__frame-1000005935">
             <div class="i-phone-14-15-pro-2__frame-10000059162">
               <div class="i-phone-14-15-pro-2__frame-1000005932">
-                <img class="i-phone-14-15-pro-2__image" src="{% static 'bonus/image0.png' %}" />
-                <img class="i-phone-14-15-pro-2__image" src="{% static 'bonus/image1.png' %}" />
-                <img class="i-phone-14-15-pro-2__image" src="{% static 'bonus/image2.png' %}" />
-                <img class="i-phone-14-15-pro-2__image" src="{% static 'bonus/image3.png' %}" />
+                {% with referrals=referrals %}
+                {% for referral in referrals|slice:":4" %}
+                <img class="i-phone-14-15-pro-2__image" src="{{ referral.image_url }}" alt="{{ referral.username }}" />
+                {% endfor %}
+                {% if referrals|length > 4 %}
                 <div class="i-phone-14-15-pro-2__frame-1000005933">
-                  <img class="i-phone-14-15-pro-2__image2" src="{% static 'bonus/image4.png' %}" />
+                  {% with fifth=referrals|slice:"4:5" %}
+                  {% if fifth %}
+                  <img class="i-phone-14-15-pro-2__image2" src="{{ fifth.0.image_url }}" alt="{{ fifth.0.username }}" />
+                  {% endif %}
+                  {% endwith %}
                   <div class="i-phone-14-15-pro-2__div20">+</div>
                 </div>
+                {% endif %}
+                {% endwith %}
               </div>
             </div>
             <div class="i-phone-14-15-pro-2__frame-1000005931">
@@ -353,7 +392,7 @@
               </div>
             </div>
             <div class="i-phone-14-15-pro-2__frame-10000059163">
-              <div class="i-phone-14-15-pro-2__heading-26">53719.00 R$</div>
+              <div class="i-phone-14-15-pro-2__heading-26">{{ profile.history_balance }} R$</div>
             </div>
           </div>
           <img

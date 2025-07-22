@@ -58,11 +58,11 @@
       <div class="i-phone-14-15-pro-8__frame-1000006014">
         <div class="i-phone-14-15-pro-8__frame-1000005983">
           <div class="i-phone-14-15-pro-8__div3">К оплате:</div>
-          <div class="i-phone-14-15-pro-8___740-74">740.74Р</div>
+          <div class="i-phone-14-15-pro-8___740-74">{{ selected_amount }}Р</div>
         </div>
-        <div class="i-phone-14-15-pro-8__frame-1000006044">
+        <a href="{% url 'create_order' %}" class="i-phone-14-15-pro-8__frame-1000006044">
           <div class="i-phone-14-15-pro-8__heading-2">Оплатить</div>
-        </div>
+        </a>
         <div class="i-phone-14-15-pro-8__frame-1000005994">
           <div class="i-phone-14-15-pro-8___5-7-roblox-game-pass">
             Доставка робуксов занимает 5-7 дней. Это общее правило Roblox для
@@ -78,11 +78,11 @@
               <div class="i-phone-14-15-pro-8__frame-1000005951"></div>
             </div>
             <div class="i-phone-14-15-pro-8__frame-1000005937"></div>
-            <img class="i-phone-14-15-pro-8__image" src="{% static 'oplata/image0.png' %}" />
+            <img class="i-phone-14-15-pro-8__image" src="{{ profile.image_url }}" />
             <div class="i-phone-14-15-pro-8__frame-1000006004">
-              <div class="i-phone-14-15-pro-8__gefzy-123">gefzy_123</div>
+              <div class="i-phone-14-15-pro-8__gefzy-123">{{ profile.username }}</div>
               <div class="i-phone-14-15-pro-8__pass-in-gefzyy-123">
-                Pass in gefzyy_123
+                Place: {{ selected_place.name|default:selected_place_id }}
               </div>
             </div>
           </div>
@@ -91,14 +91,14 @@
               <div class="i-phone-14-15-pro-8__frame-1000005951"></div>
             </div>
             <div class="i-phone-14-15-pro-8__frame-10000059372">
-              <div class="i-phone-14-15-pro-8___1000-r">1000 R$</div>
+              <div class="i-phone-14-15-pro-8___1000-r">{{ selected_amount }} R$</div>
             </div>
             <div class="i-phone-14-15-pro-8__frame-1000006006">
               <div class="i-phone-14-15-pro-8___0-r">+0R$</div>
               <img class="i-phone-14-15-pro-8__group" src="{% static 'oplata/group0.svg' %}" />
             </div>
             <div class="i-phone-14-15-pro-8__frame-1000006008">
-              <div class="i-phone-14-15-pro-8___1000-r2">1000 R$</div>
+              <div class="i-phone-14-15-pro-8___1000-r2">{{ selected_amount }} R$</div>
             </div>
           </div>
         </div>
@@ -108,13 +108,7 @@
               <div class="i-phone-14-15-pro-8__frame-10000059512"></div>
             </div>
             <div class="i-phone-14-15-pro-8__frame-10000059373">
-              <div class="i-phone-14-15-pro-8__gefzy-123-gmail-com">
-                <span>
-                  <span class="gefzy-123-gmail-com-span">gefzy_123</span>
-                  <span class="gefzy-123-gmail-com-span2">@</span>
-                  <span class="gefzy-123-gmail-com-span">gmail.com</span>
-                </span>
-              </div>
+              <div class="i-phone-14-15-pro-8__gefzy-123-gmail-com">{{ profile.username }}</div>
             </div>
           </div>
           <div class="i-phone-14-15-pro-8__email">Введите свой email</div>

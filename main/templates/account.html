@@ -61,7 +61,7 @@
               </div>
             </div>
             <div class="i-phone-14-15-pro-3__frame-1000001986">
-              <div class="i-phone-14-15-pro-3__heading-23">37 друзей</div>
+              <div class="i-phone-14-15-pro-3__heading-23">{{ friends_count }} друзей</div>
             </div>
           </div>
           <div class="i-phone-14-15-pro-3__frame-1000005919">
@@ -71,9 +71,7 @@
               <div class="i-phone-14-15-pro-3__heading-25">С первого входа</div>
             </div>
             <div class="i-phone-14-15-pro-3__frame-10000019862">
-              <div class="i-phone-14-15-pro-3__heading-23">
-                2 г. 10 мес. 3 дня
-              </div>
+              <div class="i-phone-14-15-pro-3__heading-23">{{ time_on_site|default:"-" }}</div>
             </div>
           </div>
           <div class="i-phone-14-15-pro-3__frame-1000005920">
@@ -86,15 +84,15 @@
               <div class="i-phone-14-15-pro-3__heading-26">За всё время</div>
             </div>
             <div class="i-phone-14-15-pro-3__frame-10000019863">
-              <div class="i-phone-14-15-pro-3__heading-23">53719.00 R$</div>
+              <div class="i-phone-14-15-pro-3__heading-23">{{ total_robux }} R$</div>
             </div>
           </div>
         </div>
         <div class="i-phone-14-15-pro-3__frame-1000005924">
-          <img class="i-phone-14-15-pro-3__image" src="{% static 'account/image0.png' %}" />
+          <img class="i-phone-14-15-pro-3__image" src="{{ profile.image_url }}" />
           <div class="i-phone-14-15-pro-3__frame-1000005923">
             <div class="i-phone-14-15-pro-3__frame-1000005914">
-              <div class="i-phone-14-15-pro-3__gefzyy-123">gefzyy_123</div>
+              <div class="i-phone-14-15-pro-3__gefzyy-123">{{ profile.username }}</div>
               <div class="i-phone-14-15-pro-3__div">
                 В личном кабинете вы можете отследить всю историю покупок
               </div>
@@ -113,118 +111,29 @@
           <div class="i-phone-14-15-pro-3__div2">История покупок</div>
         </div>
         <div class="i-phone-14-15-pro-3__frame-1000005913">
+          {% for order in orders %}
           <div class="i-phone-14-15-pro-3__frame-1000005911">
             <div class="i-phone-14-15-pro-3__frame-1000005928">
               <div class="i-phone-14-15-pro-3__label">
                 <div class="i-phone-14-15-pro-3___152">
                   <span>
-                    <span class="_152-span">Заказ #152 ·</span>
-                    <span class="_152-span2">Выполнен </span>
+                    <span class="_152-span">Заказ #{{ order.order_id }} ·</span>
+                    <span class="{% if order.status == 'completed' %}status-completed{% elif order.status == 'error' %}status-error{% else %}status-processing{% endif %}">{{ order.get_status_display }}</span>
                   </span>
                 </div>
               </div>
               <div class="i-phone-14-15-pro-3__frame-1000005989">
-                <div class="i-phone-14-15-pro-3___1000-r">1000 R$</div>
+                <div class="i-phone-14-15-pro-3___1000-r">{{ order.robux_count }} R$</div>
               </div>
             </div>
             <div class="i-phone-14-15-pro-3__frame-1000005929">
-              <div class="i-phone-14-15-pro-3__heading-27">29.10.2024</div>
+              <div class="i-phone-14-15-pro-3__heading-27">{{ order.created_at|date:"d.m.Y" }}</div>
             </div>
             <div class="i-phone-14-15-pro-3__frame-1000005930">
-              <img
-                class="i-phone-14-15-pro-3___13-metaverse-touch-1"
-                src="{% static 'account/_13-metaverse-touch-10.png' %}"
-              />
+              <img class="i-phone-14-15-pro-3___13-metaverse-touch-1" src="{% static 'account/_13-metaverse-touch-10.png' %}" />
             </div>
           </div>
-          <div class="i-phone-14-15-pro-3__frame-1000005916">
-            <div class="i-phone-14-15-pro-3__frame-1000005928">
-              <div class="i-phone-14-15-pro-3__label">
-                <div class="i-phone-14-15-pro-3___152">
-                  <span>
-                    <span class="_152-span">Заказ #152 ·</span>
-                    <span class="_152-span2">Выполнен </span>
-                  </span>
-                </div>
-              </div>
-              <div class="i-phone-14-15-pro-3___1000-r2">1000 R$</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005929">
-              <div class="i-phone-14-15-pro-3__heading-27">29.10.2024</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005930">
-              <img
-                class="i-phone-14-15-pro-3___13-metaverse-touch-1"
-                src="{% static 'account/_13-metaverse-touch-11.png' %}"
-              />
-            </div>
-          </div>
-          <div class="i-phone-14-15-pro-3__frame-1000005917">
-            <div class="i-phone-14-15-pro-3__frame-1000005928">
-              <div class="i-phone-14-15-pro-3__label">
-                <div class="i-phone-14-15-pro-3___152">
-                  <span>
-                    <span class="_152-span">Заказ #152 ·</span>
-                    <span class="_152-span2">Выполнен </span>
-                  </span>
-                </div>
-              </div>
-              <div class="i-phone-14-15-pro-3___1000-r2">1000 R$</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005929">
-              <div class="i-phone-14-15-pro-3__heading-27">29.10.2024</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005930">
-              <img
-                class="i-phone-14-15-pro-3___13-metaverse-touch-1"
-                src="{% static 'account/_13-metaverse-touch-12.png' %}"
-              />
-            </div>
-          </div>
-          <div class="i-phone-14-15-pro-3__frame-10000059182">
-            <div class="i-phone-14-15-pro-3__frame-1000005928">
-              <div class="i-phone-14-15-pro-3__label">
-                <div class="i-phone-14-15-pro-3___152">
-                  <span>
-                    <span class="_152-span">Заказ #152 ·</span>
-                    <span class="_152-span2">Выполнен </span>
-                  </span>
-                </div>
-              </div>
-              <div class="i-phone-14-15-pro-3___1000-r2">1000 R$</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005929">
-              <div class="i-phone-14-15-pro-3__heading-27">29.10.2024</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005930">
-              <img
-                class="i-phone-14-15-pro-3___13-metaverse-touch-1"
-                src="{% static 'account/_13-metaverse-touch-13.png' %}"
-              />
-            </div>
-          </div>
-          <div class="i-phone-14-15-pro-3__frame-10000059192">
-            <div class="i-phone-14-15-pro-3__frame-1000005928">
-              <div class="i-phone-14-15-pro-3__label">
-                <div class="i-phone-14-15-pro-3___152">
-                  <span>
-                    <span class="_152-span">Заказ #152 ·</span>
-                    <span class="_152-span2">Выполнен </span>
-                  </span>
-                </div>
-              </div>
-              <div class="i-phone-14-15-pro-3___1000-r2">1000 R$</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005929">
-              <div class="i-phone-14-15-pro-3__heading-27">29.10.2024</div>
-            </div>
-            <div class="i-phone-14-15-pro-3__frame-1000005930">
-              <img
-                class="i-phone-14-15-pro-3___13-metaverse-touch-1"
-                src="{% static 'account/_13-metaverse-touch-14.png' %}"
-              />
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
