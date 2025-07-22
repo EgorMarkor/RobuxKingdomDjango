@@ -8,12 +8,46 @@ from .models import UserProfile, WithdrawalRequest, Order
 import requests
 import logging
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
+from django.views.decorators.vary import vary_on_headers
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_GET
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
 logger = logging.getLogger(__name__)
+
+
+class DeviceTemplateMixin:
+    """Mixin to serve mobile templates for mobile User-Agents."""
+
+    pc_template_name: str | None = None
+    mobile_template_name: str | None = None
+
+    mobile_keywords = (
+        "iphone",
+        "android",
+        "ipad",
+        "mobile",
+        "phone",
+        "opera mini",
+        "blackberry",
+    )
+
+    def is_mobile(self) -> bool:
+        ua = self.request.META.get("HTTP_USER_AGENT", "").lower()
+        return any(k in ua for k in self.mobile_keywords)
+
+    def get_template_names(self):
+        if self.is_mobile() and self.mobile_template_name:
+            return [self.mobile_template_name]
+        if self.pc_template_name:
+            return [self.pc_template_name]
+        return super().get_template_names()
+
+    @method_decorator(vary_on_headers("User-Agent"))
+    def dispatch(self, request, *args, **kwargs):  # type: ignore[override]
+        return super().dispatch(request, *args, **kwargs)
 
 def cors_json(data, origin="http://rbxkingdom.com", status=200):
     resp = JsonResponse(data, status=status, safe=False)
@@ -145,8 +179,9 @@ def any_gamepasses_exist(place_id: str) -> bool:
     return len(data) > 0
 
 
-class HomeView(TemplateView):
-    template_name = "robux_head_pc/index.html"
+class HomeView(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_head_pc/index.html"
+    mobile_template_name = "index.html"
 
     def post(self, request, *args, **kwargs):
         username = request.POST.get("username")
@@ -193,8 +228,9 @@ class HomeView(TemplateView):
         return context
 
 
-class PolitConf(TemplateView):
-    template_name = "robux_politconf_pc/index.html"
+class PolitConf(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_politconf_pc/index.html"
+    mobile_template_name = "confident.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -207,8 +243,9 @@ class PolitConf(TemplateView):
         return context
     
     
-class MoneyBack(TemplateView):
-    template_name = "robux_back_money_pc/index.html"
+class MoneyBack(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_back_money_pc/index.html"
+    mobile_template_name = "refund.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -222,8 +259,9 @@ class MoneyBack(TemplateView):
         return context
 
 
-class UserSogl(TemplateView):
-    template_name = "robux_user_agree/index.html"
+class UserSogl(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_user_agree/index.html"
+    mobile_template_name = "sogl.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -238,8 +276,9 @@ class UserSogl(TemplateView):
 
 
 
-class BonusView(TemplateView):
-    template_name = "robux_bonus_pc/index.html"
+class BonusView(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_bonus_pc/index.html"
+    mobile_template_name = "bonus.html"
 
     def post(self, request, *args, **kwargs):
         code = request.POST.get("ref_code")
@@ -277,8 +316,9 @@ class BonusView(TemplateView):
         return context
     
     
-class AccountView(TemplateView):
-    template_name = "robux_account_pc/index.html"
+class AccountView(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_account_pc/index.html"
+    mobile_template_name = "account.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -303,8 +343,9 @@ class AccountView(TemplateView):
         return context
     
     
-class CheckAccountView(TemplateView):
-    template_name = "robux_check_acc_pc/index.html"
+class CheckAccountView(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_check_acc_pc/index.html"
+    mobile_template_name = "check_acc.html"
 
     def get(self, request, *args, **kwargs):
         amount = request.GET.get("amount")
@@ -335,8 +376,9 @@ class CheckAccountView(TemplateView):
         return context
     
     
-class GamePass(TemplateView):
-    template_name = "robux_gamepasses_pc/index.html"
+class GamePass(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_gamepasses_pc/index.html"
+    mobile_template_name = "gamepasses.html"
 
     def get(self, request, *args, **kwargs):
         place_id = request.GET.get("place_id")
@@ -389,8 +431,9 @@ class GamePass(TemplateView):
 
         return context
     
-class CheckPlace(TemplateView):
-    template_name = "robux_places_pc/index.html"
+class CheckPlace(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_places_pc/index.html"
+    mobile_template_name = "check_places.html"
 
     def get(self, request, *args, **kwargs):
         # place selection happens on gamepass page; nothing to store here
@@ -447,8 +490,9 @@ class CheckPlace(TemplateView):
 
         return context
     
-class Buy(TemplateView):
-    template_name = "robux_buy_pc/index.html"
+class Buy(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_buy_pc/index.html"
+    mobile_template_name = "oplata.html"
 
     def get(self, request, *args, **kwargs):
         place_id = request.session.get("selected_place_id")
@@ -619,8 +663,9 @@ def freekassa_notify(request):
     return HttpResponse("YES")
 
 
-class WithdrawView(TemplateView):
-    template_name = "robux_withdraw_pc/index.html"
+class WithdrawView(DeviceTemplateMixin, TemplateView):
+    pc_template_name = "robux_withdraw_pc/index.html"
+    mobile_template_name = "success.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
