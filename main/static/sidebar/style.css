@@ -4,7 +4,7 @@
 }
 .sidebar {
   z-index: 99;
-  top: 66rem;
+  bottom: 0rem;
   width: 40rem;
   background: #070913;
   height: 9.8rem;

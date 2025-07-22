@@ -18,7 +18,9 @@ from .views import (
     UserSogl,
     mobile_index,
     roblox_search,
-    roblox_thumb
+    roblox_thumb,
+    mobile_bonus,
+    mobile_account
 )
 
 urlpatterns = [
@@ -39,6 +41,8 @@ urlpatterns = [
     path('politika-vozvrata-sredstv/', MoneyBack.as_view(), name='moneyback'),
     path('polzovatelskoe-soglashenie/', UserSogl.as_view(), name='usersogl'),
     path('mobile_index/', mobile_index, name='mobile_index'),
+    path('mobile_bonus/', mobile_bonus, name='mobile_bonus'),
+    path('mobile_account/', mobile_account, name='mobile_account'),
     path('api/roblox/search', roblox_search, name='roblox_search'),
     path('api/roblox/avatar-headshot', roblox_thumb, name='roblox_thumb'),
 ]

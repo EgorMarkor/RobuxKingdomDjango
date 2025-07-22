@@ -1,0 +1,328 @@
+.div,
+.div * {
+  box-sizing: border-box;
+}
+.div {
+  background: #f1f5fa;
+  height: 801.7rem;
+  position: relative;
+  overflow: hidden;
+}
+.div__frame-1000006028 {
+  background: #ffffff;
+  border-radius: 2rem;
+  width: 35.8rem;
+  height: 733.6rem;
+  position: absolute;
+  left: 1.8rem;
+  top: 13.6rem;
+  overflow: hidden;
+}
+.div__frame-1000005980 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  row-gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 29.9rem;
+  position: absolute;
+  left: 2.9rem;
+  top: 2.7rem;
+}
+.div__frame-1000002526 {
+  border-radius: 76.264rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.763rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.div__div2 {
+  color: #1f1f31;
+  text-align: left;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.409rem;
+  font-weight: 700;
+  position: relative;
+  width: 27.2rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div__frame-1000006062 {
+  width: 29.9rem;
+  height: 707rem;
+  position: absolute;
+  left: 2.9rem;
+  top: 6.4rem;
+  overflow: hidden;
+}
+.div__frame-1000006061 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.33999999999999997rem;
+  align-items: center;
+  justify-content: center;
+  width: 29.9rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  overflow: hidden;
+}
+.div__rbxkingdom-gg-www-rbxkingdom-gg-1-1-1-1-1-1-rbxkingdom-gg-1-1-2-1-1-3-1-1-4-1-1-5-1-1-6-cookies-http-1-1-7-ip-ip-2-2-1-2-2-2-3-rbxkingdom-gg-2-4-2-5-visa-master-card-apple-pay-qiwi-paypal-unitpay-unitpay-unitpay-pci-dss-pci-dss-mastercard-visa-inc-unitpay-compliance-control-pci-dss-compliance-process-p-d-c-p-unitpay-3-3-1-3-2-rbxfail-io-3-2-1-3-2-2-e-mail-3-3-ip-cookies-3-3-1-cookies-3-3-2-ip-3-4-5-2-5-3-4-4-1-4-1-1-rbxfail-io-4-1-2-4-1-3-4-1-4-4-1-5-4-1-6-4-1-8-4-1-9-4-1-10-5-5-1-5-2-5-3-5-4-5-5-5-6-6-6-1-6-1-1-6-1-2-6-2-6-2-1-4-6-2-2-5-2-5-3-6-2-3-6-2-4-7-7-1-7-2-7-2-1-7-2-2-7-2-3-8-8-1-8-2-30-8-3-9-9-1-9-2-9-3-https-rbxkingdom-gg {
+  text-align: justified;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  position: relative;
+  width: 29.9rem;
+  display: flex;
+  align-items: center;
+}
+.rbxkingdom-gg-www-rbxkingdom-gg-1-1-1-1-1-1-rbxkingdom-gg-1-1-2-1-1-3-1-1-4-1-1-5-1-1-6-cookies-http-1-1-7-ip-ip-2-2-1-2-2-2-3-rbxkingdom-gg-2-4-2-5-visa-master-card-apple-pay-qiwi-paypal-unitpay-unitpay-unitpay-pci-dss-pci-dss-mastercard-visa-inc-unitpay-compliance-control-pci-dss-compliance-process-p-d-c-p-unitpay-3-3-1-3-2-rbxfail-io-3-2-1-3-2-2-e-mail-3-3-ip-cookies-3-3-1-cookies-3-3-2-ip-3-4-5-2-5-3-4-4-1-4-1-1-rbxfail-io-4-1-2-4-1-3-4-1-4-4-1-5-4-1-6-4-1-8-4-1-9-4-1-10-5-5-1-5-2-5-3-5-4-5-5-5-6-6-6-1-6-1-1-6-1-2-6-2-6-2-1-4-6-2-2-5-2-5-3-6-2-3-6-2-4-7-7-1-7-2-7-2-1-7-2-2-7-2-3-8-8-1-8-2-30-8-3-9-9-1-9-2-9-3-https-rbxkingdom-gg-span {
+  color: #565f72;
+}
+.rbxkingdom-gg-www-rbxkingdom-gg-1-1-1-1-1-1-rbxkingdom-gg-1-1-2-1-1-3-1-1-4-1-1-5-1-1-6-cookies-http-1-1-7-ip-ip-2-2-1-2-2-2-3-rbxkingdom-gg-2-4-2-5-visa-master-card-apple-pay-qiwi-paypal-unitpay-unitpay-unitpay-pci-dss-pci-dss-mastercard-visa-inc-unitpay-compliance-control-pci-dss-compliance-process-p-d-c-p-unitpay-3-3-1-3-2-rbxfail-io-3-2-1-3-2-2-e-mail-3-3-ip-cookies-3-3-1-cookies-3-3-2-ip-3-4-5-2-5-3-4-4-1-4-1-1-rbxfail-io-4-1-2-4-1-3-4-1-4-4-1-5-4-1-6-4-1-8-4-1-9-4-1-10-5-5-1-5-2-5-3-5-4-5-5-5-6-6-6-1-6-1-1-6-1-2-6-2-6-2-1-4-6-2-2-5-2-5-3-6-2-3-6-2-4-7-7-1-7-2-7-2-1-7-2-2-7-2-3-8-8-1-8-2-30-8-3-9-9-1-9-2-9-3-https-rbxkingdom-gg-span2 {
+  color: #228ce2;
+  text-decoration: underline;
+}
+.div___1-3 {
+  width: 25.5rem;
+  height: 25.5rem;
+  position: absolute;
+  left: 5.2rem;
+  top: 706.6rem;
+  object-fit: cover;
+}
+.div__frame-1000006029 {
+  background: #070913;
+  border-radius: 2rem 2rem 0rem 0rem;
+  width: 39.3rem;
+  height: 51.9rem;
+  position: absolute;
+  left: 0rem;
+  top: 749.8rem;
+  overflow: hidden;
+}
+.div__footer {
+  width: 46.21%;
+  height: 14.571000000000002rem;
+  position: absolute;
+  right: 52.7%;
+  left: 1.09%;
+  bottom: 9.774rem;
+}
+.div__subsections {
+  width: 19.911rem;
+  height: 9.016rem;
+  position: absolute;
+  left: 2.854rem;
+  top: 3.5130000000000003rem;
+}
+.div__frame-1000005876 {
+  width: 16.141rem;
+  height: 9.017rem;
+  position: absolute;
+  left: 1.046rem;
+  top: 0.487rem;
+}
+.div__logo-footer {
+  padding: 0.27rem 0rem 0.27rem 0rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.21600000000000003rem;
+  align-items: center;
+  justify-content: flex-start;
+  width: 12.044rem;
+  position: absolute;
+  left: -0.015rem;
+  top: -0.528rem;
+}
+.div__logo {
+  padding: 0.541rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.9rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.div__frame-1000006055 {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  position: relative;
+}
+.div__frame-1000005974 {
+  width: 1.6170000000000002rem;
+  height: 1.509rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  overflow: visible;
+}
+.div__robux-kingdom {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+.div__beneficiary-international-business-systems-s-r-l-reg-number-3-102-693823-beneficiary-s-address-san-jose-santa-ana-three-hundred-and-fifty-meters-of-the-restaurant-ceviche-del-rey-costa-rica-rbxkingdom-gmail-com {
+  color: rgba(174, 185, 209, 0.8);
+  text-align: left;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: absolute;
+  left: 1.246rem;
+  top: 5.987rem;
+  width: 31.725rem;
+}
+.div__frame-1000006053 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 18.7rem;
+  position: absolute;
+  left: 1.246rem;
+  top: 24.687rem;
+}
+.div__div3 {
+  color: rgba(174, 185, 209, 0.8);
+  text-align: left;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: relative;
+  width: 20.9rem;
+}
+.div__frame-1000006041 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.494rem;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 3.9rem;
+  top: 40.331rem;
+}
+.div__svg {
+  flex-shrink: 0;
+  width: 6.1259999999999994rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__svg2 {
+  flex-shrink: 0;
+  width: 6.817rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+}
+.div__vector {
+  width: 99.65%;
+  height: 99.63%;
+  position: absolute;
+  right: -0.02%;
+  left: 0.37%;
+  bottom: 0.18%;
+  top: 0.19%;
+  overflow: visible;
+}
+.div__frame-1000006010 {
+  width: 71.04%;
+  height: 37.32%;
+  position: absolute;
+  right: 12%;
+  left: 16.96%;
+  bottom: 29.66%;
+  top: 33.02%;
+}
+.div__page-1 {
+  height: auto;
+  position: absolute;
+  left: -0.001rem;
+  top: 0rem;
+  overflow: visible;
+}
+.div__svg3 {
+  flex-shrink: 0;
+  width: 6.817rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__svg4 {
+  flex-shrink: 0;
+  width: 7.659000000000001rem;
+  height: 3.6759999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__rbxkingdom-gg-2024 {
+  color: rgba(174, 185, 209, 0.8);
+  text-align: left;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.9760000000000002rem;
+  font-weight: 500;
+  position: absolute;
+  left: 3.9rem;
+  top: 47.1rem;
+  width: 29.5rem;
+}
+.div__frame-1000006215 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.248rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 2.5789999999999997rem;
+  height: 9.9rem;
+  position: absolute;
+  left: 33.2rem;
+  top: 27.6rem;
+}
+.div__frame-1000005905-variant-3 {
+  border-radius: 10.315999999999999rem;
+  flex-shrink: 0;
+  width: 2.5789999999999997rem;
+  height: 2.5789999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-1000005907-variant-2 {
+  border-radius: 10.315999999999999rem;
+  flex-shrink: 0;
+  width: 2.5789999999999997rem;
+  height: 2.5789999999999997rem;
+  position: relative;
+  overflow: visible;
+}
+.div__frame-1000005906-variant-1 {
+  border-radius: 10.315999999999999rem;
+  flex-shrink: 0;
+  width: 2.5789999999999997rem;
+  height: 2.5789999999999997rem;
+  position: relative;
+  overflow: visible;
+}

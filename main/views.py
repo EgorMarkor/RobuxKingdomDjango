@@ -680,3 +680,8 @@ def social_redirect(request, platform: str):
 def mobile_index(request):
     return render(request, 'index.html')
 
+def mobile_bonus(request):
+    return render(request, 'bonus.html')
+
+def mobile_account(request):
+    return render(request, 'account.html')
