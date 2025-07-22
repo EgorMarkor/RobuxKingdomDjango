@@ -126,6 +126,25 @@ def gamepass_exists_for_price(place_id: str, price: int) -> bool:
     return False
 
 
+def any_gamepasses_exist(place_id: str) -> bool:
+    """Return True if the place has at least one gamepass."""
+    url = f"https://games.roblox.com/v1/games/{place_id}/game-passes"
+    try:
+        resp = requests.get(url, timeout=5)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # pragma: no cover - network issue
+        logger.warning("Failed to fetch gamepasses list: %s", exc)
+        return False
+
+    try:
+        data = resp.json().get("data", [])
+    except ValueError:  # pragma: no cover - invalid JSON
+        logger.warning("Invalid JSON in gamepasses list response")
+        return False
+
+    return len(data) > 0
+
+
 class HomeView(TemplateView):
     template_name = "robux_head_pc/index.html"
 
@@ -351,6 +370,11 @@ class GamePass(TemplateView):
             context["gamepass_exists"] = gamepass_exists_for_price(place_id, expected_price)
         else:
             context["gamepass_exists"] = False
+
+        if place_id:
+            context["has_gamepasses"] = any_gamepasses_exist(place_id)
+        else:
+            context["has_gamepasses"] = False
         context["expected_gamepass_price"] = int(expected_price * 1.429)
 
         gamepass_id = self.request.session.get("selected_gamepass_id")

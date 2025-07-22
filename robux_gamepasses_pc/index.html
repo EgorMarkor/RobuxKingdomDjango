@@ -292,7 +292,11 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="game-pass__image-76">
         <div style='font-size: 2rem; color: white; left: 6rem; position: absolute; top: 26.4rem; font-family: "Wix Madefor Display", sans-serif;'>{{ expected_gamepass_price|default_if_none:"" }}</div>
+        {% if has_gamepasses %}
         <img style="height: auto; width: 47rem;" src="http://rbxkingdom.com/robux_gamepasses_pc/check.gif" />
+        {% else %}
+        <img style="height: auto; width: 47rem;" src="http://rbxkingdom.com/robux_head_pc/card-index-dividers-10.gif" />
+        {% endif %}
       </div>
     </div>
     <div class="game-pass__frame-1000002205">
