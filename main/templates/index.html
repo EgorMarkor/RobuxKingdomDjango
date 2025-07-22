@@ -132,7 +132,7 @@
               </div>
             </div>
             <div class="i-phone-14-15-pro-1__frame-1000005861">
-              <div class="i-phone-14-15-pro-1__button">
+              <a class="i-phone-14-15-pro-1__button" href="{% if profile %}{% url 'CheckAcc' %}{% else %}#auth{% endif %}" {% if profile %}id="buy-button"{% else %}data-fancybox{% endif %}>
                 <div class="i-phone-14-15-pro-1__list">
                   <div class="i-phone-14-15-pro-1__item"></div>
                   <div class="i-phone-14-15-pro-1__item2"></div>
@@ -144,13 +144,13 @@
                   <div class="i-phone-14-15-pro-1__item8"></div>
                 </div>
                 <div class="i-phone-14-15-pro-1__heading-2">Купить робуксы</div>
-              </div>
+              </a>
             </div>
             <div class="i-phone-14-15-pro-1__frame-1000006038">
-              <div class="i-phone-14-15-pro-1__button2">
+              <a class="i-phone-14-15-pro-1__button2" href="#input_promo" data-fancybox data-options='{"buttons": [], "smallBtn": false}'>
                 <div class="i-phone-14-15-pro-1__div2">Ввести промокод</div>
                 <img class="i-phone-14-15-pro-1__svg2" src="{% static 'home/svg1.svg' %}" />
-              </div>
+              </a>
             </div>
             <div class="i-phone-14-15-pro-1__frame-1000006016">
               <div class="i-phone-14-15-pro-1__frame-1000006015">
@@ -662,276 +662,211 @@
     </div>
   </div>
 
-  <div id="popup_auth"
-    style="
-      background: #0d1222;
-      border-radius: 1.75rem;
-      width: 31.4rem;
-      height: 52.2rem;
-      position: relative;
-      box-shadow: 0rem 0.461rem 1.846rem 0rem rgba(0, 0, 0, 0.16);
-      overflow: hidden;
-    "
-  >
-    <div
-      style="
-        background: #f1f5fa;
-        width: 34.396rem;
-        height: 20.041999999999998rem;
-        position: absolute;
-        left: -0.9630000000000001rem;
-        top: 0rem;
-        overflow: hidden;
-      "
-    >
-      <img
-        class="image-14"
-        style="
-          width: 34.483rem;
-          height: 48.924rem;
-          position: absolute;
-          left: -0.088rem;
-          top: 0rem;
-          object-fit: cover;
-        "
-        src="{% static 'popup_auth/image-140.png' %}"
-      />
-      <div
-        style="
-          background: #0a0d19;
-          width: 32.5rem;
-          height: 53.1rem;
-          position: absolute;
-          left: -0.037rem;
-          top: 0rem;
-          overflow: hidden;
-        "
-      >
-        <img
-          class="image-142"
-          style="
-            width: 37.182rem;
-            height: 53.134rem;
-            position: absolute;
-            left: 0.11699999999999999rem;
-            top: 0rem;
-            object-fit: cover;
-          "
-          src="{% static 'popup_auth/image-141.png' %}"
-        />
-      </div>
-      <div
-        style="
-          background: #0a0d19;
-          border-radius: 10.2rem;
-          padding: 0.52rem 0.40800000000000003rem 0.52rem 0.40800000000000003rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: 3.348rem;
-          height: 3.348rem;
-          position: absolute;
-          left: 27.262999999999998rem;
-          top: 2rem;
-          overflow: hidden;
-        "
-      >
-        <img
-          class="error-svgrepo-com-1"
-          style="
-            flex-shrink: 0;
-            width: 2.32rem;
-            height: 2.32rem;
-            position: relative;
-            overflow: visible;
-          "
-          src="{% static 'popup_auth/error-svgrepo-com-10.svg' %}"
-        />
-      </div>
-    </div>
-    <div
-      style="
-        width: 26.1rem;
-        height: 20.4rem;
-        position: absolute;
-        left: 2.7rem;
-        top: 22.5rem;
-      "
-    >
-      <div
-        style="
-          width: 27.2rem;
-          height: 18.7rem;
-          position: absolute;
-          left: 0rem;
-          top: 0rem;
-        "
-      >
-        <div
-          style="
-            width: 27rem;
-            height: 18.7rem;
-            position: absolute;
-            left: 0.034rem;
-            top: 0rem;
-          "
-        >
-          <div
-            style="
-              width: 27.110000000000003rem;
-              height: 30.031rem;
-              position: absolute;
-              left: -0.034rem;
-              top: 0rem;
-            "
-          >
-            <div
-              style="
-                width: 27.076rem;
-                height: 22.075rem;
-                position: absolute;
-                left: 0.034rem;
-                top: 0rem;
-              "
-            >
-              <div
-                style="
-                  color: #687798;
-                  text-align: left;
-                  font-family: 'WixMadeforDisplay-Medium', sans-serif;
-                  font-size: 1.2rem;
-                  line-height: 150%;
-                  font-weight: 500;
-                  position: absolute;
-                  left: 0.002rem;
-                  top: 5.1rem;
-                  width: 26.358999999999998rem;
-                  height: 2.947rem;
-                "
-              >
-                Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
-              </div>
-              <div
-                style="
-                  color: #ffffff;
-                  text-align: left;
-                  font-family: 'WixMadeforDisplay-Bold', sans-serif;
-                  font-size: 2rem;
-                  line-height: 2.6260000000000003rem;
-                  font-weight: 700;
-                  position: absolute;
-                  left: 0rem;
-                  top: 0rem;
-                  width: 20.2rem;
-                  height: 2.6rem;
-                  display: flex;
-                  align-items: center;
-                  justify-content: flex-start;
-                "
-              >
-                Мой аккаунт
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              background: #0a0d19;
-              border-radius: 1.158rem;
-              width: 26.076rem;
-              height: 4.0009999999999994rem;
-              position: absolute;
-              left: 0rem;
-              top: 10.311rem;
-              overflow: hidden;
-            "
-          >
-            <div
-              style="
-                color: #ffffff;
-                text-align: center;
-                font-family: 'WixMadeforDisplay-Medium', sans-serif;
-                font-size: 1.2rem;
-                line-height: 150%;
-                font-weight: 500;
-                position: absolute;
-                left: 2.066rem;
-                top: 1.589rem;
-                width: 13.8rem;
-                height: 1.1rem;
-              "
-            >
-              Введите свой никнейм
-            </div>
-          </div>
+  <div style="display: none; background: transparent;" id="auth">
+    <div class="popup-wrapper">
+      <!-- Левая часть: форма -->
+      <div class="popup-form">
+        <div class="popup-instruction">
+          Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
+        </div>
+        <div class="popup-title">Мой аккаунт</div>
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="username" required class="popup-input-container"
+            style="padding-left: 2rem; font-size: 4rem; color: white;">
+            <div id="user-suggestions" class="user-suggestions"></div>
+            <style>
+              /* контейнер подсказок */
+.user-suggestions {
+  display: none;               /* спрятан по умолчанию */
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow-x: auto;            /* горизонтальный скролл */
+  display: flex;
+  gap: 2.75rem;
+  scroll-behavior: smooth;
+  width: 36rem;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 48rem;
+}
+
+/* когда есть подсказки */
+.user-suggestions.show {
+  display: flex;
+}
+
+/* каждая подсказка */
+.user-suggestion {
+  background: #0a0d19;
+  border-radius: 1.5rem;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-suggestion img {
+  width: 10rem;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.user-suggestion span {
+  color: #ffffff;
+  font-size: 1.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 2rem;
+}
+
+            </style>
+          <button class="popup-button">
+            <div class="popup-button-text">Войти</div>
+          </button>
+        </form>
+
+        <div class="popup-agreement">
+          <span class="gray">Прочел и согласен с </span>
+          <a href="{% url 'usersogl' %}" class="link">Пользовательским соглашением</a><span class="gray">, </span>
+          <a href="{% url 'moneyback' %}" class="link">Политикой возврата средств</a><span class="gray">, </span>
+          <a href="{% url 'politconf' %}" class="link">Политикой конфиденциальности</a>
         </div>
       </div>
-      <div
-        style="
-          background: #3a93ef;
-          border-radius: 1.158rem;
-          padding: 1.048rem 2.7960000000000003rem 0.978rem 2.7960000000000003rem;
-          display: flex;
-          flex-direction: row;
-          gap: 0.6990000000000001rem;
-          align-items: center;
-          justify-content: center;
-          width: 26.076rem;
-          height: 3.715rem;
-          position: absolute;
-          left: -0.034rem;
-          top: 16.8rem;
-        "
-      >
-        <div
-          style="
-            color: #ffffff;
-            text-align: center;
-            font-family: 'WixMadeforDisplay-SemiBold', sans-serif;
-            font-size: 1.4003283500671386rem;
-            line-height: 1.645rem;
-            font-weight: 600;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          "
-        >
-          Войти
-        </div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('.popup-input-container');
+  const suggestions = document.getElementById('user-suggestions');
+  let controller = null;
+  let backoffUntil = 0;
+
+  // Debounce, чтобы не спамить запросами
+  const debounce = (fn, ms) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), ms);
+    };
+  };
+
+  const fetchUsers = async () => {
+    const q = input.value.trim();
+    const now = Date.now();
+    // не пытаемся при слишком частых эроверах
+    if (now < backoffUntil) return;
+
+    // минимальная длина 3 символа
+    if (q.length < 3) {
+      suggestions.classList.remove('show');
+      suggestions.innerHTML = '';
+      return;
+    }
+    if (controller) controller.abort();
+    controller = new AbortController();
+    const { signal } = controller;
+
+    try {
+      const res = await fetch(
+        `/api/roblox/search?q=${encodeURIComponent(q)}`,
+        { signal }
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const json = await res.json();
+
+      // Обработка ошибок из тела
+      if (Array.isArray(json.errors) && json.errors.length) {
+        const err = json.errors[0];
+        if (err.code === 6) {
+          // слишком коротко — просто скрываем подсказки
+          suggestions.classList.remove('show');
+          suggestions.innerHTML = '';
+          return;
+        }
+        if (err.code === 0) {
+          // too many requests — даём бэкофф в 1 секунду
+          backoffUntil = now + 1000;
+          console.warn('Roblox API rate limit, backing off for 1s');
+          return;
+        }
+        // другие ошибки
+        throw new Error(err.message);
+      }
+
+      // основной массив
+      const users = Array.isArray(json.data) ? json.data : [];
+      if (!users.length) {
+        suggestions.classList.remove('show');
+        suggestions.innerHTML = '';
+        return;
+      }
+
+      // Получаем аватарки
+      const ids = users.map(u => u.id).join(',');
+      const thumbRes = await fetch(
+        `/api/roblox/avatar-headshot?` +
+          `userIds=${encodeURIComponent(ids)}` +
+          `&size=48x48&format=Png&isCircular=true`,
+        { signal }
+      );
+      const thumbs = await thumbRes.json();
+      const thumbMap = {};
+      thumbs.data.forEach(t => thumbMap[t.targetId] = t.imageUrl);
+
+
+      // Рендерим подсказки
+      suggestions.innerHTML = '';
+      users.forEach(u => {
+        const div = document.createElement('div');
+        div.className = 'user-suggestion';
+        div.innerHTML = `
+          <img src="${thumbMap[u.id] || ''}" alt="${u.name}" />
+          <span>${u.name}</span>
+        `;
+        document.querySelector('.popup-image-frame').style.display = "none";
+        document.querySelector('.popup-form').style.left = '3rem';
+        div.addEventListener('click', () => {
+          input.value = u.name;
+          suggestions.classList.remove('show');
+        });
+        suggestions.append(div);
+      });
+      suggestions.classList.add('show');
+
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error(err);
+        suggestions.classList.remove('show');
+        suggestions.innerHTML = '';
+      }
+    }
+  };
+
+  input.addEventListener('input', debounce(fetchUsers, 600));
+  document.addEventListener('click', e => {
+    if (!input.contains(e.target) && !suggestions.contains(e.target)) {
+      suggestions.classList.remove('show');
+    }
+  });
+});
+      </script>
+
+
+      <!-- Правая часть: иллюстрация -->
+      <div class="popup-image-frame">
+        <img class="popup-image" src="{% static 'popup_auth/image-140.png' %}" alt="Иллюстрация" />
       </div>
-      <div
-        style="
-          text-align: left;
-          font-family: 'WixMadeforDisplay-Medium', sans-serif;
-          font-size: 1.0502463340759278rem;
-          line-height: 1.068rem;
-          font-weight: 500;
-          position: absolute;
-          left: -0.034rem;
-          top: 22.331rem;
-          width: 25.5rem;
-          height: 4.1rem;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-        "
-      >
-        <span>
-          <span class="div-3-span">Прочел и согласен с</span>
-          <span class="div-3-span2">Пользовательским соглашением</span>
-          <span class="div-3-span">,</span>
-          <span class="div-3-span2">Политикой возврата средств</span>
-          <span class="div-3-span">
-            ,
-            <br />
-          </span>
-          <span class="div-3-span2">Политикой конфиденциальности</span>
-        </span>
-      </div>
+
     </div>
   </div>
-  
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   const youPayEl = document.querySelector('.i-phone-14-15-pro-1___10');
@@ -1009,5 +944,42 @@
 });
 
 </script>
+<div class="promo-container" id="input_promo">
+  <div class="promo-frame-graphic">
+    <img class="telegram-icon" src="{% static 'home/icons-8-telegram-750-10.png' %}" alt="Telegram Icon" />
+  </div>
+  <div class="promo-frame-content">
+    <div class="promo-text-block">
+      <div class="promo-description">
+        Вступайте в наш Telegram канал, где мы регулярно проводим раздачи
+        промокодов на бесплатные робуксы!
+      </div>
+      <div class="promo-subheading">Нет промокода?</div>
+    </div>
+    <a class="telegram-button" href="https://t.me/rbxkingdom">
+      <div class="telegram-button-text">Telegram канал</div>
+      <img class="telegram-button-icon" src="{% static 'home/vector0.svg' %}" alt="Arrow Icon" />
+    </a>
+  </div>
+  <div class="activate-button">
+    <div class="activate-button-text">Активировать</div>
+  </div>
+  <div class="promo-heading">Промокод</div>
+  <input type="text" class="promo-input-placeholder promo-input-frame">
+  <button class="error-icon-frame promo-close" data-fancybox-close>
+    <img class="error-icon" src="{% static 'popup_auth/error-svgrepo-com-10.svg' %}" alt="Error Icon" />
+  </button>
+</div>
+<style>
+  .fancybox-close-small {
+    display: none !important;
+  }
+</style>
+<script>
+document.addEventListener('click', e => {
+  if (e.target.matches('.promo-close')) {
+    Fancybox.close();
+  }
+});
+</script>
 </body>
-</html>
