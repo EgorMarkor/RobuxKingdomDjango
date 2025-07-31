@@ -59,6 +59,13 @@ UNFOLD = {
     # Принудительная тема: 'light' или 'dark'
     "THEME": "dark",
 
+    # Заголовок и логотип админки
+    "SITE_TITLE": "Robux Kingdom",
+    "SITE_HEADER": "Robux Kingdom",
+    "SITE_SUBHEADER": "Администрирование",
+    "SITE_LOGO": lambda request: static("logo.svg"),
+    "SITE_ICON": lambda request: static("logo.svg"),
+
     # Переопределяем цвета
     "COLORS": {
         # Ваш фирменный жёлтый
@@ -78,7 +85,7 @@ UNFOLD = {
 
     # Подключаем ваш скомпилированный CSS
     "STYLES": [
-        lambda request: static("css/styles.css"),
+        lambda request: static("main/css/styles.css"),
     ],
 }
 
@@ -149,7 +156,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru"
 
 TIME_ZONE = "UTC"
 

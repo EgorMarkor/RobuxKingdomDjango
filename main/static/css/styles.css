@@ -1,0 +1,4 @@
+/* Custom admin tweaks */
+.sidebar-header img {
+    max-height: 40px;
+}
