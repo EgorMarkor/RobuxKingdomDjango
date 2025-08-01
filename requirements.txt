@@ -1,3 +1,4 @@
 Django>=5.2
 django-unfold
 requests
+django-cors-headers

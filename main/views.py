@@ -11,9 +11,8 @@ from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.vary import vary_on_headers
 from django.http import JsonResponse, HttpResponse
-from django.views.decorators.http import require_GET
+from django.views.decorators.http import require_GET, require_POST, require_http_methods
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_http_methods
 
 logger = logging.getLogger(__name__)
 
@@ -179,41 +178,56 @@ def any_gamepasses_exist(place_id: str) -> bool:
     return len(data) > 0
 
 
+def login_user(request, username: str) -> None:
+    """Authenticate the given ROBLOX username and store profile in session."""
+    if not username:
+        return
+    try:
+        r1 = requests.post(
+            "https://users.roblox.com/v1/usernames/users",
+            json={"usernames": [username], "excludeBannedUsers": True},
+            timeout=5,
+        )
+        d1 = r1.json().get("data", [{}])[0]
+        if "errorMessage" in d1:
+            return
+        user_id = d1["id"]
+        r2 = requests.get(
+            "https://thumbnails.roblox.com/v1/users/avatar-headshot",
+            params={
+                "userIds": user_id,
+                "size": "420x420",
+                "format": "Png",
+                "isCircular": "false",
+            },
+            timeout=5,
+        )
+        image_url = r2.json().get("data", [{}])[0].get("imageUrl", "")
+    except Exception:
+        return
+
+    profile, _created = UserProfile.objects.get_or_create(
+        username=username, account_id=user_id, image_url=image_url
+    )
+    request.session["profile_id"] = profile.pk
+
+
+@require_POST
+def login_view(request):
+    """Accept a username and log the user in, redirecting back afterwards."""
+    username = request.POST.get("username", "").strip()
+    login_user(request, username)
+    next_url = request.POST.get("next") or "home"
+    return redirect(next_url)
+
+
 class HomeView(DeviceTemplateMixin, TemplateView):
     pc_template_name = "robux_head_pc/index.html"
     mobile_template_name = "index.html"
 
     def post(self, request, *args, **kwargs):
-        username = request.POST.get("username")
-        print(username)
-        if username:
-            r1 = requests.post(
-                'https://users.roblox.com/v1/usernames/users',
-                json={"usernames":[username], "excludeBannedUsers":True},
-                timeout=5
-            )
-
-            d1 = r1.json()['data'][0]
-            if 'errorMessage' in d1:
-                raise ValueError(d1['errorMessage'])
-            user_id = d1['id']
-
-            # 2. Получаем thumbnail
-            r2 = requests.get(
-                'https://thumbnails.roblox.com/v1/users/avatar-headshot',
-                params={
-                    'userIds': user_id,
-                    'size': '420x420',
-                    'format': 'Png',
-                    'isCircular': 'false'
-                }
-            )
-            print(r2.json())
-            d2 = r2.json()['data'][0]['imageUrl']
-            print(d2)
-
-            profile, _created = UserProfile.objects.get_or_create(username=username, account_id=user_id, image_url=d2)
-            request.session["profile_id"] = profile.pk
+        username = request.POST.get("username", "").strip()
+        login_user(request, username)
         return redirect("home")
 
     def get_context_data(self, **kwargs):

@@ -887,8 +887,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div id="login-popup" class="popup">
     <div class="popup-content">
-      <form method="post">
+      <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.path }}">
         <label for="popup-username">Никнейм</label>
         <input id="popup-username" type="text" name="username" required>
         <button type="submit">Войти</button>
@@ -920,8 +921,9 @@ document.addEventListener('DOMContentLoaded', () => {
           Введите свой никнейм, чтобы мы нашли ваш аккаунт в системе Roblox
         </div>
         <div class="popup-title">Мой аккаунт</div>
-        <form method="post">
+        <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
           <input type="text" name="username" required class="popup-input-container"
             style="padding-left: 2rem; font-size: 4rem; color: white;">
             <div id="user-suggestions" class="user-suggestions"></div>

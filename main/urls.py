@@ -4,6 +4,7 @@ from .views import (
     BonusView,
     AccountView,
     logout_view,
+    login_view,
     CheckAccountView,
     CheckPlace,
     GamePass,
@@ -25,6 +26,7 @@ from .views import (
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    path('login/', login_view, name='login'),
     path('bonus/', BonusView.as_view(), name='bonus'),
     path('account/', AccountView.as_view(), name='account'),
     path('logout/', logout_view, name="logout"),
